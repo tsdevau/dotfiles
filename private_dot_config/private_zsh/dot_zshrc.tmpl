@@ -21,7 +21,13 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt SHARE_HISTORY
 
-if [[ -f "${XDG_CONFIG_HOME}/env/rfapps"]]; then
+# Set History Options
+export HISTSIZE="1000000"
+export SAVEHIST="1000000"
+export HISTFILE="${ZDOTDIR}/zsh_history"
+export ZSH_SESSION_FILE="${ZDOTDIR}/zsh_sessions"
+
+if [[ -f "${XDG_CONFIG_HOME}/env/rfapps" ]]; then
   source "${XDG_CONFIG_HOME}/env/rfapps"
 fi
 
