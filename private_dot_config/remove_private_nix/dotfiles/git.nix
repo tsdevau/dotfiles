@@ -1,0 +1,118 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  enable = true;
+  package = pkgs.gitFull;
+  aliases = {
+    co = "checkout";
+    ct = "commit";
+    st = "status";
+    br = "branch";
+    lg = "log --oneline --graph --decorate --all";
+  };
+  attributes = [ ];
+  extraConfig = {
+    core = {
+      pager = "bat";
+      editor = "hx";
+      ignorecase = false;
+    };
+    init = {
+      defaultBranch = "main";
+    };
+    push = {
+      autoSetupRemote = true;
+    };
+  };
+  hooks = { };
+  ignores = [
+    ".apdisk"
+    ".AppleDB"
+    ".AppleDesktop"
+    ".AppleDouble"
+    ".astro/"
+    ".cache/"
+    ".docusaurus/"
+    ".dropbox.*"
+    ".dropbox"
+    ".DS_Store"
+    ".env.development.local"
+    ".env.local"
+    ".env.production.local"
+    ".env.test.local"
+    ".env"
+    ".eslintcache"
+    ".history"
+    ".history/"
+    ".ionide"
+    ".LSOverride"
+    ".next/"
+    ".node_repl_history"
+    ".npm"
+    ".nuxt/"
+    ".nyc_output"
+    ".parcel-cache"
+    ".svelte-kit/"
+    ".TemporaryItems"
+    ".Trashes"
+    ".VolumeIcon.icns"
+    ".webpack/"
+    "*.7z"
+    "*.bz2"
+    "*.bzip"
+    "*.bzip2"
+    "*.cab"
+    "*.deb"
+    "*.dmg"
+    "*.egg"
+    "*.gem"
+    "*.gz"
+    "*.gzip"
+    "*.icloud"
+    "*.iso"
+    "*.jar"
+    "*.lcov"
+    "*.log"
+    "*.lzma"
+    "*.msi"
+    "*.msm"
+    "*.msp"
+    "*.pid"
+    "*.rar"
+    "*.rpm"
+    "*.tar"
+    "*.tgz"
+    "*.txz"
+    "*.vsix"
+    "*.xar"
+    "*.xpi"
+    "*.xz"
+    "*.zip"
+    "archive/"
+    "backup/"
+    "build/"
+    "coverage"
+    "dist-single/"
+    "dist/"
+    "jspm_packages/"
+    "lib-cov"
+    "Network Trash Folder"
+    "node_modules/"
+    "out/"
+    "srbuild/"
+    "Temporary Items"
+  ];
+  maintenance = {
+    enable = false;
+    repositories = [ ];
+  };
+  userEmail = "tim@tsdev.au";
+  userName = "Tim Stone";
+  signing = {
+    key = "695DD946F1904F52";
+  };
+}

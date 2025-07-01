@@ -1,0 +1,88 @@
+typeset -U path cdpath fpath manpath
+
+if type brew &>/dev/null; then
+  FPATH="$(brew --prefix)/share/zsh-completions:$FPATH"
+fi
+
+if [[ ! -d "${XDG_CACHE_HOME}/zsh" ]]; then
+  mkdir -m 0750 -p "${XDG_CACHE_HOME}/zsh"
+fi
+autoload -Uz compinit
+compinit -C -d "${XDG_CACHE_HOME}/zsh/zcompdump"
+
+setopt auto_cd
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushdminus
+
+setopt HIST_FCNTL_LOCK
+setopt APPEND_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt SHARE_HISTORY
+
+if [[ -f "${XDG_CONFIG_HOME}/env/rfapps"]]; then
+  source "${XDG_CONFIG_HOME}/env/rfapps"
+fi
+
+if command -v carapace >/dev/null 2>&1; then
+  source <(carapace _carapace zsh)
+fi
+
+if command -v fzf >/dev/null 2>&1; then
+  source <(fzf --zsh)
+fi
+
+if command -v op >/dev/null 2>&1; then
+  eval "$(op completion zsh)"
+  compdef _op op
+fi
+
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
+
+if [[ -f "${XDG_CONFIG_HOME}/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh" ]]; then
+  source "${XDG_CONFIG_HOME}/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh"
+fi
+
+if [[ -f "${XDG_CONFIG_HOME}/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
+  # source "${XDG_CONFIG_HOME}/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
+
+if [[ -f "${XDG_CONFIG_HOME}/zsh/plugins/code-stats-zsh/codestats.plugin.zsh" ]]; then
+  source "${XDG_CONFIG_HOME}/zsh/plugins/code-stats-zsh/codestats.plugin.zsh"
+fi
+
+if [[ -f "${XDG_CONFIG_HOME}/zsh/key-bindings.sh" ]]; then
+  source "${XDG_CONFIG_HOME}/zsh/key-bindings.sh"
+fi
+
+if [[ -f "${XDG_CONFIG_HOME}/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh" ]]; then
+  source "${XDG_CONFIG_HOME}/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh"
+  bindkey "^[[1;2A" history-substring-search-up
+  bindkey "^[[1;2${terminfo[kcuu1]}" history-substring-search-up
+  bindkey "^[[1;2B" history-substring-search-down
+  bindkey "^[[1;2${terminfo[kcud1]}" history-substring-search-down
+fi
+
+if [[ -f "${XDG_CONFIG_HOME}/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
+  source "${XDG_CONFIG_HOME}/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  ZSH_HIGHLIGHT_HIGHLIGHTERS+=(main brackets line)
+fi
+
+precmd() {
+  # Ensure the correction for right side prompt indentation is applied
+  ZLE_RPROMPT_INDENT=0
+
+  # Select and set the Starship configuration based on terminal width
+  STARSHIP_CONFIG=$(
+    if [[ $(tput cols) -lt 100 ]]; then
+      echo "${XDG_CONFIG_HOME}/starship/starship_compact.toml"
+    else
+      echo "${XDG_CONFIG_HOME}/starship/starship.toml"
+    fi
+  )
+}
+# Source Starship prompt
+eval "$(starship init zsh)"

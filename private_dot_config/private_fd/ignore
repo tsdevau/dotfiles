@@ -1,0 +1,8 @@
+.astro/
+.git/
+bower_components/
+build/
+coverage/
+dist/
+node_modules/
+vendor/

@@ -1,0 +1,58 @@
+{
+	"darkMode": "dark",
+	"scale": 0,
+	"quickWindowPosition": {
+		"absolutePointInWorkspace": {
+			"x": 1377,
+			"y": 723
+		},
+		"monitor": {
+			"accelerometerSupport": "unknown",
+			"bounds": {
+				"x": 0,
+				"y": 0,
+				"width": 3360,
+				"height": 1890
+			},
+			"colorDepth": 24,
+			"colorSpace": "{primaries:P3, transfer:SRGB, matrix:RGB, range:FULL}",
+			"depthPerComponent": 8,
+			"detected": true,
+			"displayFrequency": 60.000003814697266,
+			"id": 2,
+			"internal": false,
+			"label": "SAMSUNG",
+			"maximumCursorSize": {
+				"width": 0,
+				"height": 0
+			},
+			"monochrome": false,
+			"nativeOrigin": {
+				"x": 0,
+				"y": 0
+			},
+			"rotation": 0,
+			"scaleFactor": 2,
+			"size": {
+				"width": 3360,
+				"height": 1890
+			},
+			"workArea": {
+				"x": 0,
+				"y": 25,
+				"width": 3360,
+				"height": 1865
+			},
+			"workAreaSize": {
+				"width": 3360,
+				"height": 1865
+			},
+			"touchSupport": "unknown"
+		},
+		"relativePointFromMonitor": {
+			"x": 1377,
+			"y": 698
+		}
+	},
+	"locale": "en-US"
+}

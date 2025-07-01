@@ -1,0 +1,10 @@
+!.gitignore
+.DS_Store
+.git*
+.git/
+build/
+coverage/
+dist/
+node_modules/
+target/
+vendor/

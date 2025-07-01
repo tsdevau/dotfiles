@@ -1,0 +1,98 @@
+/* ~/Library/KeyBindings/DefaultKeyBinding.Dict
+
+This file remaps the key bindings of a single user on Mac OS X.
+To use Control instead of Command, either swap Control and Command in
+Apple->System Preferences->Keyboard->Modifier Keys...
+or replace @ with ^ in this file.
+
+Here is a rough cheatsheet for syntax.
+Key Modifiers
+^ : Ctrl
+$ : Shift
+~ : Option (Alt)
+@ : Command (Apple)
+# : Numeric Keypad
+
+Non-Printable Key Codes
+
+Standard
+Up Arrow:     \UF700        Backspace:    \U0008        F1:           \UF704
+Down Arrow:   \UF701        Tab:          \U0009        F2:           \UF705
+Left Arrow:   \UF702        Escape:       \U001B        F3:           \UF706
+Right Arrow:  \UF703        Enter:        \U000A        ...
+Insert:       \UF727        Page Up:      \UF72C
+Delete:       \UF728        Page Down:    \UF72D
+Home:         \UF729        Print Screen: \UF72E
+End:          \UF72B        Scroll Lock:  \UF72F
+Break:        \UF732        Pause:        \UF730
+SysReq:       \UF731        Menu:         \UF735
+Help:         \UF746
+
+OS X
+delete:       \U007F
+
+For a good reference see http://osxnotes.net/keybindings.html.
+
+NOTE: typically the Windows 'Insert' key is mapped to what Macs call 'Help'.
+Regular Mac keyboards don't even have the Insert key, but provide 'Fn' instead,
+which is completely different.
+*/
+
+{
+/* Move cursor to the beginning of the line */
+"\UF729" = "moveToBeginningOfLine:";
+
+/* Move cursor to the end of the line */
+"\UF72B" = "moveToEndOfLine:";
+
+/* Move cursor to the beginning of the line & select */
+"$\UF729" = "moveToBeginningOfLineAndModifySelection:";
+
+/* Move cursor to the end of the line & select */
+"$\UF72B" = "moveToEndOfLineAndModifySelection:";
+
+/* Move cursor to the beginning of the document */
+"@\UF729" = "moveToBeginningOfDocument:";
+
+/* Move cursor to the end of the document */
+"@\UF72B" = "moveToEndOfDocument:";
+
+ /* Move cursor to the beginning of the document & select */
+"$@\UF729" = "moveToBeginningOfDocumentAndModifySelection:";
+
+/* Move cursor to the end of the document & select */
+"$@\UF72B" = "moveToEndOfDocumentAndModifySelection:";
+
+/* Scroll page up by viewport */
+"\UF72C" = "pageUp:";
+
+/* Scroll page down by viewport */
+"\UF72D" = "pageDown:";
+
+/* Select from the cursor to the end of the line & delete */
+"@\UF728" = "deleteToEndOfLine:";
+
+/* Select from the cursor to the beginning of the line & delete */
+"@\U007F" = "deleteToBeginningOfLine:";
+
+/* Delete the whole word to the right of the cursor */
+"~\UF728" = "deleteWordForward:";
+
+/* Delete the whole word to the left of the cursor */
+"~\U007F" = "deleteWordBackward:";
+
+/* Move cursor to right by a whole word */
+"~\UF703" = "moveWordForward:";
+
+/* Move cursor to left by a whole word */
+"~\UF702" = "moveWordBackward:";
+
+/* Move cursor to right by a whole word and select */
+"~$\UF703" = "moveWordForwardAndModifySelection:";
+
+/* Move cursor to left by a whole word and select */
+"~$\UF702" = "moveWordBackwardAndModifySelection:";
+
+/* Delete the whole line */
+"$@\U006B" = "deleteLine:";
+}

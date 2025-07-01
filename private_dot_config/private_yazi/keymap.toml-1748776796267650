@@ -1,0 +1,39 @@
+[manager]
+prepend_keymap = [
+  { on = "e", run = "edit", desc = "Edit the selection" },
+  { on = "<Enter>", run = "plugin --sync smart-enter", desc = "Enter the child directory, or open the file" },
+  { on = [
+    "g",
+    "p",
+  ], run = "cd ~/pittsworth", desc = "Goto ~/pittsworth directory" },
+  { on = [
+    "g",
+    "w",
+  ], run = "cd ~/westbrook", desc = "Goto ~/westbrook directory" },
+  { on = [
+    "g",
+    "c",
+  ], run = "cd ~/code", desc = "Goto ~/code directory" },
+  { on = [
+    "g",
+    ",",
+  ], run = "cd $XDG_CONFIG_HOME", desc = "Goto ~/.config directory" },
+  { on = [
+    "g",
+    "l",
+  ], run = "cd ~/Library", desc = "Goto ~/Library directory" },
+  { on = "<C-Up>", run = "arrow top", desc = "Goto top of the list" },
+  { on = "<C-Down>", run = "arrow bottom", desc = "Goto bottom of the list" },
+  { on = "!", run = 'shell --interactive', desc = 'Open "$SHELL" here (non-blocking)', for = "unix" },
+  { on = [
+    "m",
+    "m",
+  ], run = "linemode mtime_or_btime", desc = "Linemode: mytime" },
+  { on = [
+    "m",
+    "M",
+  ], run = "linemode mtime", desc = "Linemode: mtime" },
+]
+
+[input]
+prepend_keymap = [{ on = "<Esc>", run = "close", desc = "Cancel input" }]

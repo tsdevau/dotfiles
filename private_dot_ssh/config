@@ -1,0 +1,226 @@
+# Added by OrbStack: 'orb' SSH host for Linux machines
+# This only works if it's at the top of ssh_config (before any Host blocks).
+# This won't be added again if you remove it.
+# Include ~/.orbstack/ssh/config
+
+IgnoreUnknown UseKeyChain
+
+Host pittsworth
+  HostName 172.27.13.100
+  User tpstech
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+  
+Host pw-sr
+  HostName 172.27.13.101
+  User tpstech
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+  
+Host westbrook
+  HostName 172.27.20.100
+  User tpstech
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host wb-sr
+  HostName 172.27.20.101
+  User tpstech
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host udm
+  HostName 192.168.79.1
+  User root
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host nas
+  HostName 192.168.79.100
+  User tpstech
+  UpdateHostKeys yes
+  Port 9922
+  IdentityFile ~/.ssh/id_rsa
+
+Host pihole
+  HostName 192.168.79.113
+  User root
+  UpdateHostKeys yes
+    IdentityFile ~/.ssh/id_rsa
+
+Host pihole2
+  HostName 192.168.79.112
+  User root
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host pve1
+  HostName 192.168.79.101
+  User root
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host pve2
+  HostName 192.168.79.102
+  User root
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host pve3
+  HostName 192.168.79.103
+  User root
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host pve9
+  HostName 192.168.79.109
+  User root
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host pbs
+  HostName 192.168.79.106
+  User root
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host template-docker
+  HostName 192.168.79.199
+  User tsdevau
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host proxy
+  HostName 192.168.79.201
+  User root
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host rf-client-db
+  HostName 192.168.79.202
+  User root
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host dashy
+  HostName 192.168.79.203
+  User root
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host hass
+  HostName ha.local
+  User tsdevau
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host docker
+  HostName 192.168.79.205
+  User root
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host rf--cashup
+  HostName 192.168.79.207
+  User tsdevau
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host win11
+  HostName 192.168.79.208
+  User tsdevau
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+host homarr
+  HostName 192.168.79.209
+  User root
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+host elementary
+  HostName 192.168.79.210
+  User tsdevau
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host coolify
+  HostName 192.168.79.211
+  User root
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_ed25519
+
+Host strapi
+  HostName 192.168.79.212
+  User root
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host osmium
+  HostName 172.105.175.184
+  User root
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_osmium
+
+# Host iridium
+#   HostName 194.195.252.216
+#   User root
+#   UpdateHostKeys yes
+#   IdentityFile ~/.ssh/id_iridium
+
+Host pwpve1
+  HostName 172.27.13.250
+  User root
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host pwpve2
+  HostName 172.27.13.251
+  User root
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host wbpve1
+  HostName 172.27.20.250
+  User root
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host wbpve2
+  HostName 172.27.20.251
+  User root
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host github.com
+  HostName ssh.github.com
+  Port 443
+  User git
+  AddKeysToAgent yes
+  UseKeychain yes
+  UpdateHostKeys yes
+  IdentityFile ~/.ssh/id_ed25519
+
+# START - SR Remote Repos - Test for VSCode Remote SSH
+# Host tpstech-sr-import
+#   HostName github.com
+#   User git
+#   IdentityFile ~/.ssh/vscode-remote-sessions/sr_import_ed25519
+
+# Host tpstech-webhook-server
+#   HostName github.com
+#   User git
+#   IdentityFile ~/.ssh/vscode-remote-sessions/webhook-server
+# END - SR Remote Repos - Test for VSCode Remote SSH
+
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  SetEnv TERM=xterm-256color
+  IdentityFile ~/.ssh/id_ed25519
+  # IdentityFile ~/.ssh/id_osmium
+  # IdentityFile ~/.ssh/id_rsa
+  # IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+
+Match all
+  SetEnv TERM=xterm-256color

@@ -1,0 +1,4 @@
+{
+  "python.createEnvironment.trigger": "prompt",
+  "python.defaultInterpreterPath": "/opt/homebrew/opt/python@3.12/libexec/bin/python"
+}

@@ -1,0 +1,206 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+# ===== My NORMAL COLUMN WIDTH Config =====
+format = """\
+[╭─ ](fg:overlay1)\
+$os\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$bun\
+$c\
+$docker_context\
+$dotnet\
+$golang\
+$lua\
+$nodejs\
+$php\
+$python\
+$time\
+[ ─╮](fg:overlay1)\
+$line_break\
+[╰─ ](fg:overlay1)\
+$character\
+"""
+
+right_format = """\
+$status\
+$cmd_duration\
+[ ─╯](fg:overlay1)\
+"""
+
+palette = "catppuccin_mocha"
+
+[bun]
+format = "[ $symbol [$version](dimmed fg:rosewater)]($style)"
+style = "bold fg:rosewater"
+symbol = ""
+
+[c]
+format = "[ $symbol [$version](dimmed fg:blue)]($style)"
+style = "bold fg:blue"
+symbol = ""
+
+[character]
+disabled = false
+error_symbol = "[❯](bold fg:red)"
+success_symbol = "[❯](bold fg:green)"
+vimcmd_replace_one_symbol = "[❮](bold fg:lavender)"
+vimcmd_replace_symbol = "[❮](bold fg:lavender)"
+vimcmd_symbol = "[❮](bold fg:blue)"
+vimcmd_visual_symbol = "[❮](bold fg:yellow)"
+
+[cmd_duration]
+disabled = false
+format = "[ 󱫫 $duration]($style)"
+min_time = 1000
+style = "fg:peach"
+
+[directory]
+before_repo_root_style = "dimmed fg:blue"
+format = "[$read_only ]($read_only_style)[$path ]($style)"
+read_only = " 󰌾"
+read_only_style = "bold fg:red"
+repo_root_format = "[$read_only ]($read_only_style)[$before_root_path]($before_repo_root_style)[$repo_root$path ]($repo_root_style)"
+repo_root_style = "bold fg:blue"
+style = "fg:blue"
+truncate_to_repo = false
+truncation_length = 4
+truncation_symbol = "…/"
+
+[docker_context]
+format = "[ $symbol [$context](dimmed fg:blue)]($style)"
+style = "fg:blue"
+symbol = ""
+
+[dotnet]
+format = "[ $symbol [$version](dimmed fg:mauve)]($style)"
+style = "fg:mauve"
+symbol = "󰪮"
+
+[fill]
+symbol = "─"
+
+[git_branch]
+format = "[$symbol $branch ]($style)"
+style = "bold fg:green"
+symbol = "󰘬"
+
+[git_status]
+ahead = "[$count ](fg:green)"
+behind = "[$count ](fg:maroon)"
+conflicted = "[ ](fg:red)"
+deleted = "[D$count ](fg:red)"
+diverged = "[](bold fg:yellow)"
+format = "[$all_status$ahead_behind]($style) "
+modified = "[M$count ](fg:flamingo)"
+renamed = "[$count ](fg:yellow)"
+staged = "[+$count ](fg:green)"
+stashed = "[*$count ](fg:purple)"
+style = "fg:green"
+untracked = "[U$count ](fg:orange)"
+up_to_date = ""
+
+[golang]
+format = "[ $symbol [$version](dimmed fg:sky)]($style)"
+style = "fg:sky"
+symbol = ""
+
+[hostname]
+format = "[@](dimmed fg:white)[$hostname ]($style)"
+ssh_only = true
+style = "fg:sapphire"
+
+[line_break]
+disabled = false
+
+[lua]
+format = "[ $symbol [$version](dimmed fg:blue)]($style)"
+style = "bold fg:blue"
+symbol = ""
+
+[nodejs]
+format = "[ $symbol [$version](dimmed fg:green)]($style)"
+style = "bold fg:green"
+symbol = ""
+
+[os]
+disabled = false
+format = "[$symbol]($style)"
+style = "fg:text"
+
+[os.symbols]
+Alpine = ""
+Debian = ""
+Linux = ""
+Macos = ""
+Redhat = "󱄛"
+RockyLinux = ""
+Ubuntu = ""
+Unknown = ""
+Windows = ""
+
+[palettes.catppuccin_mocha]
+base = "#1e1e2e"
+blue = "#89b4fa"
+crust = "#11111b"
+flamingo = "#f2cdcd"
+green = "#a6e3a1"
+lavender = "#b4befe"
+mantle = "#181825"
+maroon = "#eba0ac"
+mauve = "#cba6f7"
+overlay0 = "#6c7086"
+overlay1 = "#7f849c"
+overlay2 = "#9399b2"
+peach = "#fab387"
+pink = "#f5c2e7"
+red = "#f38ba8"
+rosewater = "#f5e0dc"
+sapphire = "#74c7ec"
+sky = "#89dceb"
+subtext0 = "#a6adc8"
+subtext1 = "#bac2de"
+surface0 = "#313244"
+surface1 = "#45475a"
+surface2 = "#585b70"
+teal = "#94e2d5"
+text = "#cdd6f4"
+yellow = "#f9e2af"
+
+[php]
+format = "[ $symbol [$version](dimmed fg:mauve)]($style)"
+style = "fg:mauve"
+symbol = ""
+
+[python]
+format = "[ $symbol [$version](dimmed fg:yellow)]($style)"
+style = "fg:yellow"
+symbol = ""
+
+[status]
+disabled = false
+format = "[ $symbol]($style)"
+not_executable_symbol = "󰛧"
+not_found_symbol = "󱈍"
+sigint_symbol = ""
+signal_symbol = "󱄙"
+style = "bold fg:red"
+success_style = "bold fg:green"
+success_symbol = "✔"
+symbol = "[✖ $status]($style)"
+
+[time]
+disabled = false
+format = "[  $time]($style)"
+style = "fg:lavender"
+time_format = "%T"
+
+[username]
+format = "[ $user]($style)"
+show_always = true
+style_root = "bold fg:red"
+style_user = "bold fg:lavender"

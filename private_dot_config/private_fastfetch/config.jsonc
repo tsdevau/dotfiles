@@ -1,0 +1,33 @@
+{
+  "display": {
+    "color": {
+      "keys": "yellow"
+    },
+    "key": {
+      "type": "both"
+    }
+  },
+  "logo": {
+    "padding": {
+      "left": 1,
+      "right": 1
+    },
+    "source": "/nix/store/y5r1297s2r30zi9c6r76jbcch354sic7-tsdev_logo_square_144x144.png",
+    "type": "kitty-direct"
+  },
+  "modules": [
+    {
+      "fqdn": true,
+      "type": "title"
+    },
+    "os",
+    "memory",
+    "disk",
+    {
+      "format": "{9}, {23} {6} {1} {14}:{18}:{20}",
+      "key": "Date",
+      "type": "datetime"
+    },
+    "uptime"
+  ]
+}

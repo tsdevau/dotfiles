@@ -1,0 +1,67 @@
+# Reload config with cmd + shift + ,
+
+background-opacity = 0.9
+theme = catppuccin-mocha.conf
+unfocused-split-opacity = 0.6
+
+font-family = MesloLGM Nerd Font Mono Regular
+font-family-bold = MesloLGM Nerd Font Mono Bold
+font-family-bold-italic = MesloLGM Nerd Font Mono Bold Italic
+font-family-italic = MesloLGM Nerd Font Mono Italic
+font-size = 16
+
+adjust-cursor-thickness = 4
+cursor-style = bar
+cursor-style-blink = true
+window-decoration = auto
+window-padding-balance = true
+window-padding-y = 4
+window-theme = dark
+
+confirm-close-surface = false
+link-url = true
+scrollback-limit = 104857600
+shell-integration = detect
+shell-integration-features = no-cursor
+term = xterm-256color
+window-save-state = always
+
+macos-option-as-alt = true
+macos-secure-input-indication = true
+macos-titlebar-style = hidden
+
+keybind = super+k=unbind
+
+keybind = alt+delete=text:\x1b\x64
+keybind = super+backspace=text:\x1b\x5b\x31\x3b\x08
+keybind = super+delete=text:\x0b
+keybind = super+shift+k=text:\x15
+
+keybind = page_down=scroll_page_down
+keybind = page_up=scroll_page_up
+keybind = super+page_down=unbind
+keybind = super+page_up=unbind
+
+keybind = cmd+shift+down=adjust_selection:end
+keybind = cmd+shift+up=adjust_selection:home
+keybind = shift+end=adjust_selection:end_of_line
+keybind = shift+home=adjust_selection:beginning_of_line
+
+keybind = cmd+alt+physical:one=goto_split:left
+keybind = cmd+alt+physical:two=goto_split:right
+keybind = super+alt+down=resize_split:down,10
+keybind = super+alt+enter=toggle_split_zoom
+keybind = super+alt+equal=equalize_splits
+keybind = super+alt+left=resize_split:left,10
+keybind = super+alt+right=resize_split:right,10
+keybind = super+alt+up=resize_split:up,10
+keybind = super+ctrl+down=unbind
+keybind = super+ctrl+equal=unbind
+keybind = super+ctrl+left=unbind
+keybind = super+ctrl+right=unbind
+keybind = super+ctrl+up=unbind
+keybind = super+shift+enter=unbind
+keybind = super+enter=unbind
+
+keybind = ctrl+tab=text:\x1b\x5b\x32\x37\x3b\x35\x3b\x39\x7e
+keybind = ctrl+shift+tab=text:\x1b\x5b\x32\x37\x3b\x36\x3b\x39\x7e

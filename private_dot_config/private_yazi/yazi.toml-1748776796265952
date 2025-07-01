@@ -1,0 +1,71 @@
+[manager]
+ratio = [0, 3, 3]
+show_hidden = false
+sort_by = "natural"
+sort_dir_first = true
+show_symlink = false
+linemode = "mtime_or_btime"
+
+[opener]
+edit = [
+  { run = '~/.config/yazi/opener-editor-new-tab.sh "$@"', desc = "Editor in new tab", orphan = true, for = "unix" },
+  # { run = '"${EDITOR:-vi}" "$@"', desc = "Editor (blocking)", block = true, for = "unix" },
+  { run = '"${VISUAL}" "$@"', desc = "Editor (non-blocking)", orphan = true, for = "unix" },
+]
+git = [
+  { run = '~/.config/yazi/opener-lazygit-new-tab.sh "$@"', desc = "Open with LazyGit", orphan = true, for = "unix" },
+]
+
+[open]
+prepend_rules = [
+  # Folders
+  { name = "*/", use = [
+    "open",
+    "edit",
+    "git",
+  ] },
+  # Text files
+  { mime = "text/*", use = [
+    "edit",
+    "reveal",
+  ] },
+  # Images
+  { mime = "image/*", use = [
+    "open",
+    "reveal",
+  ] },
+  # Audio and video files
+  { mime = "{audio,video}/*", use = [
+    "play",
+    "reveal",
+  ] },
+  # Archive files
+  { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [
+    "extract",
+    "reveal",
+  ] },
+  # JSON files
+  { mime = "application/{json,ndjson}", use = [
+    "edit",
+    "reveal",
+  ] },
+  # JavaScript files
+  { mime = "*/javascript", use = [
+    "edit",
+    "reveal",
+  ] },
+  # Empty file
+  { mime = "inode/empty", use = [
+    "edit",
+    "reveal",
+  ] },
+  # Fallback
+  { name = "*", use = [
+    "open",
+    "edit",
+    "reveal",
+  ] },
+]
+
+[input]
+cursor_blink = true

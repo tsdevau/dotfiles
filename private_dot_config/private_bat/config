@@ -1,0 +1,5 @@
+--color=always
+--map-syntax='~/.config/ghostty/config:Ghostty Config'
+--style=numbers,changes,header
+--tabs=2
+--theme='Catppuccin Mocha'

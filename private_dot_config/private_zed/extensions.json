@@ -1,0 +1,17 @@
+{
+  "extensions": [
+    "astro",
+    "catppuccin-icons",
+    "catppuccin",
+    "code-stats",
+    "html",
+    "kdl",
+    "lua",
+    "markdown-oxide",
+    "marksman",
+    "mcp-server-context7",
+    "nix",
+    "svelte",
+    "typos"
+  ]
+}

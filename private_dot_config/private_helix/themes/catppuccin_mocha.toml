@@ -1,0 +1,167 @@
+# Syntax highlighting
+# -------------------
+"attribute" = "yellow"
+
+"type" = "flamingo"
+"type.enum.variant" = "teal"
+
+"constructor" = "peach"
+
+"constant" = "peach"
+"constant.builtin" = { fg = "red", modifiers = ["bold"] }
+"constant.numeric" = "peach"
+"constant.character.escape" = "pink"
+
+"string" = "green"
+"string.regexp" = "pink"
+"string.special" = "blue"
+"string.special.symbol" = "red"
+
+"comment" = { fg = "overlay2", modifiers = ["italic"] }
+
+"variable" = "yellow"
+"variable.parameter" = { fg = "sapphire", modifiers = ["bold"] }
+"variable.builtin" = { fg = "red", modifiers = ["bold"] }
+"variable.other.member" = "lavender"
+
+"label" = "sapphire" # used for lifetimes
+
+"punctuation" = "text"
+"punctuation.bracket" = "rosewater"
+"punctuation.special" = "red"
+
+"keyword" = { fg = "mauve", modifiers = ["bold"] }
+"keyword.control.conditional" = { fg = "red", modifiers = ["bold", "italic"] }
+"keyword.control.repeat" = { fg = "red", modifiers = ["bold", "italic"] }
+"keyword.control.return" = { fg = "red", modifiers = ["bold", "italic"] }
+
+"operator" = { fg = "mauve", modifiers = ["bold"] }
+
+"function" = "blue"
+"function.macro" = "rosewater"
+
+"tag" = "maroon"
+
+"namespace" = { fg = "peach", modifiers = ["bold", "italic"] }
+
+"special" = "blue" # fuzzy highlight
+
+"markup.heading.1" = "red"
+"markup.heading.2" = "peach"
+"markup.heading.3" = "yellow"
+"markup.heading.4" = "green"
+"markup.heading.5" = "sapphire"
+"markup.heading.6" = "lavender"
+"markup.list" = "teal"
+"markup.list.unchecked" = "overlay2"
+"markup.list.checked" = "green"
+"markup.bold" = { fg = "red", modifiers = ["bold"] }
+"markup.italic" = { fg = "red", modifiers = ["italic"] }
+"markup.link.url" = { fg = "blue", modifiers = ["italic", "underlined"] }
+"markup.link.text" = "lavender"
+"markup.link.label" = "sapphire"
+"markup.raw" = "green"
+"markup.quote" = "pink"
+
+"diff.plus" = "green"
+"diff.minus" = "red"
+"diff.delta" = "blue"
+
+# User Interface
+# --------------
+
+"ui.background" = { fg = "text" } # No background colour to allow transparency
+
+"ui.cursor" = { fg = "base", bg = "secondary_cursor" }
+"ui.cursor.normal" = { fg = "base", bg = "secondary_cursor_normal" }
+"ui.cursor.insert" = { fg = "base", bg = "secondary_cursor_insert" }
+"ui.cursor.select" = { fg = "base", bg = "secondary_cursor_select" }
+
+"ui.cursor.match" = { fg = "peach", modifiers = ["bold"] }
+
+"ui.cursor.primary" = { fg = "base", bg = "rosewater" }
+"ui.cursor.primary.normal" = { fg = "base", bg = "text" }
+"ui.cursor.primary.insert" = { fg = "base", bg = "text" }
+"ui.cursor.primary.select" = { fg = "base", bg = "text" }
+
+"ui.cursorline.primary" = { bg = "mantle" }
+
+"ui.linenr" = { fg = "surface1" }
+"ui.linenr.selected" = { fg = "lavender" }
+
+"ui.statusline" = { fg = "subtext1", bg = "base" }
+"ui.statusline.inactive" = { fg = "surface2", bg = "base" }
+"ui.statusline.normal" = { fg = "base", bg = "blue", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "base", bg = "green", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "base", bg = "yellow", modifiers = ["bold"] }
+
+"ui.popup" = { fg = "text", bg = "surface0" }
+"ui.window" = { fg = "crust" }
+"ui.help" = { fg = "overlay2", bg = "surface0" }
+
+"ui.bufferline" = { fg = "subtext0", bg = "mantle" }
+"ui.bufferline.active" = { fg = "mauve", bg = "base", underline = { color = "mauve", style = "line" } }
+"ui.bufferline.background" = { bg = "crust" }
+
+"ui.text" = "text"
+"ui.text.focus" = { fg = "text", bg = "surface0", modifiers = ["bold"] }
+"ui.text.inactive" = { fg = "overlay1" }
+"ui.text.directory" = { fg = "blue" }
+
+"ui.virtual" = "overlay0"
+"ui.virtual.ruler" = { bg = "base" }
+"ui.virtual.indent-guide" = "surface0"
+"ui.virtual.inlay-hint" = { fg = "surface1", bg = "mantle" }
+"ui.virtual.jump-label" = { fg = "rosewater", modifiers = ["bold"] }
+
+"ui.selection" = { bg = "surface1" }
+"ui.highlight" = { bg = "surface1", modifiers = ["bold"] }
+
+"ui.menu" = { fg = "overlay2", bg = "surface0" }
+"ui.menu.selected" = { fg = "text", bg = "surface1", modifiers = ["bold"] }
+
+"diagnostic.error" = { underline = { color = "red", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "rosewater", style = "curl" } }
+"diagnostic.info" = { underline = { color = "sky", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "teal", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { crossed_out = { color = "text" } }
+
+error = "red"
+warning = "rosewater"
+info = "sky"
+hint = "teal"
+
+[palette]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+cursorline = "#2a2b3c"
+secondary_cursor = "#b5a6a8"
+secondary_cursor_select = "#878ec0"
+secondary_cursor_normal = "#b5a6a8"
+secondary_cursor_insert = "#7ea87f"

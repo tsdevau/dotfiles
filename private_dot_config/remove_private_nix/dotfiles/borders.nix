@@ -1,0 +1,17 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  enable = true;
+  package = pkgs.jankyborders;
+  settings = {
+    style = "round";
+    width = 10.0;
+    hidpi = "on";
+    active_color = "0xfff38ba8";
+    inactive_color = "0x00000000";
+  };
+}

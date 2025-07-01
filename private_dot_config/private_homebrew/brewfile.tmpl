@@ -1,0 +1,15 @@
+{{- range .homebrew.taps }}
+tap "{{ . }}"
+{{- end }}
+
+{{- range .homebrew.formulae }}
+brew "{{ . }}"
+{{- end }}
+
+{{- range .homebrew.casks }}
+cask "{{ . }}"
+{{- end }}
+
+{{- range $name, $id := .masApps }}
+mas "{{ $name }}", id: {{ $id }}
+{{- end }}

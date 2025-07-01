@@ -1,0 +1,679 @@
+### Astro ###
+[[language]]
+name = "astro"
+scope = "source.astro"
+injection-regex = "astro"
+file-types = ["astro"]
+block-comment-tokens = { start = "<!--", end = "-->" }
+comment-token = "//"
+indent = { tab-width = 2, unit = " " }
+language-servers = [
+  "astro-ls",
+  "typescript-language-server",
+  "tailwindcss-ls",
+  "uwu_colors",
+  "typos",
+]
+roots = ["package.json", "astro.config.mjs"]
+auto-format = true
+formatter = { command = "prettier", args = [
+  "--plugin",
+  "prettier-plugin-astro",
+  "--parser",
+  "astro",
+] }
+
+[[grammar]]
+name = "astro"
+source = { git = "https://github.com/virchau13/tree-sitter-astro", rev = "947e93089e60c66e681eba22283f4037841451e7" }
+
+[language-server.astro-ls]
+command = "astro-ls"
+args = ["--stdio"]
+config = { "typescript" = { "tsdk" = "/nix/store/cw0dghf6idlcppanwx7ym4gjcbm4q6p0-typescript-5.8.2/lib/node_modules/typescript/lib" }, "environment" = "node" }
+
+### Bash ###
+[[language]]
+name = "bash"
+scope = "source.bash"
+injection-regex = "(shell|bash|zsh|sh)"
+file-types = [
+  "sh",
+  "bash",
+  "ash",
+  "dash",
+  "ksh",
+  "mksh",
+  "zsh",
+  "zshenv",
+  "zlogin",
+  "zlogout",
+  "zprofile",
+  "zshrc",
+  "eclass",
+  "ebuild",
+  "bazelrc",
+  "Renviron",
+  "zsh-theme",
+  "cshrc",
+  "tcshrc",
+  "bashrc_Apple_Terminal",
+  "zshrc_Apple_Terminal",
+  { glob = "i3/config" },
+  { glob = "sway/config" },
+  { glob = "tmux.conf" },
+  { glob = ".bash_history" },
+  { glob = ".bash_login" },
+  { glob = ".bash_logout" },
+  { glob = ".bash_profile" },
+  { glob = ".bashrc" },
+  { glob = ".profile" },
+  { glob = ".zshenv" },
+  { glob = ".zlogin" },
+  { glob = ".zlogout" },
+  { glob = ".zprofile" },
+  { glob = ".zshrc" },
+  { glob = ".zimrc" },
+  { glob = "APKBUILD" },
+  { glob = ".bash_aliases" },
+  { glob = ".Renviron" },
+  { glob = ".xprofile" },
+  { glob = ".xsession" },
+  { glob = ".xsessionrc" },
+  { glob = ".yashrc" },
+  { glob = ".yash_profile" },
+  { glob = ".hushlogin" },
+]
+shebangs = ["sh", "bash", "dash", "zsh"]
+comment-token = "#"
+language-servers = ["bash-language-server", "typos"]
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+formatter = { command = "prettier", args = [
+  "--plugin",
+  "prettier-plugin-sh",
+  "--parser",
+  "sh",
+] }
+
+[[grammar]]
+name = "bash"
+source = { git = "https://github.com/tree-sitter/tree-sitter-bash", rev = "487734f87fd87118028a65a4599352fa99c9cde8" }
+
+[language-server.bash-language-server]
+command = "bash-language-server"
+args = ["start"]
+
+### CSS ###
+[[language]]
+name = "css"
+scope = "source.css"
+injection-regex = "css"
+file-types = ["css"]
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = [
+  "vscode-css-language-server",
+  "tailwindcss-ls",
+  "uwu_colors",
+  "typos",
+]
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "css"] }
+
+[[grammar]]
+name = "css"
+source = { git = "https://github.com/tree-sitter/tree-sitter-css", rev = "769203d0f9abe1a9a691ac2b9fe4bb4397a73c51" }
+
+### ESLint ###
+[language-server.vscode-eslint-language-server]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.vscode-eslint-language-server.config]
+validate = "on"
+experimental = { useFlatConfig = false }
+rulesCustomizations = []
+run = "onType"
+problems = { shortenToSingleLine = false }
+nodePath = ""
+
+[language-server.vscode-eslint-language-server.config.codeAction.disableRuleComment]
+enable = true
+location = "separateLine"
+
+[language-server.vscode-eslint-language-server.config.codeAction.showDocumentation]
+enable = true
+
+[language-server.vscode-eslint-language-server.config.workingDirectory]
+mode = "location"
+
+### HTML ###
+[[language]]
+name = "html"
+scope = "text.html.basic"
+injection-regex = "html"
+file-types = [
+  "html",
+  "htm",
+  "shtml",
+  "xhtml",
+  "xht",
+  "jsp",
+  "asp",
+  "aspx",
+  "jshtm",
+  "volt",
+  "rhtml",
+  "cshtml",
+]
+block-comment-tokens = { start = "<!--", end = "-->" }
+language-servers = [
+  "vscode-html-language-server",
+  "superhtml",
+  "tailwindcss-ls",
+  "uwu_colors",
+  "typos",
+]
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "html"] }
+
+[[grammar]]
+name = "html"
+source = { git = "https://github.com/tree-sitter/tree-sitter-html", rev = "29f53d8f4f2335e61bf6418ab8958dac3282077a" }
+
+### JavaScript ###
+[[language]]
+name = "javascript"
+scope = "source.js"
+injection-regex = "(js|javascript)"
+language-id = "javascript"
+file-types = [
+  "js",
+  "mjs",
+  "cjs",
+  "rules",
+  "es6",
+  "pac",
+  { glob = ".node_repl_history" },
+  { glob = "jakefile" },
+]
+shebangs = ["node"]
+roots = ["package.json"]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = [
+  "typescript-language-server",
+  "tailwindcss-ls",
+  "uwu_colors",
+  "typos",
+]
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "javascript"] }
+
+[language.debugger]
+name = "node-debug2"
+transport = "stdio"
+quirks = { absolute-paths = true }
+
+[[language.debugger.templates]]
+name = "source"
+request = "launch"
+completion = [{ name = "main", completion = "filename", default = "index.js" }]
+args = { program = "{0}" }
+
+[[grammar]]
+name = "javascript"
+source = { git = "https://github.com/tree-sitter/tree-sitter-javascript", rev = "f772967f7b7bc7c28f845be2420a38472b16a8ee" }
+
+### JSX ###
+[[language]]
+name = "jsx"
+scope = "source.jsx"
+injection-regex = "jsx"
+language-id = "javascriptreact"
+file-types = ["jsx"]
+roots = ["package.json"]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = [
+  "typescript-language-server",
+  "tailwindcss-ls",
+  "uwu_colors",
+  "typos",
+]
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "javascript"] }
+grammar = "javascript"
+
+### JSON ###
+[[language]]
+name = "json"
+scope = "source.json"
+injection-regex = "json"
+file-types = [
+  "json",
+  "arb",
+  "ipynb",
+  "geojson",
+  "gltf",
+  "webmanifest",
+  { glob = "flake.lock" },
+  { glob = ".babelrc" },
+  { glob = ".bowerrc" },
+  { glob = ".jscrc" },
+  "js.map",
+  "ts.map",
+  "css.map",
+  { glob = ".jslintrc" },
+  "jsonl",
+  "jsonld",
+  { glob = ".vuerc" },
+  { glob = "composer.lock" },
+  { glob = ".watchmanconfig" },
+  "avsc",
+  "ldtk",
+  "ldtkl",
+  { glob = ".swift-format" },
+  "sublime-build",
+  "sublime-color-scheme",
+  "sublime-commands",
+  "sublime-completions",
+  "sublime-keymap",
+  "sublime-macro",
+  "sublime-menu",
+  "sublime-mousemap",
+  "sublime-project",
+  "sublime-settings",
+  "sublime-theme",
+  "sublime-workspace",
+]
+language-servers = ["vscode-json-language-server", "uwu_colors", "typos"]
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "json"] }
+
+[[grammar]]
+name = "json"
+source = { git = "https://github.com/tree-sitter/tree-sitter-json", rev = "73076754005a460947cafe8e03a8cf5fa4fa2938" }
+
+### JSON5 ###
+[[language]]
+name = "json5"
+scope = "source.json5"
+injection-regex = "json5"
+file-types = ["json5"]
+language-servers = ["vscode-json-language-server", "uwu_colors", "typos"]
+comment-token = "//"
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "json"] }
+
+[[grammar]]
+name = "json5"
+source = { git = "https://github.com/Joakker/tree-sitter-json5", rev = "c23f7a9b1ee7d45f516496b1e0e4be067264fa0d" }
+
+### JSONC ###
+[[language]]
+name = "jsonc"
+scope = "source.json"
+injection-regex = "jsonc"
+file-types = [
+  "jsonc",
+  { glob = "tsconfig.json" },
+  { glob = "bun.lock" },
+  { glob = "settings.json" },
+]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+grammar = "json"
+language-servers = ["vscode-json-language-server", "uwu_colors", "typos"]
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "jsonc"] }
+
+### KDL ###
+[[language]]
+name = "kdl"
+scope = "source.kdl"
+injection-regex = "kdl"
+file-types = ["kdl"]
+indent = { tab-width = 2, unit = " " }
+comment-token = "//"
+language-servers = ["kdl-lsp", "uwu_colors", "typos"]
+auto-format = true
+formatter = { command = "kdlfmt", args = ["--stdio"] }
+
+[[grammar]]
+name = "kdl"
+source = { git = "https://github.com/tree-sitter-grammars/tree-sitter-kdl", rev = "master" }
+
+[language-server.kdl-lsp]
+command = "kdl-lsp"
+
+### Lua ###
+[[language]]
+name = "lua"
+injection-regex = "lua"
+scope = "source.lua"
+file-types = ["lua", "rockspec"]
+shebangs = ["lua", "luajit"]
+roots = [".luarc.json", ".luacheckrc", ".stylua.toml", "selene.toml", ".git"]
+comment-token = "--"
+block-comment-tokens = { start = "--[[", end = "--]]" }
+indent = { tab-width = 2, unit = " " }
+language-servers = ["lua-language-server", "uwu_colors", "typos"]
+auto-format = true
+formatter = { command = "stylua", args = ["-"] }
+
+[[grammar]]
+name = "lua"
+source = { git = "https://github.com/tree-sitter-grammars/tree-sitter-lua", rev = "88e446476a1e97a8724dff7a23e2d709855077f2" }
+
+[language-server.lua-language-server]
+command = "lua-language-server"
+
+[language-server.lua-language-server.config.Lua.hint]
+enable = true
+arrayIndex = "Enable"
+setType = true
+paramName = "All"
+paramType = true
+await = true
+
+### Markdown ###
+[[language]]
+name = "markdown"
+scope = "source.md"
+injection-regex = "md|markdown"
+file-types = [
+  "md",
+  "livemd",
+  "markdown",
+  "mdx",
+  "mkd",
+  "mkdn",
+  "mdwn",
+  "mdown",
+  "markdn",
+  "mdtxt",
+  "mdtext",
+  "workbook",
+  { glob = "PULLREQ_EDITMSG" },
+]
+roots = [".marksman.toml"]
+language-servers = ["marksman", "markdown-oxide"]
+indent = { tab-width = 2, unit = "  " }
+block-comment-tokens = { start = "<!--", end = "-->" }
+auto-format = true
+formatter = { command = "dprint", args = [
+  "fmt",
+  "--config",
+  "~/.config/dprint/dprint.json",
+  "--stdin",
+  "md",
+] }
+
+[[grammar]]
+name = "markdown"
+source = { git = "https://github.com/tree-sitter-grammars/tree-sitter-markdown", rev = "62516e8c78380e3b51d5b55727995d2c511436d8", subpath = "tree-sitter-markdown" }
+
+[language-server.marksman]
+command = "marksman"
+args = ["server"]
+
+[language-server.markdown-oxide]
+command = "markdown-oxide"
+args = ["--stdio"]
+
+### Nix ###
+[[language]]
+name = "nix"
+scope = "source.nix"
+injection-regex = "nix"
+file-types = [
+  "nix",
+  "nixexpr",
+  "nixpkgs",
+  "nix-shell",
+  "nixfmt",
+  { glob = "flake.nix" },
+  { glob = "shell.nix" },
+  { glob = "default.nix" },
+  { glob = "nixfmt.toml" },
+]
+shebangs = ["nix-shell", "nix"]
+roots = ["flake.nix", "shell.nix", "default.nix"]
+comment-token = "#"
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = ["nil", "rnix-lsp", "uwu_colors", "typos"]
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+formatter = { command = "nixfmt", args = ["--stdin"] }
+
+[[grammar]]
+name = "nix"
+source = { git = "https://github.com/nix-community/tree-sitter-nix", rev = "master" }
+
+[language-server.nil]
+command = "nil"
+args = ["--stdio"]
+
+[language-server.rnix-lsp]
+command = "rnix-lsp"
+args = ["--stdio"]
+
+
+### Svelte ###
+[[language]]
+name = "svelte"
+scope = "source.svelte"
+injection-regex = "svelte"
+file-types = ["svelte"]
+indent = { tab-width = 2, unit = " " }
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = ["svelteserver", "tailwindcss-ls", "uwu_colors", "typos"]
+auto-format = true
+formatter = { command = "prettier", args = [
+  "--plugin",
+  "prettier-plugin-svelte",
+  "--parser",
+  "svelte",
+] }
+
+[[grammar]]
+name = "svelte"
+source = { git = "https://github.com/Himujjal/tree-sitter-svelte", rev = "60ea1d673a1a3eeeb597e098d9ada9ed0c79ef4b" }
+
+[language-server.svelteserver]
+command = "svelteserver"
+args = ["--stdio"]
+
+[language-server.svelteserver.config.configuration.typescript]
+inlayHints.parameterTypes.enabled = true
+inlayHints.variableTypes.enabled = true
+inlayHints.propertyDeclarationTypes.enabled = true
+inlayHints.functionLikeReturnTypes.enabled = true
+inlayHints.enumMemberValues.enabled = true
+inlayHints.parameterNames.enabled = "all"
+
+[language-server.svelteserver.config.configuration.javascript]
+inlayHints.parameterTypes.enabled = true
+inlayHints.variableTypes.enabled = true
+inlayHints.propertyDeclarationTypes.enabled = true
+inlayHints.functionLikeReturnTypes.enabled = true
+inlayHints.enumMemberValues.enabled = true
+inlayHints.parameterNames.enabled = "all"
+
+### TSX ###
+[[language]]
+name = "tsx"
+scope = "source.tsx"
+injection-regex = "tsx"
+language-id = "typescriptreact"
+file-types = ["tsx"]
+roots = ["package.json", "tsconfig.json"]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = [
+  "typescript-language-server",
+  "tailwindcss-ls",
+  "uwu_colors",
+  "typos",
+]
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+
+[[grammar]]
+name = "tsx"
+source = { git = "https://github.com/tree-sitter/tree-sitter-typescript", rev = "b1bf4825d9eaa0f3bdeb1e52f099533328acfbdf", subpath = "tsx" }
+
+### TypeScript ###
+[[language]]
+name = "typescript"
+scope = "source.ts"
+injection-regex = "(ts|typescript)"
+language-id = "typescript"
+file-types = ["ts", "mts", "cts"]
+shebangs = ["deno", "bun", "ts-node", "tsx"]
+roots = ["package.json", "tsconfig.json"]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = [
+  "typescript-language-server",
+  "tailwindcss-ls",
+  "uwu_colors",
+  "typos",
+]
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+
+[[grammar]]
+name = "typescript"
+source = { git = "https://github.com/tree-sitter/tree-sitter-typescript", rev = "b1bf4825d9eaa0f3bdeb1e52f099533328acfbdf", subpath = "typescript" }
+
+[language-server.typescript-language-server]
+command = "typescript-language-server"
+args = ["--stdio"]
+config.hostInfo = "helix"
+
+[language-server.typescript-language-server.config.typescript.inlayHints]
+includeInlayEnumMemberValueHints = true
+includeInlayFunctionLikeReturnTypeHints = true
+includeInlayFunctionParameterTypeHints = true
+includeInlayParameterNameHints = "all"
+includeInlayParameterNameHintsWhenArgumentMatchesName = true
+includeInlayPropertyDeclarationTypeHints = true
+includeInlayVariableTypeHints = true
+
+[language-server.typescript-language-server.config.javascript.inlayHints]
+includeInlayEnumMemberValueHints = true
+includeInlayFunctionLikeReturnTypeHints = true
+includeInlayFunctionParameterTypeHints = true
+includeInlayParameterNameHints = "all"
+includeInlayParameterNameHintsWhenArgumentMatchesName = true
+includeInlayPropertyDeclarationTypeHints = true
+includeInlayVariableTypeHints = true
+
+### Tailwind ###
+[[grammar]]
+name = "tailwindcss"
+source = { git = "https://github.com/tailwindlabs/tailwindcss-intellisense", rev = "master" }
+
+[language-server.tailwindcss-ls]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+config = { userLanguages = { astro = "html", "*.astro" = "html" } }
+
+### TOML ###
+[[language]]
+name = "toml"
+scope = "source.toml"
+injection-regex = "toml"
+file-types = [
+  "toml",
+  { glob = "pdm.lock" },
+  { glob = "poetry.lock" },
+  { glob = "Cargo.lock" },
+  { glob = "uv.lock" },
+]
+comment-token = "#"
+language-servers = ["taplo", "uwu_colors", "typos"]
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+# formatter = { command = "taplo", args = ["format", "-"] }
+formatter = { command = "dprint", args = [
+  "fmt",
+  "--config",
+  "~/.config/dprint/dprint.json",
+  "--stdin",
+  "toml",
+] }
+
+[[grammar]]
+name = "toml"
+source = { git = "https://github.com/ikatyang/tree-sitter-toml", rev = "7cff70bbcbbc62001b465603ca1ea88edd668704" }
+
+[language-server.taplo]
+command = "taplo"
+args = ["lsp", "--no-auto-config", "stdio"]
+config = {}
+
+### Typos LSP ###
+[language-server.typos]
+command = "typos-lsp"
+config.config = "~/.config/typos/typos.toml"
+config.diagnosticSeverity = "Info"
+
+### uwu_colors ###
+[language-server.uwu_colors]
+command = "uwu_colors"
+args = [
+  "--variable-completions",
+  "--named-completions-mode",
+  "lower",
+  "--color-collection",
+  "colorhexa",
+]
+
+### YAML ###
+[[language]]
+name = "yaml"
+scope = "source.yaml"
+file-types = [
+  "yml",
+  "yaml",
+  { glob = ".prettierrc" },
+  { glob = ".clangd" },
+  { glob = ".clang-format" },
+  { glob = ".clang-tidy" },
+  "sublime-syntax",
+]
+comment-token = "#"
+indent = { tab-width = 2, unit = " " }
+language-servers = [
+  "yaml-language-server",
+  "ansible-language-server",
+  "uwu_colors",
+  "typos",
+]
+injection-regex = "yml|yaml"
+auto-format = true
+# formatter = { command = "prettier", args = ["--parser", "yaml"] }
+formatter = { command = "dprint", args = [
+  "fmt",
+  "--config",
+  "~/.config/dprint/dprint.json",
+  "--stdin",
+  "yaml",
+] }
+
+[[grammar]]
+name = "yaml"
+source = { git = "https://github.com/ikatyang/tree-sitter-yaml", rev = "0e36bed171768908f331ff7dff9d956bae016efb" }
