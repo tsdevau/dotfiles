@@ -1,1 +1,0 @@
-DELETE FROM "public"."Charge" WHERE "id" = 'cmavt07ao0ghlesa8btdgh4r1';

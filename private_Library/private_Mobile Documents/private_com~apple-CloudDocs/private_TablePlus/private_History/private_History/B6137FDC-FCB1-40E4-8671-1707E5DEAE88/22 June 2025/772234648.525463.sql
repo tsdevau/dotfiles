@@ -1,1 +1,0 @@
-UPDATE "public"."Charge" SET "customerId" = '14021' WHERE "id" = 'cmc5brxjq0gxo9xvilpcci5rh';

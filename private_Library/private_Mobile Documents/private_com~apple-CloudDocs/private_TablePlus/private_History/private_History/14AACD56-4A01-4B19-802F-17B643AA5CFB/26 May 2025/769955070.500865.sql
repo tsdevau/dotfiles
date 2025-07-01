@@ -1,1 +1,0 @@
-UPDATE "public"."Charge" SET "date" = '2025-05-25 14:00:00', "tranTimeStamp" = '2025-05-26 09:05:55', "updatedAt" = '2025-05-26 12:24:25.361' WHERE "id" = 'clcs6mdyj00064bdejox9rloj';
