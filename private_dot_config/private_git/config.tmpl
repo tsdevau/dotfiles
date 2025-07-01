@@ -4,12 +4,12 @@ email = {{ .email }}
 {{- if .githubUsername }}
 username = {{ .githubUsername }}
 {{- end }}
-signingkey = "695DD946F1904F52"
+signingkey = {{ onepasswordRead "op://Personal/l4c4htdjojwcfanbjr2hqxeufm/Section_yfmxturzjnv4gl3aqas3jjhamy/signingkey" }}
 
 [core]
 pager = bat
 editor = {{ .defaultVisualEditor }} --wait
-excludesfile = "${XDG_CONFIG_HOME}/git/.gitignore_global"
+excludesfile = "${XDG_CONFIG_HOME}/git/gitignore_global"
 
 [init]
 defaultBranch = main
@@ -73,7 +73,6 @@ changed = green
 untracked = cyan
 
 [credential]
-helper =
 {{- if eq .chezmoi.os "darwin" }}
 helper = osxkeychain
 {{- end }}
