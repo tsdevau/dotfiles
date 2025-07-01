@@ -15,7 +15,7 @@ config.window_padding = {
 	top = "4px",
 	bottom = "4px",
 }
--- config.window_decorations = "RESIZE"
+config.window_decorations = "RESIZE"
 config.native_macos_fullscreen_mode = false
 config.macos_window_background_blur = 0
 config.hide_tab_bar_if_only_one_tab = false
@@ -191,7 +191,7 @@ config.cursor_blink_rate = 600
 
 -- Shell Configuration
 
-config.default_prog = { "/opt/homebrew/bin/zsh" }
+config.default_prog = { "/bin/zsh" }
 config.scrollback_lines = 100000
 
 -- Other Options
@@ -231,32 +231,32 @@ config.keys = {
 	},
 
 	-- Tab Management
-	{ key = "t", mods = "CMD", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
-	{ key = "w", mods = "CMD", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
-	{ key = "w", mods = "CMD|ALT", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
+	{ key = "t",   mods = "CMD",        action = wezterm.action.SpawnTab("CurrentPaneDomain") },
+	{ key = "w",   mods = "CMD",        action = wezterm.action.CloseCurrentPane({ confirm = false }) },
+	{ key = "w",   mods = "CMD|ALT",    action = wezterm.action.CloseCurrentTab({ confirm = false }) },
 
 	-- Tab Navigation
-	{ key = "1", mods = "CMD", action = wezterm.action.ActivateTab(0) },
-	{ key = "2", mods = "CMD", action = wezterm.action.ActivateTab(1) },
-	{ key = "3", mods = "CMD", action = wezterm.action.ActivateTab(2) },
-	{ key = "4", mods = "CMD", action = wezterm.action.ActivateTab(3) },
-	{ key = "5", mods = "CMD", action = wezterm.action.ActivateTab(4) },
-	{ key = "6", mods = "CMD", action = wezterm.action.ActivateTab(5) },
-	{ key = "7", mods = "CMD", action = wezterm.action.ActivateTab(6) },
-	{ key = "8", mods = "CMD", action = wezterm.action.ActivateTab(7) },
-	{ key = "9", mods = "CMD", action = wezterm.action.ActivateLastTab },
-	{ key = "1", mods = "LEADER", action = wezterm.action.ActivateTab(0) },
-	{ key = "2", mods = "LEADER", action = wezterm.action.ActivateTab(1) },
-	{ key = "3", mods = "LEADER", action = wezterm.action.ActivateTab(2) },
-	{ key = "4", mods = "LEADER", action = wezterm.action.ActivateTab(3) },
-	{ key = "5", mods = "LEADER", action = wezterm.action.ActivateTab(4) },
-	{ key = "6", mods = "LEADER", action = wezterm.action.ActivateTab(5) },
-	{ key = "7", mods = "LEADER", action = wezterm.action.ActivateTab(6) },
-	{ key = "8", mods = "LEADER", action = wezterm.action.ActivateTab(7) },
-	{ key = "9", mods = "LEADER", action = wezterm.action.ActivateLastTab },
-	{ key = "[", mods = "CMD|SHIFT", action = wezterm.action.ActivateTabRelative(-1) },
-	{ key = "]", mods = "CMD|SHIFT", action = wezterm.action.ActivateTabRelative(1) },
-	{ key = "Tab", mods = "CTRL", action = wezterm.action.ActivateTabRelative(1) },
+	{ key = "1",   mods = "CMD",        action = wezterm.action.ActivateTab(0) },
+	{ key = "2",   mods = "CMD",        action = wezterm.action.ActivateTab(1) },
+	{ key = "3",   mods = "CMD",        action = wezterm.action.ActivateTab(2) },
+	{ key = "4",   mods = "CMD",        action = wezterm.action.ActivateTab(3) },
+	{ key = "5",   mods = "CMD",        action = wezterm.action.ActivateTab(4) },
+	{ key = "6",   mods = "CMD",        action = wezterm.action.ActivateTab(5) },
+	{ key = "7",   mods = "CMD",        action = wezterm.action.ActivateTab(6) },
+	{ key = "8",   mods = "CMD",        action = wezterm.action.ActivateTab(7) },
+	{ key = "9",   mods = "CMD",        action = wezterm.action.ActivateLastTab },
+	{ key = "1",   mods = "LEADER",     action = wezterm.action.ActivateTab(0) },
+	{ key = "2",   mods = "LEADER",     action = wezterm.action.ActivateTab(1) },
+	{ key = "3",   mods = "LEADER",     action = wezterm.action.ActivateTab(2) },
+	{ key = "4",   mods = "LEADER",     action = wezterm.action.ActivateTab(3) },
+	{ key = "5",   mods = "LEADER",     action = wezterm.action.ActivateTab(4) },
+	{ key = "6",   mods = "LEADER",     action = wezterm.action.ActivateTab(5) },
+	{ key = "7",   mods = "LEADER",     action = wezterm.action.ActivateTab(6) },
+	{ key = "8",   mods = "LEADER",     action = wezterm.action.ActivateTab(7) },
+	{ key = "9",   mods = "LEADER",     action = wezterm.action.ActivateLastTab },
+	{ key = "[",   mods = "CMD|SHIFT",  action = wezterm.action.ActivateTabRelative(-1) },
+	{ key = "]",   mods = "CMD|SHIFT",  action = wezterm.action.ActivateTabRelative(1) },
+	{ key = "Tab", mods = "CTRL",       action = wezterm.action.ActivateTabRelative(1) },
 	{ key = "Tab", mods = "CTRL|SHIFT", action = wezterm.action.ActivateTabRelative(-1) },
 
 	-- Pane Management
@@ -270,54 +270,54 @@ config.keys = {
 		mods = "CMD|SHIFT",
 		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
-	{ key = "[", mods = "CMD|ALT", action = wezterm.action.ActivatePaneDirection("Prev") },
-	{ key = "]", mods = "CMD|ALT", action = wezterm.action.ActivatePaneDirection("Next") },
-	{ key = "H", mods = "CMD|ALT", action = wezterm.action.ActivatePaneDirection("Left") },
-	{ key = "L", mods = "CMD|ALT", action = wezterm.action.ActivatePaneDirection("Right") },
-	{ key = "Enter", mods = "CMD|ALT", action = wezterm.action.TogglePaneZoomState },
-	{ key = "=", mods = "CMD|ALT", action = wezterm.action.PaneSelect({ mode = "Activate" }) },
+	{ key = "[",          mods = "CMD|ALT",   action = wezterm.action.ActivatePaneDirection("Prev") },
+	{ key = "]",          mods = "CMD|ALT",   action = wezterm.action.ActivatePaneDirection("Next") },
+	{ key = "H",          mods = "CMD|ALT",   action = wezterm.action.ActivatePaneDirection("Left") },
+	{ key = "L",          mods = "CMD|ALT",   action = wezterm.action.ActivatePaneDirection("Right") },
+	{ key = "Enter",      mods = "CMD|ALT",   action = wezterm.action.TogglePaneZoomState },
+	{ key = "=",          mods = "CMD|ALT",   action = wezterm.action.PaneSelect({ mode = "Activate" }) },
 
 	-- Pane Resizing
-	{ key = "LeftArrow", mods = "CMD|ALT", action = wezterm.action.AdjustPaneSize({ "Left", 10 }) },
-	{ key = "RightArrow", mods = "CMD|ALT", action = wezterm.action.AdjustPaneSize({ "Right", 10 }) },
-	{ key = "UpArrow", mods = "CMD|ALT", action = wezterm.action.AdjustPaneSize({ "Up", 10 }) },
-	{ key = "DownArrow", mods = "CMD|ALT", action = wezterm.action.AdjustPaneSize({ "Down", 10 }) },
+	{ key = "LeftArrow",  mods = "CMD|ALT",   action = wezterm.action.AdjustPaneSize({ "Left", 10 }) },
+	{ key = "RightArrow", mods = "CMD|ALT",   action = wezterm.action.AdjustPaneSize({ "Right", 10 }) },
+	{ key = "UpArrow",    mods = "CMD|ALT",   action = wezterm.action.AdjustPaneSize({ "Up", 10 }) },
+	{ key = "DownArrow",  mods = "CMD|ALT",   action = wezterm.action.AdjustPaneSize({ "Down", 10 }) },
 
 	-- Window Management
-	{ key = "n", mods = "CMD", action = wezterm.action.SpawnWindow },
-	{ key = "q", mods = "CMD", action = wezterm.action.QuitApplication },
-	{ key = "f", mods = "CMD|CTRL", action = wezterm.action.ToggleFullScreen },
+	{ key = "n",          mods = "CMD",       action = wezterm.action.SpawnWindow },
+	{ key = "q",          mods = "CMD",       action = wezterm.action.QuitApplication },
+	{ key = "f",          mods = "CMD|CTRL",  action = wezterm.action.ToggleFullScreen },
 
 	-- Font Size
-	{ key = "=", mods = "CMD", action = wezterm.action.IncreaseFontSize },
-	{ key = "+", mods = "CMD", action = wezterm.action.IncreaseFontSize },
-	{ key = "-", mods = "CMD", action = wezterm.action.DecreaseFontSize },
-	{ key = "0", mods = "CMD", action = wezterm.action.ResetFontSize },
+	{ key = "=",          mods = "CMD",       action = wezterm.action.IncreaseFontSize },
+	{ key = "+",          mods = "CMD",       action = wezterm.action.IncreaseFontSize },
+	{ key = "-",          mods = "CMD",       action = wezterm.action.DecreaseFontSize },
+	{ key = "0",          mods = "CMD",       action = wezterm.action.ResetFontSize },
 
 	-- Copy/Paste
 	-- { key = "c", mods = "CMD", action = wezterm.action.CopyTo("Clipboard") },
 	-- { key = "v", mods = "CMD", action = wezterm.action.PasteFrom("Clipboard") },
-	{ key = "a", mods = "CMD", action = wezterm.action.ActivateCopyMode },
+	{ key = "a",          mods = "CMD",       action = wezterm.action.ActivateCopyMode },
 
 	-- Navigation
-	{ key = "LeftArrow", mods = "CMD", action = wezterm.action.SendKey({ key = "Home" }) },
-	{ key = "RightArrow", mods = "CMD", action = wezterm.action.SendKey({ key = "End" }) },
-	{ key = "LeftArrow", mods = "ALT", action = wezterm.action.SendString("\x1bb") },
-	{ key = "RightArrow", mods = "ALT", action = wezterm.action.SendString("\x1bf") },
-	{ key = "Backspace", mods = "CMD", action = wezterm.action.SendString("\x1b[1;\x08") },
-	{ key = "Delete", mods = "", action = wezterm.action.SendString("\x1b[3~") },
-	{ key = "Delete", mods = "CMD", action = wezterm.action.SendKey({ key = "k", mods = "CTRL" }) },
-	{ key = "k", mods = "CMD|SHIFT", action = wezterm.action.SendString("\x1b[1;[4;k") },
-	{ key = "Delete", mods = "ALT", action = wezterm.action.SendKey({ key = "d", mods = "ALT" }) },
+	{ key = "LeftArrow",  mods = "CMD",       action = wezterm.action.SendKey({ key = "Home" }) },
+	{ key = "RightArrow", mods = "CMD",       action = wezterm.action.SendKey({ key = "End" }) },
+	{ key = "LeftArrow",  mods = "ALT",       action = wezterm.action.SendString("\x1bb") },
+	{ key = "RightArrow", mods = "ALT",       action = wezterm.action.SendString("\x1bf") },
+	{ key = "Backspace",  mods = "CMD",       action = wezterm.action.SendString("\x1b[1;\x08") },
+	{ key = "Delete",     mods = "",          action = wezterm.action.SendString("\x1b[3~") },
+	{ key = "Delete",     mods = "CMD",       action = wezterm.action.SendKey({ key = "k", mods = "CTRL" }) },
+	{ key = "k",          mods = "CMD|SHIFT", action = wezterm.action.SendString("\x1b[1;[4;k") },
+	{ key = "Delete",     mods = "ALT",       action = wezterm.action.SendKey({ key = "d", mods = "ALT" }) },
 
 	-- Scrolling
-	{ key = "UpArrow", mods = "CMD", action = wezterm.action.ScrollToTop },
-	{ key = "DownArrow", mods = "CMD", action = wezterm.action.ScrollToBottom },
-	{ key = "Home", mods = "", action = wezterm.action.SendKey({ key = "Home" }) },
-	{ key = "End", mods = "", action = wezterm.action.SendKey({ key = "End" }) },
-	{ key = "PageUp", mods = "", action = wezterm.action.SendKey({ key = "PageUp" }) },
-	{ key = "PageDown", mods = "", action = wezterm.action.SendKey({ key = "PageDown" }) },
-	{ key = "Tab", mods = "SHIFT", action = wezterm.action.SendKey({ key = "Tab", mods = "SHIFT" }) },
+	{ key = "UpArrow",    mods = "CMD",       action = wezterm.action.ScrollToTop },
+	{ key = "DownArrow",  mods = "CMD",       action = wezterm.action.ScrollToBottom },
+	{ key = "Home",       mods = "",          action = wezterm.action.SendKey({ key = "Home" }) },
+	{ key = "End",        mods = "",          action = wezterm.action.SendKey({ key = "End" }) },
+	{ key = "PageUp",     mods = "",          action = wezterm.action.SendKey({ key = "PageUp" }) },
+	{ key = "PageDown",   mods = "",          action = wezterm.action.SendKey({ key = "PageDown" }) },
+	{ key = "Tab",        mods = "SHIFT",     action = wezterm.action.SendKey({ key = "Tab", mods = "SHIFT" }) },
 
 	-- Other Keys
 	{
