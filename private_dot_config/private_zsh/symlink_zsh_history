@@ -2,3 +2,10 @@
 : 1751360995:0;cat ~/.config/zsh/zsh_history_2 >> ~/.config/zsh/zsh_history
 : 1751360853:0;chezmoi chattr +symlink "~/.local/share/chezmoi/private_dot_config/private_zsh/symlink_zsh_history"
 : 1751361037:0;chezmoi add ~/.config/zsh/zsh_history
+: 1751489673:0;which python
+: 1751489676:0;which python3
+: 1751489796:0;echo $HOMEBREW_PREFIX
+: 1751491130:15;chezmoi apply
+: 1751493343:0;chezmoi apply
+: 1751493681:0;yazi
+: 1751494722:0;chezmoi forget ~/Library/Application\ Support/Code/Preferences
