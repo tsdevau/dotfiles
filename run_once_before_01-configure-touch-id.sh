@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 echo "Configuring Touch ID and Watch ID for sudo..."
 
