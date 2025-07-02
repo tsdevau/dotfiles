@@ -2,7 +2,7 @@
 .idea/
 .vscode/
 *.log
-*/Code/User/keybindings.json
-*/Code/User/settings.json
+/**/Code/User/keybindings.json
+/**/Code/User/settings.json
 README.md
-zsh_history
+/**/zsh_history
