@@ -27,7 +27,7 @@ export HISTSIZE="1000000"
 export SAVEHIST="1000000"
 export HISTFILE="${ZDOTDIR}/zsh_history"
 export ZSH_SESSION_FILE="${ZDOTDIR}/zsh_sessions"
-export LESSHISTFILE="${ZDOTDIR}/less_history"
+export LESSHISTFILE="${XDG_STATE_HOME}/lesshst"
 
 if [[ -f "${XDG_CONFIG_HOME}/env/rfapps" ]]; then
   source "${XDG_CONFIG_HOME}/env/rfapps"
