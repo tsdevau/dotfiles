@@ -14,7 +14,12 @@ echo "Removing unmanaged Homebrew packages..."
 brew bundle cleanup --file "~/.config/homebrew/brewfile" --force
 
 # Clean up Homebrew
-echo "Cleaning up Homebrew..."
+echo "Cleaning up the Homebrew clutter..."
 brew cleanup
+
+# Restart any installed services that are required
+echo "Starting Homebrew services..."
+# Manually adding services here until I can find a better way
+brew services restart borders
 
 echo "Homebrew packages installation and cleanup completed successfully."

@@ -3,11 +3,11 @@ tap "{{ . }}"
 {{- end }}
 
 {{- range .homebrew.formulae }}
-brew "{{ . }}"
+brew "{{ .name }}"{{ if hasKey . "head" }}, args: ["HEAD"]{{ end }}
 {{- end }}
 
 {{- range .homebrew.casks }}
-cask "{{ . }}"
+cask "{{ .name }}"{{ if hasKey . "head" }}, args: ["HEAD"]{{ end }}
 {{- end }}
 
 {{- range $name, $id := .masApps }}

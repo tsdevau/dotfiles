@@ -1,18 +1,13 @@
 #!/bin/zsh
 
-# Add pam_tid.so and pam_watchid.so to the PAM sudo_local configuration
-echo "Configuring Touch ID for sudo..."
+echo "Configuring Touch ID and Watch ID for sudo..."
 
-# Make sure that sudo_local actually exists
-if [[ ! -f  "/etc/pam.d/sudo_local" ]]; then
-  sudo touch "/etc/pam.d/sudo_local"
-fi
+# Run the installation script for pam_watchid.so from my GitHub repository
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/tsdevau/pam_watchid/HEAD/install.sh)"
 
-sudo sed -i '' 's/^#\?\(auth\s\+sufficient\s\pam_tid.so\)/auth sufficient pam_tid.so/' /etc/pam.d/sudo_local
-sudo sed -i '' 's/^#\?\(auth\s\+sufficient\s\pam_watchid.so\)/auth sufficient pam_watchid.so/' /etc/pam.d/sudo_local
-echo "Touch ID configuration for sudo completed."
+echo "Touch ID and Watch ID configuration for sudo completed."
 
-# Ensure the changes take effect immediately
+# Reload sudo session
 echo "Reloading sudo configuration..."
 sudo -k
-echo "Sudo configuration reloaded. You can now use Touch ID for sudo commands."
+echo "Sudo configuration reloaded. You can now use Touch ID and Watch ID for sudo commands."

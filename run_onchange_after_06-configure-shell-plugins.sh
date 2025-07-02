@@ -3,9 +3,19 @@
 echo "Configuring shell environment..."
 
 # Set zsh as default shell if not already set
-if [[ "$SHELL" != "$(which zsh)" ]]; then
+if [[ "$SHELL" != "/bin/zsh" || "$SHELL" != "$(which zsh)" ]]; then
   echo "Setting zsh as default shell..."
-  chsh -s "$(which zsh)"
+
+  # Prefer /bin/zsh if available or use which zsh
+  if command -v /bin/zsh >/dev/null 2>&1; then
+    SHELL_PATH="/bin/zsh"
+  else
+    SHELL_PATH=$(which zsh)
+  fi
+  chsh -s "$SHELL_PATH"
+  echo "Default shell set to $SHELL_PATH"
+else
+  echo "Default shell is already configured to zsh."
 fi
 
 # Install zsh plugins
