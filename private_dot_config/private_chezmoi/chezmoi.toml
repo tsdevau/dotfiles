@@ -1,18 +1,8 @@
-[diff]
-command = "/opt/homebrew/bin/code"
-args = ["--wait", "--diff", "{{ .SourcePath }}", "{{ .DestinationPath }}"]
-
-[edit]
-command = "/opt/homebrew/bin/code"
-args = ["--wait"]
+progress = true
 
 [git]
 autoCommit = true
 autoPush = true
 
-[1password]
-command = "/opt/homebrew/bin/op"
-
-[shell]
-command = "/bin/zsh"
-args = ["-l"]
+[update]
+apply = false
