@@ -9,3 +9,4 @@
 : 1751493343:0;chezmoi apply
 : 1751493681:0;yazi
 : 1751494722:0;chezmoi forget ~/Library/Application\ Support/Code/Preferences
+: 1751494738:0;chezmoi diff
