@@ -19,3 +19,5 @@
 : 1751496405:0;which nixfmt
 : 1751496410:0;which nixd
 : 1751497677:0;chezmoi add ~/.config/cspell
+: 1751497990:0;chezmoi diff
+: 1751498127:0;chezmoi apply
