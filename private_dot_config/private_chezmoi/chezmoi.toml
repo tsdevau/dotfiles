@@ -1,11 +1,18 @@
+[diff]
+command = "/opt/homebrew/bin/code"
+args = ["--wait", "--diff", "{{ .SourcePath }}", "{{ .DestinationPath }}"]
+
+[edit]
+command = "/opt/homebrew/bin/code"
+args = ["--wait"]
+
 [git]
 autoCommit = true
 autoPush = true
 
-[onepassword]
-command = "op"
+[1password]
+command = "/opt/homebrew/bin/op"
 
-[onchange]
-".chezmoidata.toml" = [
-  "chezmoi apply --include private_dot_config/private_homebrew/brewfile.tmpl",
-]
+[shell]
+command = "/bin/zsh"
+args = ["-l"]
