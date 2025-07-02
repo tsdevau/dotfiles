@@ -2,28 +2,47 @@
 
 echo "Setting up development environment..."
 
-# Set up GitHub CLI
-if command -v gh >/dev/null 2>&1; then
-  echo "GitHub CLI is available. Run 'gh auth login' to authenticate."
-fi
-
-# Install global pnpm packages using template data from .chezmoi.toml
-if command -v pnpm >/dev/null 2>&1; then
-  echo "Installing global pnpm packages..."
-  pnpm install -g {{ .pnpmGlobals.packages | join " " }}
-fi
-
-# Set up Rust environment
-if command -v rustc >/dev/null 2>&1; then
-  echo "Setting up Rust environment..."
-  rustup default stable
-  rustup component add rustfmt clippy
+# Check for bat cache and build it if required
+# bat cache hash: {{ "$XDG_CONFIG_HOME/bat/syntaxes.bin" | sha256sum }}
+# bat config hash: {{ "$XDG_CONFIG_HOME/bat/config" | sha256sum }}
+# bat binary hash: {{ "$(which bat)" | sha256sum }}
+if command -v bat >/dev/null 2>&1; then
+  echo "Re-building bat cache..."
+  command bat cache --build
 fi
 
 # Configure 1Password CLI
+# op binary hash: {{ "$(which op)" | sha256sum }}
 if command -v op >/dev/null 2>&1; then
   echo "1Password CLI is available. Signing in..."
   op signin
+fi
+
+# Install global pnpm packages using template data from .chezmoi.toml
+# pnpm binary hash: {{ "$(which pnpm)" | sha256sum }}
+if command -v pnpm >/dev/null 2>&1; then
+  echo "Installing global pnpm packages..."
+  pnpm install -g {{ .pnpm.packages | join " " }}
+fi
+
+# Set up Rust environment
+# rustc binary hash: {{ "$(which rustc)" | sha256sum }}
+if command -v rustc >/dev/null 2>&1; then
+  echo "Setting up Rust environment..."
+
+  # Install and activate Rust toolchains
+  {{ range .rustup.toolchains }}
+  if ! rustup show active-toolchain | grep -q '^{{- .name -}}'; then
+    rustup {{ .profile }} {{ .name }}
+  fi
+  {{ end }}
+
+  # Install Rust components
+  {{ range .rustup.components }}
+  if ! rustup component list --installed | grep -q '^{{- . -}}'; then
+    rustup component add {{ . }}
+  fi
+  {{ end }}
 fi
 
 echo "Development environment setup completed"
