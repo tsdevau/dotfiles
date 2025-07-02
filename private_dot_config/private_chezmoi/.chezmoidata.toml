@@ -148,7 +148,7 @@ casks = [
 # "Speedtest" = 1153157709; # Not currently using it
 "Xcode" = 497799835
 
-[pnpmGlobals]
+[pnpm]
 packages = [
   "@cspell/dict-en-au",
   "@google/gemini-cli",
@@ -156,3 +156,7 @@ packages = [
   "tsx",
   "wrangler",
 ]
+
+[rustup]
+components = ["rustfmt", "clippy"]
+toolchains = [{ name = "stable", profile = "default" }]
