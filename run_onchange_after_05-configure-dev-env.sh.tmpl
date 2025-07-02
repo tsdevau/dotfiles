@@ -3,8 +3,8 @@
 echo "Setting up development environment..."
 
 # Check for bat cache and build it if required
-# bat cache hash: {{ "$XDG_CONFIG_HOME/bat/syntaxes.bin" | sha256sum }}
-# bat config hash: {{ "$XDG_CONFIG_HOME/bat/config" | sha256sum }}
+# bat cache hash: {{ "~/.config/bat/syntaxes.bin" | sha256sum }}
+# bat config hash: {{ "~/.config/bat/config" | sha256sum }}
 # bat binary hash: {{ "$(which bat)" | sha256sum }}
 if command -v bat >/dev/null 2>&1; then
   echo "Re-building bat cache..."
