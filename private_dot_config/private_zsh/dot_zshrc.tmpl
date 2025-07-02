@@ -10,16 +10,17 @@ fi
 autoload -Uz compinit
 compinit -C -d "${XDG_CACHE_HOME}/zsh/zcompdump"
 
-setopt auto_cd
-setopt auto_pushd
-setopt pushd_ignore_dups
-setopt pushdminus
+setopt AUTO_CD
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+setopt PUSHDMINUS
 
 setopt HIST_FCNTL_LOCK
-setopt APPEND_HISTORY
-setopt HIST_IGNORE_DUPS
-setopt HIST_FIND_NO_DUPS
 setopt SHARE_HISTORY
+setopt APPEND_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_DUPS
 
 # Set History Options
 export HISTSIZE="1000000"
