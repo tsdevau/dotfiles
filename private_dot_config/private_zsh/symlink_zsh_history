@@ -10,3 +10,12 @@
 : 1751493681:0;yazi
 : 1751494722:0;chezmoi forget ~/Library/Application\ Support/Code/Preferences
 : 1751494738:0;chezmoi diff
+: 1751495441:0;chezmoi apply
+: 1751495539:0;cd ~/Library/Application\ Support/Code/User
+: 1751495541:0;lsa
+: 1751496245:0;which git
+: 1751496257:0;which git | pbcopy
+: 1751496334:0;which bunx
+: 1751496405:0;which nixfmt
+: 1751496410:0;which nixd
+: 1751497677:0;chezmoi add ~/.config/cspell
