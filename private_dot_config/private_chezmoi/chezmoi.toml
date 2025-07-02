@@ -1,5 +1,3 @@
-progress = true
-
 [git]
 autoCommit = true
 autoPush = true
