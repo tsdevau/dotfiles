@@ -1,0 +1,8 @@
+.ssh/*.key
+.ssh/*.pem
+.ssh/id_*
+.ssh/config
+.ssh/known*
+.ssh/authori*
+.ssh/vscode-remote-sessions/*
+.config/raycast/*.pem
