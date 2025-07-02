@@ -2,7 +2,7 @@
 .idea/
 .vscode/
 *.log
-private_dot_config/private_zsh/symlink_zsh_history
-private_Library/private_Application Support/private_Code/private_User/symlink_keybindings.json
-private_Library/private_Application Support/private_Code/private_User/symlink_settings.json
+*/Code/User/keybindings.json
+*/Code/User/settings.json
 README.md
+zsh_history
