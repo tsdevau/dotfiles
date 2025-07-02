@@ -5,15 +5,15 @@ prepend_keymap = [
   { on = [
     "g",
     "p",
-  ], run = "cd ~/pittsworth", desc = "Goto ~/pittsworth directory" },
+  ], run = "cd $HOME/pittsworth", desc = "Goto ~/pittsworth directory" },
   { on = [
     "g",
     "w",
-  ], run = "cd ~/westbrook", desc = "Goto ~/westbrook directory" },
+  ], run = "cd $HOME/westbrook", desc = "Goto ~/westbrook directory" },
   { on = [
     "g",
     "c",
-  ], run = "cd ~/code", desc = "Goto ~/code directory" },
+  ], run = "cd $HOME/code", desc = "Goto ~/code directory" },
   { on = [
     "g",
     ",",
@@ -21,9 +21,21 @@ prepend_keymap = [
   { on = [
     "g",
     "l",
-  ], run = "cd ~/Library", desc = "Goto ~/Library directory" },
+  ], run = "cd $HOME/Library", desc = "Goto ~/Library directory" },
+  { on = [
+    "g",
+    "x",
+  ], run = "cd $HOME/.local", desc = "Goto ~/.local directory" },
+  { on = [
+    "g",
+    "z",
+  ], run = "cd $HOME/.local/share/chezmoi", desc = "Goto Chezmoi source directory" },
   { on = "<C-Up>", run = "arrow top", desc = "Goto top of the list" },
   { on = "<C-Down>", run = "arrow bottom", desc = "Goto bottom of the list" },
+  { on = [
+    "g",
+    "e",
+  ], run = "arrow bottom", desc = "Goto bottom of the list" },
   { on = "!", run = 'shell --interactive', desc = 'Open "$SHELL" here (non-blocking)', for = "unix" },
   { on = [
     "m",
@@ -37,3 +49,6 @@ prepend_keymap = [
 
 [input]
 prepend_keymap = [{ on = "<Esc>", run = "close", desc = "Cancel input" }]
+
+[help]
+prepend_keymap = [{ on = "/", run = "filter", desc = "Filter help items" }]
