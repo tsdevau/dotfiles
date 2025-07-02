@@ -2,7 +2,8 @@
 .idea/
 .vscode/
 *.log
+/**/.config/cpsell/
 /**/Code/User/keybindings.json
 /**/Code/User/settings.json
-README.md
 /**/zsh_history
+README.md
