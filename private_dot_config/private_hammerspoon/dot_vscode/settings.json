@@ -1,0 +1,10 @@
+{
+  // "Lua.diagnostics.globals": ["hs"],
+  "Lua.runtime.path": [
+    "?.lua",
+    "?/init.lua",
+    "/Users/tpstech/.config/hammerspoon/?.lua;/Users/tpstech/.config/hammerspoon/?/init.lua;/Users/tpstech/.config/hammerspoon/Spoons/?.spoon/init.lua;/opt/homebrew/share/lua/5.4/?.lua;/opt/homebrew/share/lua/5.4/?/init.lua;/opt/homebrew/lib/lua/5.4/?.lua;/opt/homebrew/lib/lua/5.4/?/init.lua;/usr/local/share/lua/5.4/?.lua;/usr/local/share/lua/5.4/?/init.lua;/usr/local/lib/lua/5.4/?.lua;/usr/local/lib/lua/5.4/?/init.lua;./?.lua;./?/init.lua;/Applications/Hammerspoon.app/Contents/Resources/extensions/?.lua;/Applications/Hammerspoon.app/Contents/Resources/extensions/?/init.lua;~/.local/share/hammerspoon/site/?.lua;~/.local/share/hammerspoon/site/?/init.lua;~/.local/share/hammerspoon/site/Spoons/?.spoon/init.lua"
+  ],
+  "Lua.runtime.version": "Lua 5.4",
+  "Lua.workspace.library": ["/Users/tpstech/.config/hammerspoon/Spoons/EmmyLua.spoon/annotations"]
+}
