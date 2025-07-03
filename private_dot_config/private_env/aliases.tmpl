@@ -35,8 +35,9 @@ alias ghcs="gh copilot suggest "
 alias grep="grep --color=always"
 alias ip="ip -c"
 alias less="less -FX"
-alias wget="wget --hsts-file=\"${XDG_CONFIG_HOME}/wget/wget-hsts\""
-alias y="yadm"
+alias wget="wget --hsts-file=\"${XDG_CACHE_HOME}/wget/wget-hsts\""
+# alias y="yadm"
+alias yarn="yarn --use-yarnrc \"${XDG_CONFIG_HOME}/yarn/config\""
 
 # Convenience aliases for common mis-typed commands and shortcuts
 alias cls="clear"
