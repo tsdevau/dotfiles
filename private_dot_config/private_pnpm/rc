@@ -1,3 +1,4 @@
 allowedBuilds=@anthropic-ai/claude-code
-dangerouslyAllowAllBuilds = true
-global-bin-dir="${XDG_DATA_HOME}/pnpm"
+dangerouslyAllowAllBuilds=true
+global-bin-dir=${XDG_DATA_HOME}/pnpm
+store-dir=/Users/tpstech/.local/share/pnpm/store/v10
