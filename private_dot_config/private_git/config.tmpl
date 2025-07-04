@@ -9,7 +9,7 @@ signingkey = {{ onepasswordRead "op://Personal/l4c4htdjojwcfanbjr2hqxeufm/Sectio
 [core]
 pager = bat
 editor = {{ .editors.gui }} --wait
-excludesfile = "${XDG_CONFIG_HOME}/git/gitignore_global"
+excludesfile = {{ .chezmoi.homeDir -}}/.config/git/gitignore_global
 
 [init]
 defaultBranch = main
