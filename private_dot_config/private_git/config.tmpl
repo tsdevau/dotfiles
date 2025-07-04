@@ -1,14 +1,14 @@
 [user]
-name = {{ .name }}
-email = {{ .email }}
-{{- if .githubUsername }}
-username = {{ .githubUsername }}
+name = {{ .user.name }}
+email = {{ .user.email }}
+{{- if .user.githubUsername }}
+username = {{ .user.githubUsername }}
 {{- end }}
 signingkey = {{ onepasswordRead "op://Personal/l4c4htdjojwcfanbjr2hqxeufm/Section_yfmxturzjnv4gl3aqas3jjhamy/signingkey" }}
 
 [core]
 pager = bat
-editor = {{ .defaultVisualEditor }} --wait
+editor = {{ .editors.gui }} --wait
 excludesfile = "${XDG_CONFIG_HOME}/git/gitignore_global"
 
 [init]
@@ -28,7 +28,7 @@ conflictstyle = diff3
 tool = vscode
 
 [difftool "vscode"]
-cmd = {{ .defaultVisualEditor }} --wait --diff $LOCAL $REMOTE
+cmd = {{ .editors.gui }} --wait --diff $LOCAL $REMOTE
 
 [alias]
 st = status
