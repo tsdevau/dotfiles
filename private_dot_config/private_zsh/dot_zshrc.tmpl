@@ -16,8 +16,8 @@ setopt HIST_IGNORE_DUPS
 # Set any additional environment variables not handled in zshenv
 export HISTSIZE="1000000"
 export SAVEHIST="1000000"
-export HISTFILE="${ZDOTDIR}/zsh_history"
-export ZSH_SESSION_FILE="${ZDOTDIR}/zsh_sessions"
+export HISTFILE="${XDG_STATE_HOME}/zsh_history"
+export ZSH_SESSION_FILE="${XDG_STATE_HOME}/zsh_sessions"
 export LESSHISTFILE="${XDG_STATE_HOME}/lesshst"
 
 if [[ -f "${XDG_CONFIG_HOME}/env/rfapps" ]]; then
@@ -26,7 +26,7 @@ fi
 
 # Build FPATH
 if command -v brew >/dev/null 2>&1; then
-  FPATH="$(brew --prefix)/share/zsh-completions:$FPATH"
+  FPATH+="$(brew --prefix)/share/zsh/site-functions:$FPATH"
   if [ -f "$(brew --prefix)/bin/orb" ]; then
     source "${HOME}/.orbstack/shell/init.zsh" 2>/dev/null || :
   fi
@@ -37,7 +37,7 @@ if [[ ! -d "${XDG_CACHE_HOME}/zsh" ]]; then
   mkdir -m 0750 -p "${XDG_CACHE_HOME}/zsh"
 fi
 autoload -Uz compinit
-compinit -C -d "${XDG_CACHE_HOME}/zsh/zcompdump"
+compinit -d "${XDG_CACHE_HOME}/zsh/zcompdump"
 
 # Initialize interactive shell commands
 if command -v carapace >/dev/null 2>&1; then
