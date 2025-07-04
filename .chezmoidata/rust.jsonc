@@ -1,0 +1,17 @@
+{
+  "rust": {
+    "components": [
+      // Keep formatted as single line
+      "clippy",
+      "rustfmt"
+    ],
+    "toolchains": [
+      // Keep formatted as single line
+      {
+        // Keep formatted as single line
+        "name": "stable",
+        "profile": "default"
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "pnpm": {
+    "packages": [
+      // Keep formatted as single line
+      "@cspell/dict-en-au",
+      "@google/gemini-cli",
+      "claude-code",
+      "tsx",
+      "wrangler"
+    ]
+  }
+}

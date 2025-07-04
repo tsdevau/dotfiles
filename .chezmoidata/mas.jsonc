@@ -1,0 +1,13 @@
+{
+  "mas": {
+    "apps": [
+      { "name": "1Password for Safari", "id": 1569813296 },
+      { "name": "Dark Reader for Safari", "id": 1438243180 },
+      // { name: "IP Scanner", id: 6443819966 }, // Not currently using it
+      // { name: "LightBlue", id: 557428110 }, // Not currently using it
+      // { name: "ServiceM8", id: 1585087725 }, // Not currently using it
+      // { name: "Speedtest", id: 1153157709 }, // Not currently using it
+      { "name": "Xcode", "id": 497799835 }
+    ]
+  }
+}

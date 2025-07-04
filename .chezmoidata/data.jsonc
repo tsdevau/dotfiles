@@ -1,0 +1,14 @@
+{
+  "editors": {
+    // Change this for vscode, cursor, windsurf, zed, etc.
+    "gui": "code",
+    "tui": "hx",
+    "visual": "code --wait"
+  },
+  "language": "en_AU.UTF-8",
+  "user": {
+    "email": "tim@tsdev.au",
+    "githubUsername": "tsdevau",
+    "name": "Tim Stone"
+  }
+}
