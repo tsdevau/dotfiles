@@ -1,15 +1,6 @@
 typeset -U path cdpath fpath manpath
 
-if type brew &>/dev/null; then
-  FPATH="$(brew --prefix)/share/zsh-completions:$FPATH"
-fi
-
-if [[ ! -d "${XDG_CACHE_HOME}/zsh" ]]; then
-  mkdir -m 0750 -p "${XDG_CACHE_HOME}/zsh"
-fi
-autoload -Uz compinit
-compinit -C -d "${XDG_CACHE_HOME}/zsh/zcompdump"
-
+# Apply shell options
 setopt AUTO_CD
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
@@ -22,7 +13,7 @@ setopt EXTENDED_HISTORY
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_DUPS
 
-# Set History Options
+# Set any additional environment variables not handled in zshenv
 export HISTSIZE="1000000"
 export SAVEHIST="1000000"
 export HISTFILE="${ZDOTDIR}/zsh_history"
@@ -33,6 +24,22 @@ if [[ -f "${XDG_CONFIG_HOME}/env/rfapps" ]]; then
   source "${XDG_CONFIG_HOME}/env/rfapps"
 fi
 
+# Build FPATH
+if command -v brew >/dev/null 2>&1; then
+  FPATH="$(brew --prefix)/share/zsh-completions:$FPATH"
+  if [ -f "$(brew --prefix)/bin/orb" ]; then
+    source "${HOME}/.orbstack/shell/init.zsh" 2>/dev/null || :
+  fi
+fi
+
+# Initialize Completions
+if [[ ! -d "${XDG_CACHE_HOME}/zsh" ]]; then
+  mkdir -m 0750 -p "${XDG_CACHE_HOME}/zsh"
+fi
+autoload -Uz compinit
+compinit -C -d "${XDG_CACHE_HOME}/zsh/zcompdump"
+
+# Initialize interactive shell commands
 if command -v carapace >/dev/null 2>&1; then
   source <(carapace _carapace zsh)
 fi
@@ -50,6 +57,7 @@ if command -v zoxide >/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
 fi
 
+# Initialize plugins
 if [[ -f "${XDG_CONFIG_HOME}/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh" ]]; then
   source "${XDG_CONFIG_HOME}/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh"
 fi
@@ -74,11 +82,13 @@ if [[ -f "${XDG_CONFIG_HOME}/zsh/plugins/zsh-history-substring-search/zsh-histor
   bindkey "^[[1;2${terminfo[kcud1]}" history-substring-search-down
 fi
 
+# Source ZSH Syntax Highlighting LAST!
 if [[ -f "${XDG_CONFIG_HOME}/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
   source "${XDG_CONFIG_HOME}/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
   ZSH_HIGHLIGHT_HIGHLIGHTERS+=(main brackets line)
 fi
 
+# Terminal emulator width-dependent Starship precmd
 precmd() {
   # Ensure the correction for right side prompt indentation is applied
   ZLE_RPROMPT_INDENT=0
@@ -92,5 +102,6 @@ precmd() {
     fi
   )
 }
-# Source Starship prompt
+
+# Initialize Starship shell prompt
 eval "$(starship init zsh)"
