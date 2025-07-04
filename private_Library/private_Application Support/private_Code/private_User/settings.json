@@ -1,0 +1,957 @@
+{
+  "SQL-Formatter-VSCode.dialect": "postgresql",
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "[config]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[env]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[ini]": {
+    "editor.defaultFormatter": "lkrms.inifmt"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[kdl]": {
+    "editor.defaultFormatter": "kdl-org.kdl"
+  },
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "[properties]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[scminput]": {
+    "editor.rulers": [
+      {
+        "color": "#34D39955",
+        "column": 50
+      },
+      {
+        "color": "#60A5FA55",
+        "column": 72
+      },
+      {
+        "color": "#F8717155",
+        "column": 80
+      }
+    ],
+    "editor.wordWrap": "on"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[sql]": {
+    "editor.defaultFormatter": "ReneSaarsoo.sql-formatter-vsc"
+  },
+  "[sqlite]": {
+    "editor.defaultFormatter": "yy0931.vscode-sqlite3-editor"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "PrateekMahendrakar.prettyxml"
+  },
+  "accessibility.verbosity.inlineChat": false,
+  "astro.content-intellisense": true,
+  "better-comments.tags": [
+    {
+      "backgroundColor": "transparent",
+      "bold": true,
+      "color": "#f87171",
+      "italic": false,
+      "tag": "!"
+    },
+    {
+      "backgroundColor": "transparent",
+      "bold": false,
+      "color": "#60A5FA",
+      "italic": false,
+      "tag": "INFO"
+    },
+    {
+      "backgroundColor": "#f472b6",
+      "bold": true,
+      "color": "#333333",
+      "italic": true,
+      "tag": "MARK"
+    },
+    {
+      "backgroundColor": "transparent",
+      "bold": true,
+      "color": "#f472b6",
+      "italic": false,
+      "tag": "."
+    },
+    {
+      "backgroundColor": "transparent",
+      "bold": false,
+      "color": "#fb923c",
+      "italic": false,
+      "tag": "TODO"
+    },
+    {
+      "backgroundColor": "#fb923c",
+      "bold": true,
+      "color": "#333333",
+      "italic": false,
+      "tag": "WARN"
+    },
+    {
+      "backgroundColor": "transparent",
+      "bold": false,
+      "color": "#4ade80",
+      "italic": false,
+      "tag": "*"
+    },
+    {
+      "backgroundColor": "transparent",
+      "bold": true,
+      "color": "#c084fc",
+      "italic": false,
+      "tag": "+"
+    }
+  ],
+  "color-highlight.useARGB": false,
+  "cSpell.customDictionaries": {
+    "custom-dictionary-user": {
+      "addWords": true,
+      "name": "custom-dictionary-user",
+      "path": "~/.config/cspell/custom-dictionary-user.txt",
+      "scope": "user"
+    }
+  },
+  "cSpell.dictionaries": ["astro", "css", "en-au", "html", "json", "markdown", "svelte", "typescript_ts", "typescript"],
+  "cSpell.enabled": true,
+  "cSpell.enabledNotifications": {
+    "Average Word Length too Long": false,
+    "Lines too Long": false,
+    "Maximum Word Length Exceeded": false
+  },
+  "cSpell.language": "en-AU",
+  "cSpell.suggestionMenuType": "quickFix",
+  "cSpell.textDecorationColor": "#60A5FA",
+  "cSpell.useCustomDecorations": true,
+  "chat.agent.enabled": true,
+  "chat.editor.fontSize": 14,
+  "chat.editor.wordWrap": "on",
+  "code-runner.enableAppInsights": false,
+  "code-runner.executorMap": {
+    "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "ahk": "autohotkey",
+    "applescript": "osascript",
+    "autoit": "autoit3",
+    "bat": "cmd /c",
+    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "clojure": "lein exec",
+    "coffeescript": "coffee",
+    "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "crystal": "crystal",
+    "csharp": "scriptcs",
+    "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+    "dart": "dart",
+    "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fsharp": "fsi",
+    "go": "go run",
+    "groovy": "groovy",
+    "haskell": "runghc",
+    "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+    "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+    "javascript": "node",
+    "julia": "julia",
+    "kit": "kitc --run",
+    "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+    "lisp": "sbcl --script",
+    "lua": "lua",
+    "mojo": "mojo run",
+    "nim": "nim compile --verbosity:0 --hints:off --run",
+    "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "ocaml": "ocaml",
+    "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+    "perl": "perl",
+    "perl6": "perl6",
+    "php": "php",
+    "powershell": "powershell -ExecutionPolicy ByPass -File",
+    "python": "python -u",
+    "r": "Rscript",
+    "racket": "racket",
+    "ruby": "ruby",
+    "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+    "sass": "sass --style expanded",
+    "scala": "scala",
+    "scheme": "csi -script",
+    "scss": "scss --style expanded",
+    "shellscript": "bash",
+    "sml": "cd $dir && sml $fileName",
+    "swift": "swift",
+    "typescript": "tsx",
+    "v": "v run",
+    "vbscript": "cscript //Nologo",
+    "zig": "zig run"
+  },
+  "code-runner.ignoreSelection": true,
+  "code-runner.saveFileBeforeRun": true,
+  "codestats.apikey": "${env:CODESTATS_API_KEY}",
+  "codestats.username": "tpstech",
+  "color-highlight.matchRgbWithNoFunction": true,
+  "color-highlight.rgbWithNoFunctionLanguages": [
+    "astro",
+    "css",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "svelte",
+    "typescript",
+    "typescriptreact"
+  ],
+  "console-ninja.allowConsoleLogToTriggerPredictions": true,
+  "console-ninja.allowedHosts": ["/^.*\\\\.tpstech\\\\.services$/"],
+  "console-ninja.captureFunctions": true,
+  "console-ninja.dateTimeFormat": "HH:mm:ss",
+  "console-ninja.featureSet": "Pro",
+  "console-ninja.fontSize": 16,
+  "console-ninja.output.showLogsFromMultipleRunningToolsTogether": true,
+  "console-ninja.output.showLogsOnlyFromOpenedFiles": true,
+  "console-ninja.outputMode": "In View",
+  "console-ninja.searchUrl": "https://www.google.com/search?udm=14&q={query}",
+  "css.completion.completePropertyWithSemicolon": true,
+  "css.lint.duplicateProperties": "warning",
+  "css.lint.unknownAtRules": "ignore",
+  "dance.defaultMode": "helix/normal",
+  "dance.menus": {
+    "match": {
+      "title": "Match",
+      "items": {
+        "m": {
+          "command": "dance.seek.enclosing",
+          "text": "Goto matching bracket"
+        },
+        "a": {
+          "command": "dance.openMenu",
+          "args": [
+            {
+              "menu": "object",
+              "title": "Match around"
+            }
+          ],
+          "text": "Select around object"
+        },
+        "i": {
+          "command": "dance.openMenu",
+          "args": [
+            {
+              "menu": "object",
+              "title": "Match inside",
+              "pass": [
+                {
+                  "inner": true
+                }
+              ]
+            }
+          ],
+          "text": "Select inside object"
+        }
+      }
+    },
+    "object": {
+      "title": "Select object...",
+      "items": {
+        "()": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "\\((?#inner)\\)"
+            }
+          ],
+          "text": "parenthesis block"
+        },
+        "{}": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "\\{(?#inner)\\}"
+            }
+          ],
+          "text": "braces block"
+        },
+        "[]": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "\\[(?#inner)\\]"
+            }
+          ],
+          "text": "brackets block"
+        },
+        "<>": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "<(?#inner)>"
+            }
+          ],
+          "text": "angle block"
+        },
+        "\"": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#noescape)\"(?#inner)(?#noescape)\""
+            }
+          ],
+          "text": "double quote string"
+        },
+        "'": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#noescape)'(?#inner)(?#noescape)'"
+            }
+          ],
+          "text": "single quote string"
+        },
+        "`": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#noescape)`(?#inner)(?#noescape)`"
+            }
+          ],
+          "text": "grave quote string"
+        },
+        "w": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "[\\p{L}_\\d]+(?<after>[^\\S\\n]+)"
+            }
+          ],
+          "text": "word"
+        },
+        "W": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "[\\S]+(?<after>[^\\S\\n]+)"
+            }
+          ],
+          "text": "WORD"
+        },
+        "p": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#predefined=paragraph)"
+            }
+          ],
+          "text": "paragraph"
+        },
+        "a": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#predefined=argument)"
+            }
+          ],
+          "text": "argument"
+        },
+        "!": {
+          "command": "dance.seek.object",
+          "text": "custom object desc"
+        }
+      }
+    },
+    "view": {
+      "title": "View",
+      "items": {
+        "cz": {
+          "text": "Align view center",
+          "command": "dance.view.line",
+          "args": [
+            {
+              "at": "center"
+            }
+          ]
+        },
+        "t": {
+          "text": "Align view top",
+          "command": "dance.view.line",
+          "args": [
+            {
+              "at": "top"
+            }
+          ]
+        },
+        "b": {
+          "text": "Align view bottom",
+          "command": "dance.view.line",
+          "args": [
+            {
+              "at": "bottom"
+            }
+          ]
+        },
+        "k": {
+          "text": "Scroll view up",
+          "command": "editorScroll",
+          "args": [
+            {
+              "by": "line",
+              "revealCursor": true,
+              "to": "up"
+            }
+          ]
+        },
+        "j": {
+          "text": "Scroll view down",
+          "command": "editorScroll",
+          "args": [
+            {
+              "by": "line",
+              "revealCursor": true,
+              "to": "down"
+            }
+          ]
+        },
+        "/": {
+          "text": "Search for regex pattern",
+          "command": "dance.search"
+        },
+        "?": {
+          "text": "Reverse search for regex pattern",
+          "command": "dance.search.backward"
+        },
+        "n": {
+          "text": "Select next search match",
+          "command": "dance.search.next"
+        },
+        "N": {
+          "text": "Select previous search match",
+          "command": "dance.search.previous"
+        }
+      }
+    },
+    "goto": {
+      "title": "Goto",
+      "items": {
+        "g": {
+          "text": "to line number else file start",
+          "command": "dance.select.lineStart",
+          "args": [
+            {
+              "count": 1
+            }
+          ]
+        },
+        "e": {
+          "text": "to last line",
+          "command": "dance.select.lineEnd",
+          "args": [
+            {
+              "count": 2147483647
+            }
+          ]
+        },
+        "f": {
+          "text": "to file/URLs in selections",
+          "command": "dance.selections.open"
+        },
+        "h": {
+          "text": "to line start",
+          "command": "cursorHome"
+        },
+        "l": {
+          "text": "to line end",
+          "command": "dance.select.lineEnd"
+        },
+        "s": {
+          "text": "to first non-blank in line",
+          "command": "cursorHome"
+          // "args": [
+          //   {
+          //     "skipBlank": true
+          //   }
+          // ]
+        },
+        "d": {
+          "text": "to definition",
+          "command": "editor.action.revealDefinition"
+        },
+        "r": {
+          "text": "to references",
+          "command": "editor.action.goToReferences"
+        },
+        "j": {
+          "text": "to last line",
+          "command": "dance.select.lastLine"
+        },
+        "t": {
+          "text": "to window top",
+          "command": "dance.select.firstVisibleLine"
+        },
+        "c": {
+          "text": "to window center",
+          "command": "dance.select.middleVisibleLine"
+        },
+        "b": {
+          "text": "to window bottom",
+          "command": "dance.select.lastVisibleLine"
+        },
+        "a": {
+          "text": "to last buffer",
+          "command": "workbench.action.openPreviousRecentlyUsedEditorInGroup"
+        },
+        "A": {
+          "text": "to last buffer...",
+          "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+        },
+        "n": {
+          "text": "to next buffer",
+          "command": "workbench.action.nextEditor"
+        },
+        "p": {
+          "text": "to previous buffer",
+          "command": "workbench.action.previousEditor"
+        },
+        ".": {
+          "text": "to last buffer modification position",
+          "command": "workbench.action.navigatePreviousInEditLocations",
+          "args": [
+            {
+              "register": " insert"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "dance.modes": {
+    "helix/insert": {
+      "cursorStyle": "line",
+      "lineNumbers": "on",
+      "onLeaveMode": [
+        [
+          ".selections.save",
+          {
+            "register": " insert"
+          }
+        ]
+      ]
+    },
+    "helix/select": {
+      "cursorStyle": "block",
+      "lineNumbers": "relative",
+      "selectionBehavior": "character"
+    },
+    "helix/normal": {
+      "cursorStyle": "block",
+      "lineNumbers": "relative",
+      "selectionBehavior": "character",
+      "decorations": {
+        "applyTo": "main",
+        "backgroundColor": "$editor.hoverHighlightBackground",
+        "isWholeLine": true
+      },
+      "onEnterMode": [
+        [
+          ".selections.restore",
+          {
+            "register": " ^",
+            "try": true
+          }
+        ]
+      ],
+      "onLeaveMode": [
+        [
+          ".selections.save",
+          {
+            "register": " ^",
+            "style": {
+              "borderColor": "$editor.selectionBackground",
+              "borderStyle": "solid",
+              "borderWidth": "2px",
+              "borderRadius": "1px"
+            },
+            "until": [
+              [
+                "mode-did-change",
+                {
+                  "include": "helix/normal"
+                }
+              ],
+              ["selections-did-change"]
+            ]
+          }
+        ]
+      ]
+    }
+  },
+  "debug.console.fontSize": 16,
+  "debug.inlineValues": "on",
+  "debug.showVariableTypes": true,
+  "debug.terminal.clearBeforeReusing": false,
+  "debug.toolBarLocation": "floating",
+  "diffCommit.customInstructions": "Use Australian English spelling",
+  "diffCommit.model": "claude-sonnet-4-0",
+  "diffCommit.provider": "anthropic",
+  "diffCommit.ollamaHostname": "http://localhost:11434/",
+  "diffCommit.ollamaModel": "qwen3:4b",
+  "diffCommit.temperature": 0.3,
+  "diffEditor.codeLens": true,
+  "diffEditor.experimental.showMoves": true,
+  "diffEditor.experimental.useTrueInlineView": true,
+  "diffEditor.maxComputationTime": 0,
+  "diffEditor.renderSideBySide": true,
+  "editor.accessibilitySupport": "off",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "'MesloLGM Nerd Font Mono', 'RobotoMono Nerd Font', 'FiraMono Nerd Font'",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": true,
+  "editor.guides.bracketPairsHorizontal": true,
+  "editor.guides.highlightActiveIndentation": "always",
+  "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "editor.inlineSuggest.syntaxHighlightingEnabled": false,
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.minimap.maxColumn": 80,
+  "editor.minimap.size": "fit",
+  "editor.quickSuggestions": {
+    "comments": "inline",
+    "other": "on",
+    "strings": "on"
+  },
+  "editor.renderLineHighlight": "gutter",
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [
+    {
+      "color": "#34D39955",
+      "column": 80
+    },
+    {
+      "color": "#60A5FA55",
+      "column": 100
+    },
+    {
+      "color": "#F8717155",
+      "column": 120
+    }
+  ],
+  "editor.semanticHighlighting.enabled": true,
+  "editor.showFoldingControls": "never",
+  "editor.suggest.localityBonus": true,
+  "editor.suggest.shareSuggestSelections": true,
+  "editor.suggest.showWords": false,
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "emmet.includeLanguages": {
+    "astro": "html",
+    "postcss": "css",
+    "svelte": "html",
+    "vue": "html"
+  },
+  "eslint.enable": true,
+  "eslint.validate": [
+    "astro",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "svelte",
+    "typescript",
+    "typescriptreact"
+  ],
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.openEditors.visible": 1,
+  "extensions.experimental.affinity": {
+    "gregoire.dance": 1
+  },
+  "files.associations": {
+    "*.css": "tailwindcss",
+    ".env": "env",
+    ".env.*": "env"
+  },
+  "files.watcherExclude": {
+    "**/*cache/**": true,
+    "**/*coverage/**": true,
+    "**/*webpack*/**": true,
+    "**/.astro/**": true,
+    "**/.git/**": true,
+    "**/.next/**": true,
+    "**/.solid/**": true,
+    "**/.svelte-kit/**": true,
+    "**/bin/**": true,
+    "**/build/**": true,
+    "**/dist/**": true,
+    "**/node_modules/**": true,
+    "**/out/**": true,
+    "**/tmp/**": true
+  },
+  "git.autofetch": true,
+  "git.closeDiffOnOperation": true,
+  "git.confirmSync": false,
+  "git.followTagsWhenSync": true,
+  "git.path": "/opt/homebrew/bin/git",
+  "git.suggestSmartCommit": false,
+  "github.copilot.chat.agent.thinkingTool": true,
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "file": "AGENTS.md"
+    },
+    {
+      "file": "CLAUDE.md"
+    },
+    {
+      "text": "Add trailing slash to all routes when deployed with Cloudflare Pages."
+    },
+    {
+      "text": "Use Australian English spelling for comments, filenames, variables, etc."
+    },
+    {
+      "text": "Use camelCase for variable names."
+    },
+    {
+      "text": "Use PascalCase for class names."
+    },
+    {
+      "text": "Use kebab-case for filenames."
+    },
+    {
+      "text": "Use double quotes."
+    },
+    {
+      "text": "NEVER use semi-colons."
+    },
+    {
+      "text": "Prefer 'function' over arrow functions, EXCEPT in callbacks."
+    },
+    {
+      "text": "Keep code modular and DRY."
+    }
+  ],
+  "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "Use Australian English spelling."
+    },
+    {
+      "text": "Use conventional commit message format."
+    },
+    {
+      "text": "Use only one of [ 'chore', 'ci', 'docs', 'feat', 'fix', 'perf', 'refactor', 'style', 'test', 'wip'] as the commit type."
+    },
+    {
+      "text": "Always include a scope."
+    },
+    {
+      "text": "Never use '!' or 'BREAKING CHANGE' in the commit message."
+    },
+    {
+      "text": "Avoid unnecessary adjectives (eg 'enhance', 'comprehensive', etc)."
+    },
+    {
+      "text": "Never use emojis."
+    }
+  ],
+  "github.copilot.chat.languageContext.typescript.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": true,
+    "plaintext": false,
+    "scminput": false
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.gitAuthentication": true,
+  "github.gitProtocol": "ssh",
+  "hammerspoon.console.focusOutputWindow": false,
+  "hammerspoon.spoons.path": "~/.config/hammerspoon/Spoons",
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.preferences.importModuleSpecifierEnding": "auto",
+  "javascript.preferGoToSourceDefinition": true,
+  "javascript.referencesCodeLens.enabled": true,
+  "javascript.suggest.autoImports": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.implicitProjectConfig.module": "ESNext",
+  "js/ts.implicitProjectConfig.target": "ESNext",
+  "Lua.completion.callSnippet": "Disable",
+  "Lua.completion.displayContext": 0,
+  "Lua.completion.keywordSnippet": "Replace",
+  "Lua.hint.setType": true,
+  "Lua.semantic.keyword": true,
+  "markdown.extension.italic.indicator": "_",
+  "markdown.preview.fontFamily": "'Helvetica Neue', -apple-system, 'Segoe WPC', sans-serif",
+  "markdown.preview.fontSize": 16,
+  "markdown.preview.lineHeight": 1.2,
+  "mcp": {
+    "inputs": [],
+    "servers": {
+      "Apple MCP Utils": {
+        "command": "/opt/homebrew/bin/bunx",
+        "args": ["--no-cache", "apple-mcp@latest"]
+      },
+      "Console Ninja": {
+        "args": ["--no-cache", "node ~/.console-ninja/mcp/"],
+        "command": "/opt/homebrew/bin/bunx"
+      },
+      "Context7": {
+        "args": ["--no-cache", "@upstash/context7-mcp@latest"],
+        "command": "/opt/homebrew/bin/bunx",
+        "type": "stdio"
+      },
+      "Wallaby": {
+        "args": ["--no-cache", "node ~/.wallaby/mcp/"],
+        "command": "/opt/homebrew/bin/bunx"
+      }
+    }
+  },
+  "multiCommand.commands": [
+    {
+      "command": "multiCommand.saveAndNormalMode",
+      "description": "Format, save file and switch to normal mode",
+      "label": "Format, Save and Set Normal Mode",
+      "sequence": ["editor.action.formatDocument", "workbench.action.files.save", "dance.modes.set.normal"]
+    }
+  ],
+  "npm-intellisense.importLinebreak": "\\n",
+  "npm-intellisense.importQuotes": "\"",
+  "npm-intellisense.packageSubfoldersIntellisense": true,
+  "npm-intellisense.scanDevDependencies": true,
+  "npm-outdated.majorUpdateProtection": false,
+  "npm-outdated.parallelProcessesLimit": 50,
+  "npm.packageManager": "pnpm",
+  "prettier.bracketSameLine": true,
+  "prettier.printWidth": 120,
+  "prettier.quoteProps": "consistent",
+  "prettier.semi": false,
+  "prettier.singleAttributePerLine": true,
+  "prettier.trailingComma": "all",
+  "quokka.automaticRestart": true,
+  "quokka.fontSize": 16,
+  "redhat.telemetry.enabled": false,
+  "remote.autoForwardPortsSource": "hybrid",
+  // "remote.SSH.defaultExtensions": [
+  //   "christian-kohler.npm-intellisense",
+  //   "christian-kohler.path-intellisense",
+  //   "dbaeumer.vscode-eslint",
+  //   "esbenp.prettier-vscode",
+  //   "meganrogge.template-string-converter",
+  //   "mskelton.npm-outdated",
+  //   "naumovs.color-highlight",
+  //   "oderwat.indent-rainbow",
+  //   "riussi.code-stats-vscode",
+  //   "visualstudioexptteam.vscodeintellicode",
+  //   "yoavbls.pretty-ts-errors"
+  // ],
+  "scm.defaultViewMode": "tree",
+  "scm.diffDecorationsGutterPattern": {
+    "added": true
+  },
+  "scm.inputFontSize": 14,
+  "scm.inputMaxLineCount": 50,
+  "scm.inputMinLineCount": 12,
+  "security.promptForLocalFileProtocolHandling": false,
+  "security.workspace.trust.untrustedFiles": "prompt",
+  "svelte.enable-ts-plugin": true,
+  "tailwindCSS.classFunctions": ["twMerge", "tw", "clsx", "cva", "cn"],
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.experimental.classRegex": [
+    ["clsx\\(([^)]*)\\)", "clsx"],
+    ["cn\\(([^)]*)\\)", "cn"],
+    ["cva\\(([^)]*)\\)", "cva"],
+    ["tw\\(([^)]*)\\)", "tw"],
+    ["twMerge\\(([^)]*)\\)", "twMerge"]
+  ],
+  "telemetry.telemetryLevel": "crash",
+  "template-string-converter.autoRemoveTemplateString": true,
+  "template-string-converter.convertOutermostQuotes": true,
+  "template-string-converter.validLanguages": [
+    "astro",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "svelte",
+    "typescript",
+    "typescriptreact"
+  ],
+  "terminal.external.osxExec": "WezTerm.app",
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.env.osx": {},
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "/bin/bash",
+      "args": ["-l"],
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "/bin/zsh",
+      "args": ["-l"],
+      "icon": "terminal"
+    }
+  },
+  "terminal.integrated.fontFamily": "'MesloLGM Nerd Font Mono', 'Helvetica Neue'",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.suggest.enabled": false,
+  "typescript.implementationsCodeLens.enabled": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.importModuleSpecifierEnding": "auto",
+  "typescript.preferGoToSourceDefinition": true,
+  "typescript.referencesCodeLens.enabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.customTitleBarVisibility": "never",
+  "window.title": "${activeEditorShort}${separator}${activeRepositoryName} / ${activeRepositoryBranchName}",
+  "window.titleBarStyle": "native",
+  "workbench.activityBar.orientation": "vertical",
+  "workbench.colorTheme": "Catppuccin by tpsTech Mocha",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.openPositioning": "last",
+  "workbench.editor.tabActionLocation": "left",
+  "workbench.editor.tabSizing": "fixed",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.startupEditor": "none",
+  "workbench.tree.indent": 16,
+  "workbench.tree.renderIndentGuides": "always"
+}
