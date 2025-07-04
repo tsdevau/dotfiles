@@ -1,0 +1,156 @@
+# XDG Base Directory Specification
+# https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest
+export XDG_CACHE_HOME="${HOME}/.local/cache"
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_STATE_HOME="${HOME}/.local/state"
+export XDG_RUNTIME_DIR="${XDG_DATA_HOME}/runtime"
+
+[[ -d "$XDG_CONFIG_HOME" ]] || mkdir -m 0750 -p "$XDG_CONFIG_HOME"
+[[ -d "$XDG_CACHE_HOME" ]] || mkdir -m 0750 -p "$XDG_CACHE_HOME"
+[[ -d "$XDG_DATA_HOME" ]] || mkdir -m 0750 -p "$XDG_DATA_HOME"
+[[ -d "$XDG_STATE_HOME" ]] || mkdir -m 0750 -p "$XDG_STATE_HOME"
+[[ -d "$XDG_RUNTIME_DIR" ]] || mkdir -m 0750 -p "$XDG_RUNTIME_DIR"
+
+# Set Zsh configuration directory
+export ZDOTDIR="$HOME/.config/zsh"
+
+# Set Homebrew prefix
+export HOMEBREW_PREFIX="/opt/homebrew"
+
+# Set PATH
+if [[ -d "$HOMEBREW_PREFIX/bin" ]]; then
+  eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
+fi
+
+export PATH="${HOMEBREW_PREFIX}/opt/python@3.13/libexec/bin:${HOME}/.local/bin:${XDG_DATA_HOME}/pnpm:${XDG_DATA_HOME}/bun/bin:${XDG_DATA_HOME}/cargo/bin:${XDG_DATA_HOME}/rustup:${XDG_DATA_HOME}/go/bin:${XDG_DATA_HOME}/dotnet/tools:${PATH}"
+
+# Set default editors
+export EDITOR={{- .editors.tui | quote }}
+export VISUAL={{- .editors.visual | quote }}
+
+# Set language and locale
+export LANG={{- .language | quote }}
+export LC_ALL={{- .language | quote }}
+export LC_CTYPE={{- .language | quote }}
+
+# Shell/Terminal preferences and options
+export CLICOLOR="true"
+export LS_COLORS="$(vivid -m 8-bit generate catppuccin-mocha)"
+export MANPAGER='sh -c "sed -u -e '\''s/\x1B\[[0-9;]*m//g; s/.\x08//g'\'' | bat -p -l man"'
+export PAGER="bat"
+export TERMINFO_DIRS="${XDG_DATA_HOME}/terminfo:/usr/share/terminfo"
+export TERMINFO="${XDG_DATA_HOME}/terminfo"
+
+# Bun environment
+export BUN_INSTALL="${XDG_DATA_HOME}/bun"
+export BUN_BIN="${BUN_INSTALL}/bin"
+case ":$PATH:" in
+*":$BUN_BIN:"*) ;;
+*) export PATH="$BUN_BIN:$PATH" ;;
+esac
+
+# Code::Stats Configuration
+export CODESTATS_API_KEY={{- onepasswordRead "op://Chezmoi/Code-Stats/credential" | quote }}
+export CODESTATS_API_TOKEN={{- onepasswordRead "op://Chezmoi/Code-Stats/credential" | quote }}
+export CODESTATS_LOG_FILE="${XDG_CONFIG_HOME}/code-stats/codestats.log"
+[[ ! -f "${CODESTATS_LOG_FILE}" ]] && mkdir -p "$(dirname "$CODESTATS_LOG_FILE")" && touch "${CODESTATS_LOG_FILE}"
+
+# Docker environment
+export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
+
+# dotNet SDK configuration
+export ASPNET_HOME="$XDG_DATA_HOME/aspnet"
+export DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet"
+export DOTNET_ROOT="$XDG_CONFIG_HOME/dotnet"
+export NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages"
+
+# Eza Configuration
+export EZA_CONFIG_DIR="${XDG_CONFIG_HOME}/eza"
+
+# FFMPEG environment
+export FFMPEG_DATADIR="${XDG_DATA_HOME}/ffmpeg"
+
+# FZF Configuration
+export FZF_ALT_C_COMMAND="fd --type d --hidden --follow --strip-cwd-prefix --exclude node_modules --exclude .astro --exclude cache --exclude .git --exclude cargo --exclude .Trash --exclude Trash"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --only-dirs --show-symlinks --level=3 --icons=always --color=always | head -200'"
+export FZF_CTRL_T_COMMAND="fd --type f --hidden --follow --strip-cwd-prefix --exclude node_modules --exclude .astro --exclude cache --exclude .git --exclude cargo --exclude .Trash --exclude Trash"
+export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {1} | head -200'"
+export FZF_DEFAULT_COMMAND="fd --hidden --follow --strip-cwd-prefix --exclude .Trash --exclude Trash"
+export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border --prompt='❯ ' --pointer='→' --marker='✓' --color bg:#1a1b26,bg+:#33467c,fg:#c0caf5,fg+:#c0caf5,gutter:#24283b,header:#414868,hl:#7aa2f7,hl+:#7dcfff,info:#a9b1d6,marker:#f7768e,pointer:#bb9af7,prompt:#9ece6a,spinner:#e0af68"
+
+# Gitleaks environment
+export GITLEAKS_CONFIG="${XDG_CONFIG_HOME}/gitleaks/gitleaks.toml"
+
+# Go environment
+export GOMODCACHE="${XDG_CACHE_HOME}/go/mod"
+export GOPATH="${XDG_DATA_HOME}/go"
+export GOBIN="${GOPATH}/bin"
+case ":$PATH:" in
+*":$GOBIN:"*) ;;
+*) export PATH="$GOBIN:$PATH" ;;
+esac
+
+# GPG environment
+export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
+# Avoid issues with "gpg" as installed via Homebrew.
+# https://stackoverflow.com/a/42265848/96656
+if [[ -n "$TTY" ]]; then
+  # zsh
+  export GPG_TTY=$TTY
+else
+  # bash
+  export GPG_TTY=$(tty)
+fi
+
+# NPM environment
+export NPM_CONFIG_CACHE="${XDG_CACHE_HOME}/npm"
+export NPM_CONFIG_INIT_MODULE="${XDG_CONFIG_HOME}/npm/config/npm-init.js"
+export NPM_CONFIG_TMP="${XDG_RUNTIME_DIR}/npm"
+export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}/npm/npmrc"
+
+# Node.js environment
+export NODE_REPL_HISTORY="${XDG_DATA_HOME}/node/repl_history"
+
+# Ollama environment
+export OLLAMA_MODELS="${XDG_DATA_HOME}/ollama/models"
+
+# 1Password CLI environment
+export OP_BIOMETRIC_UNLOCK_ENABLE="true"
+
+# PNPM environment
+export PNPM_CONFIG_HOME="${XDG_CONFIG_HOME}/pnpm"
+export PNPM_HOME="${XDG_DATA_HOME}/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# Python environment
+export PYTHONUSERBASE="${XDG_DATA_HOME}/python"
+export PYTHONPYCACHEPREFIX="${XDG_CACHE_HOME}/python"
+export PYTHON_HISTORY="${XDG_STATE_HOME}/python/python_history"
+export PIP_CACHE_DIR="${XDG_CACHE_HOME}/pip"
+export PIP_CONFIG_FILE="${XDG_CONFIG_HOME}/pip/pip.conf"
+export RUFF_CACHE_DIR="${XDG_CACHE_HOME}/ruff"
+
+# Rust environment
+export CARGO_HOME="${XDG_DATA_HOME}/cargo"
+export RUSTUP_HOME="${XDG_DATA_HOME}/rustup"
+case ":$PATH:" in
+*":$CARGO_HOME/bin:"*) ;;
+*) export PATH="$CARGO_HOME/bin:$PATH" ;;
+esac
+
+# SQLite environment
+export SQLITE_HISTORY="${XDG_STATE_HOME}/sqlite/sqlite_history"
+
+# Starship environment
+export STARSHIP_CONFIG="${XDG_CONFIG_HOME}/starship/starship.toml"
+export STARSHIP_CACHE="${XDG_CACHE_HOME}/starship"
+
+# TLDR environment
+export TLDR_CACHE_DIR="${XDG_CACHE_HOME}/tldr"
+
+# WGET environment
+export WGETRC="${XDG_CONFIG_HOME}/wgetrc"
