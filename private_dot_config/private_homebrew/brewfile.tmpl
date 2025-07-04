@@ -1,17 +1,18 @@
-# Chezmoi Data Hash: {{ "~/.local/share/chezmoi/private_dot_config/private_chezmoi/.chezmoidata.toml" | sha256sum }}
+# Homebrew hash: {{ include ".chezmoidata/homebrew.jsonc" | sha256sum }}
+# MAS Apps hash: {{ include ".chezmoidata/mas.jsonc" | sha256sum }}
 
 {{- range .homebrew.taps }}
-tap "{{ . }}"
+tap {{ . | quote }}
 {{- end }}
 
 {{- range .homebrew.formulae }}
-brew "{{ .name }}"{{ if hasKey . "head" }}, args: ["HEAD"]{{ end }}
+brew {{ .name | quote }}{{ if hasKey . "head" }}, args: ["HEAD"]{{ end }}
 {{- end }}
 
 {{- range .homebrew.casks }}
-cask "{{ .name }}"{{ if hasKey . "head" }}, args: ["HEAD"]{{ end }}
+cask {{ .name | quote }}{{ if hasKey . "head" }}, args: ["HEAD"]{{ end }}
 {{- end }}
 
-{{- range $name, $id := .masApps }}
-mas "{{ $name }}", id: {{ $id }}
+{{- range .mas.apps }}
+mas {{ .name | quote }}, id: {{ .id }}
 {{- end }}
