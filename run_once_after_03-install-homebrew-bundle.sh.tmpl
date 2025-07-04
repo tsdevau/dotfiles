@@ -1,8 +1,10 @@
 #!/bin/bash
-# brewfile hash: {{ "~/.config/homebrew/brewfile" | sha256sum }}
+# brewfile hash: {{ includeTemplate "private_dot_config/private_homebrew/brewfile.tmpl" | sha256sum }}
+# homebrew hash: {{ include ".chezmoidata/homebrew.jsonc" | sha256sum }}
+# mas apps hash: {{ include ".chezmoidata/mas.jsonc" | sha256sum }}
 # This script runs when the Homebrew package list changes
 
-BREWFILE="$HOME/.config/homebrew/brewfile"
+BREWFILE="${HOME}/.config/homebrew/brewfile"
 
 # Verify that Homebrew is installed
 if ! command -v brew &>/dev/null; then
