@@ -1,0 +1,23 @@
+# #. Node Settings
+# NODE_ENV="development"
+
+#. RF Client DB Config
+# RetailFocus Client DB URL
+export RF_CLIENT_DB_URL={{- onepasswordRead "op://Chezmoi/RF Apps ENV Variables/RF_CLIENT_DB_URL" | quote }}
+
+#. XLSX-XERO Variables
+# xero-node SDK Variables
+export XERO_CLIENT_ID={{- onepasswordRead "op://Chezmoi/RF Apps ENV Variables/XERO_CLIENT_ID" | quote }}
+export XERO_CLIENT_SECRET={{- onepasswordRead "op://Chezmoi/RF Apps ENV Variables/XERO_CLIENT_SECRET" | quote }}
+# UserId is a made up identifier for the Authorising User - Used to fetched Token Set from config db
+export XERO_USER_ID={{- onepasswordRead "op://Chezmoi/RF Apps ENV Variables/XERO_USER_ID" | quote }}
+export XERO_REDIRECT_URI={{- onepasswordRead "op://Chezmoi/RF Apps ENV Variables/XERO_REDIRECT_URI" | quote }}
+export XERO_SCOPES={{- onepasswordRead "op://Chezmoi/RF Apps ENV Variables/XERO_SCOPES" | quote }}
+
+# Pittsworth Specific Xero Variables
+export XERO_DB_URL_PW={{- onepasswordRead "op://Chezmoi/RF Apps ENV Variables/XERO_DB_URL_PW" | quote }}
+export XERO_DD_CONTACT_ID_PW={{- onepasswordRead "op://Chezmoi/RF Apps ENV Variables/XERO_DD_CONTACT_ID_PW" | quote }}
+
+# Westbrook Specific Xero Variables
+export XERO_DB_URL_WB={{- onepasswordRead "op://Chezmoi/RF Apps ENV Variables/XERO_DB_URL_WB" | quote }}
+export XERO_DD_CONTACT_ID_WB={{- onepasswordRead "op://Chezmoi/RF Apps ENV Variables/XERO_DD_CONTACT_ID_WB" | quote }}
