@@ -9,6 +9,11 @@
   "user": {
     "email": "tim@tsdev.au",
     "githubUsername": "tsdevau",
-    "name": "Tim Stone"
+    "name": "Tim Stone",
+    "npm": {
+      "authorEmail": "github@tsdev.au",
+      "authorName": "@tsdesvau",
+      "authorUrl": "https://github.com/tsdevau"
+    }
   }
 }
