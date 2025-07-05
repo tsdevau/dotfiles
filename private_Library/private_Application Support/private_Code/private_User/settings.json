@@ -6,6 +6,9 @@
   "[config]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   "[env]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
