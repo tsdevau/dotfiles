@@ -1,247 +1,160 @@
-# Chezmoi Configuration
+# Dotfiles
 
-This is a comprehensive Chezmoi configuration for macOS development environments with declarative package management using Homebrew and secure secrets management with 1Password.
+<div align="center">
+<img src="https://raw.githubusercontent.com/tsdevau/dotfiles/main/.assets/tsdevau.png" width="200">
+<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/sample.png" width="400">
+<img src="https://raw.githubusercontent.com/tsdevau/dotfiles/main/.assets/tpstech.png" width="200">
+</div>
 
-## Features
+**My personal [Chezmoi](https://www.chezmoi.io/) dotfiles, themes, and developer tools for macOS.**
 
-- **Declarative Package Management**: All packages defined in `.chezmoidata.toml` and installed via Homebrew
-- **1Password Integration**: Secure secrets management using 1Password CLI with `onepasswordRead` template function
-- **macOS Optimisation**: Comprehensive system defaults for Dock, Finder, keyboard, and system settings
-- **Development Environment**: Pre-configured Git, shell, and modern development tools (Helix, Neovim, Zed, etc.)
-- **Modular Configuration**: Template-based configuration with environment-specific customisation
-- **XDG Base Directory**: Full XDG specification compliance for clean config organisation
-- **Modern Shell Setup**: Zsh with Starship prompt, fzf, zoxide, and custom plugins
-- **Touch ID Integration**: Automated Touch ID and Apple Watch configuration for sudo
+---
 
-## Prerequisites
+## 🌟 Overview
 
-1. **1Password**: Install 1Password and the 1Password CLI
-2. **Chezmoi**: Install Chezmoi (`brew install chezmoi`)
-3. **macOS**: This configuration is specifically designed for macOS
+This repository contains my personal [Chezmoi](https://www.chezmoi.io/) configuration for macOS. It's designed to provide a consistent, beautiful, and efficient development environment across multiple machines. The setup is highly automated, leveraging Homebrew for package management, 1Password for secrets, and a suite of modern, CLI tools.
 
-## Initial Setup
+### ✨ Features
 
-1. **Initialise with this directory**:
-   ```bash
-   chezmoi init --apply ~/.local/share/chezmoi
-   ```
+- **Declarative Package Management**: All packages, casks, and applications are defined in `.chezmoidata/*.jsonc` files and installed via a templated Homebrew `Brewfile`.
+- **1Password Integration**: Securely manages secrets and sensitive data like Git signing keys using the 1Password CLI and the `onepasswordRead` template function.
+- **macOS Optimisation**: Includes scripts to apply sensible macOS defaults, enhancing the user experience for developers.
+- **Comprehensive Tooling**: Pre-configured settings for a wide range of development tools, including multiple editors (VSCode, Zed, Helix, Neovim), shell tools, and more.
+- **XDG Compliance**: Follows the XDG Base Directory Specification for a clean and organised home directory.
+- **Modern Shell Environment**: A powerful and customisable Zsh setup featuring the Starship prompt, `fzf`, `zoxide`, and various plugins.
+- **Automated Setup**: Scripts for initial setup and ongoing maintenance, including Homebrew installation, package updates, and environment configuration.
 
-2. **Or clone from source**:
-   ```bash
-   chezmoi init --apply https://github.com/tsdevau/dotfiles.git
-   ```
+---
 
-## Configuration Structure
+## 🚀 Getting Started
 
-### Core Files
-- `chezmoi.toml` - Main chezmoi configuration with git auto-commit/push settings
-- `.chezmoidata.toml` - Package definitions, user data, and template variables
-- `.chezmoiignore` - Files to ignore during application (README.md, .DS_Store, etc.)
+### Prerequisites
 
-### XDG Configuration Directory
-The `private_dot_config/` directory follows the XDG Base Directory specification:
-- `private_git/` - Git configuration with 1Password GPG key integration
-- `private_zsh/` - Zsh configuration with modern shell tools
-- `private_env/` - Environment variables, aliases, and shell functions
-- `private_nvim/` - Neovim configuration with LazyVim
-- `private_helix/` - Helix editor configuration
-- `private_starship/` - Starship prompt configuration
-- `private_homebrew/` - Homebrew Brewfile template
-- `private_ssh/` - SSH configuration (no 1Password templates - uses static config)
+1.  **1Password**: Ensure you have [1Password](https://1password.com/) and the [1Password CLI](https://developer.1password.com/docs/cli/get-started/) installed and configured.
+2.  **Chezmoi**: Install Chezmoi using Homebrew: `brew install chezmoi`.
+3.  **macOS**: This configuration is tailored specifically for macOS.
+
+### Initial Setup
+
+You can initialise this configuration on a new machine with a single command:
+
+```bash
+chezmoi init --apply https://github.com/tsdevau/dotfiles.git
+```
+
+This will clone the repository and apply the dotfiles to your home directory.
+
+---
+
+## 📂 Repository Structure
+
+This repository is organised to be modular and easy to navigate. Here's a breakdown of the key directories and files:
+
+-   `.chezmoiignore`: Specifies files and directories that Chezmoi should ignore.
+-   `.chezmoidata/`: Contains JSONC files with data for templates, including package lists and user information.
+-   `.chezmoiscripts/`: Holds scripts that run at different stages of the `chezmoi apply` process.
+-   `private_dot_config/`: The heart of the configuration, following the XDG specification. It contains settings for various applications.
+-   `private_dot_ssh/`: Manages SSH configuration.
+-   `private_Library/`: Contains macOS-specific application support files and settings.
+
+### Core Configuration Files
+
+-   `private_dot_config/chezmoi/chezmoi.jsonc`: Main Chezmoi configuration, including Git auto-commit settings.
+-   `.chezmoidata/data.jsonc`: General user data and editor preferences.
+-   `.chezmoidata/homebrew.jsonc`: Lists Homebrew taps, formulae, and casks.
+-   `.chezmoidata/mas.jsonc`: Lists Mac App Store applications to be installed.
+-   `.chezmoidata/pnpm.jsonc`: Lists global pnpm packages.
+-   `.chezmoidata/rust.jsonc`: Specifies Rust toolchains and components.
 
 ### Run Scripts
-- `run_once_before_01-configure-touch-id.sh` - Configure Touch ID/Apple Watch for sudo
-- `run_once_before_02-install-homebrew.sh` - Install Homebrew if not present
-- `run_onchange_after_03-install-homebrew-bundle.sh.tmpl` - Install/update packages via Brewfile
-- `run_onchange_after_05-configure-dev-env.sh.tmpl` - Set up development environment (pnpm, Rust, etc.)
-- `run_onchange_after_06-configure-shell-plugins.sh` - Install zsh plugins
-- `run_onchange_after_99-apply-macos-defaults.sh.tmpl` - Apply macOS system defaults
 
-### Template Files
-- `private_dot_config/private_git/config.tmpl` - Git configuration with 1Password signing key
-- `private_dot_config/private_zsh/dot_zshrc.tmpl` - Zsh configuration
-- `private_dot_config/private_env/aliases.tmpl` - Shell aliases
-- `private_dot_config/private_env/exports.tmpl` - Environment variables
-- `private_dot_config/private_homebrew/brewfile.tmpl` - Homebrew package manifest
+The `.chezmoiscripts/` directory contains scripts that automate the setup process:
 
-## Package Management
+-   `run_once_before_01-configure-touch-id.sh`: Configures Touch ID and Apple Watch for `sudo` authentication.
+-   `run_once_before_02-install-homebrew.sh`: Installs Homebrew if it's not already present.
+-   `run_once_after_03-install-homebrew-bundle.sh.tmpl`: Installs and updates packages from the `Brewfile`.
+-   `run_once_after_05-configure-dev-env.sh.tmpl`: Sets up the development environment, including pnpm and Rust.
+-   `run_once_after_06-configure-shell-plugins.sh`: Installs Zsh plugins.
+-   `run_once_after_99-apply-macos-defaults.sh`: Applies custom macOS system defaults.
 
-All packages are defined in `.chezmoidata.toml` under the `[homebrew]` section:
+---
 
-```toml
-[homebrew]
-taps = ["FelixKratz/formulae", "oven-sh/bun", "supabase/tap"]
-formulae = [
-  { name = "helix" },
-  { name = "starship" },
-  { name = "zoxide" },
-  # ... more packages
-]
-casks = [
-  { name = "visual-studio-code" },
-  { name = "cursor" },
-  # ... more applications
-]
+## 📦 Package Management
 
-[masApps]
-"1Password for Safari" = 1569813296
-"Xcode" = 497799835
+This setup uses a declarative approach to package management. All packages are defined in the `.chezmoidata/` directory and installed using a templated `Brewfile`.
 
-[pnpm]
-packages = [
-  "@google/gemini-cli",
-  "claude-code",
-  "tsx",
-  "wrangler",
-]
+To add a new package:
 
-[rustup]
-components = ["rustfmt", "clippy"]
-toolchains = [{ name = "stable", profile = "default" }]
-```
+1.  Edit the appropriate file in `.chezmoidata/` (e.g., `homebrew.jsonc` for a new cask).
+2.  Run `chezmoi apply`.
+3.  The `run_once_after_03-install-homebrew-bundle.sh.tmpl` script will automatically detect the changes and install the new packages.
 
-To add new packages:
-1. Edit `.chezmoidata.toml`
-2. Run `chezmoi apply`
-3. The `run_onchange_*` scripts will automatically install new packages
+---
 
-## 1Password Integration
+## 🔒 1Password Integration
 
-This configuration uses 1Password for secure secrets management:
-
-1. **Git Signing Key**: Automatically retrieved using `onepasswordRead` in Git config
-2. **1Password CLI Integration**: Configured in shell environment
-3. **Biometric Unlock**: Enabled for seamless CLI authentication
-
-The Git configuration template shows the actual usage:
-```bash
-signingkey = {{ onepasswordRead "op://Personal/.../signingkey" }}
-```
-
-## User Configuration
-
-The configuration uses template variables defined in `.chezmoidata.toml`:
+This configuration leverages 1Password for secure management of secrets. The Git configuration, for example, retrieves the GPG signing key directly from 1Password:
 
 ```toml
-name = "Mr Jones"
-email = "mr.jones@example.com"
-githubUsername = "mrjones"
-defaultVisualEditor = "code"
-editor = "hx"
-language = "en_AU.UTF-8"
+signingkey = {{ onepasswordRead "op://Personal/l4c4htdjojwcfanbjr2hqxeufm/Section_yfmxturzjnv4gl3aqas3jjhamy/signingkey" }}
 ```
 
-## Commands
+This ensures that sensitive information is never stored directly in the repository.
 
-### Daily Usage
-```bash
-# Apply changes
-chezmoi apply
+---
 
-# Check what would change
-chezmoi diff
+## 🧑‍💻 User Configuration
 
-# Edit a managed file
-chezmoi edit ~/.config/git/config
+You can customise the configuration by editing the files in the `.chezmoidata/` directory. For example, you can change your name, email, and preferred editors in `data.jsonc`:
 
-# Update from source repository
-chezmoi update
+```json
+{
+  "editors": {
+    "gui": "code",
+    "tui": "hx",
+    "visual": "code --wait"
+  },
+  "user": {
+    "email": "github@tsdev.au",
+    "githubUsername": "tsdevau",
+    "name": "Tim Stone"
+  }
+}
 ```
 
-### Package Management
-```bash
-# Update packages when configuration changes
-chezmoi apply
+---
 
-# Force package reinstallation (reset run_onchange state)
-chezmoi state delete-bucket --bucket=scriptState
-chezmoi apply
-```
+## 🛠️ Commands
 
-### Troubleshooting
-```bash
-# Check system health
-chezmoi doctor
+Here are some common commands for managing your dotfiles with Chezmoi:
 
-# View all managed files
-chezmoi managed
+-   `chezmoi apply`: Apply any changes to your dotfiles.
+-   `chezmoi diff`: See what changes would be made without applying them.
+-   `chezmoi edit ~/.config/git/config`: Edit a managed file directly.
+-   `chezmoi update`: Pull the latest changes from the source repository.
+-   `chezmoi doctor`: Check for any issues with your setup.
 
-# Reset and reapply everything
-chezmoi state reset
-chezmoi apply
-```
+---
 
-## Actual Directory Structure
+## 🎨 Theming
 
-```
-.
-├── empty_dot_hushlogin                     # Disable login messages
-├── private_dot_zshenv                      # Zsh environment setup
-├── run_once_before_01-configure-touch-id.sh
-├── run_once_before_02-install-homebrew.sh
-├── run_onchange_after_03-install-homebrew-bundle.sh.tmpl
-├── run_onchange_after_05-configure-dev-env.sh.tmpl
-├── run_onchange_after_06-configure-shell-plugins.sh
-├── run_onchange_after_99-apply-macos-defaults.sh.tmpl
-├── private_dot_config/
-│   ├── private_chezmoi/
-│   │   ├── chezmoi.toml                    # Chezmoi configuration
-│   │   ├── .chezmoidata.toml               # Template data and packages
-│   │   ├── .chezmoiignore                  # Files to ignore
-│   │   └── README.md                       # This file
-│   ├── private_bat/                        # Bat (cat replacement) config
-│   ├── private_borders/                    # Window border tool config
-│   ├── private_env/                        # Environment configuration
-│   │   ├── aliases.tmpl
-│   │   ├── exports.tmpl
-│   │   ├── functions
-│   │   └── private_rfapps
-│   ├── private_git/                        # Git configuration
-│   │   ├── config.tmpl
-│   │   └── gitignore_global
-│   ├── private_helix/                      # Helix editor config
-│   ├── private_homebrew/                   # Homebrew configuration
-│   │   └── brewfile.tmpl
-│   ├── private_nvim/                       # Neovim configuration
-│   ├── private_starship/                   # Starship prompt config
-│   ├── private_wezterm/                    # WezTerm configuration
-│   ├── private_yazi/                       # Yazi file manager config
-│   ├── private_zed/                        # Zed editor configuration
-│   └── private_zsh/                        # Zsh configuration
-│       ├── dot_zshrc.tmpl
-│       ├── key-bindings.sh
-│       ├── private_dot_zshenv.tmpl
-│       └── symlink_zsh_history
-├── private_dot_ssh/
-│   ├── config                              # SSH configuration (static)
-│   └── dot_gitkeep
-└── private_Library/                        # macOS Library files
-```
+This configuration uses the [Catppuccin](https://github.com/catppuccin) theme across a wide range of applications, providing a consistent and beautiful user experience. You'll find Catppuccin themes for:
 
-## Modern Development Tools
+-   Bat
+-   Ghostty
+-   Glamour
+-   Glow
+-   Helix
+-   And many more...
 
-This configuration includes modern alternatives to traditional Unix tools:
+---
 
-- **`bat`** instead of `cat` (syntax highlighting)
-- **`eza`** instead of `ls` (modern file listing)
-- **`fd`** instead of `find` (fast file search)
-- **`ripgrep`** instead of `grep` (fast text search)
-- **`zoxide`** instead of `cd` (smart directory jumping)
-- **`fzf`** for fuzzy finding
-- **`starship`** for a modern shell prompt
-- **`helix`** as primary editor with Neovim as fallback
+## 🤝 Contributing
 
-## Contributing
+While this is a personal configuration, I'm happy to receive suggestions and contributions. Feel free to open an issue or a pull request if you have ideas for improvements.
 
-1. Make your changes to the appropriate files
-2. Test with `chezmoi apply --dry-run`
-3. Apply changes with `chezmoi apply`
-4. Commit changes automatically (auto-commit is enabled)
+---
 
-## Security
+## 📜 License
 
-- 1Password integration for sensitive data (GPG keys, tokens)
-- SSH configuration uses static files (no templates for security)
-- Private files are marked with `private_` prefix
-- All scripts are idempotent and safe to run multiple times
-- Touch ID/Apple Watch authentication for sudo commands
+This project is licensed under the Apache-2.0 License. See the [LICENSE](LICENSE) file for details.
