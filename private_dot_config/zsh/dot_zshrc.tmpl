@@ -20,8 +20,8 @@ export HISTFILE="${XDG_STATE_HOME}/zsh_history"
 export ZSH_SESSION_FILE="${XDG_STATE_HOME}/zsh_sessions"
 export LESSHISTFILE="${XDG_STATE_HOME}/lesshst"
 
-if [[ -f "${XDG_CONFIG_HOME}/env/rfapps" ]]; then
-  source "${XDG_CONFIG_HOME}/env/rfapps"
+if [[ -f "${XDG_CONFIG_HOME}/env/rfapps.sh" ]]; then
+  source "${XDG_CONFIG_HOME}/env/rfapps.sh"
 fi
 
 # Build FPATH

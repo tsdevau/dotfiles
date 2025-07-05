@@ -1,3 +1,3 @@
-source "${HOME}/.config/env/exports"
-source "${HOME}/.config/env/functions"
-source "${HOME}/.config/env/aliases"
+source "${HOME}/.config/env/exports.sh"
+source "${HOME}/.config/env/functions.sh"
+source "${HOME}/.config/env/aliases.sh"
