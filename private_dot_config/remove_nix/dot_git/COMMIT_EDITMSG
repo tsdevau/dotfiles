@@ -1,5 +1,0 @@
-chore(deps): update flake dependencies
-
-- Update home-manager from 080e8b4 to f6deff1
-- Update nixpkgs from 80d50fc to a48741b
-- Update nixpkgs_2 from 30a61f0 to 30e2e28
