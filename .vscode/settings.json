@@ -1,6 +1,35 @@
 {
   "files.associations": {
-    "*.tmpl": "shellscript",
-    "*gitignore*": "gitignore"
+    "*.conf.tmpl": "properties",
+    "*.desktop.tmpl": "ini",
+    "*.env.tmpl": "dotenv",
+    "*.ini.tmpl": "ini",
+    "*.js.tmpl": "javascript",
+    "*.json.tmpl": "json",
+    "*.jsonc.tmpl": "jsonc",
+    "*.kdl.tmpl": "kdl",
+    "*.lua.tmpl": "lua",
+    "*.md.tmpl": "markdown",
+    "*.nix.tmpl": "nix",
+    "*.plist.tmpl": "xml",
+    "*.ps1.tmpl": "powershell",
+    "*.service.tmpl": "ini",
+    "*.sh.tmpl": "shellscript",
+    "*.swift.tmpl": "swift",
+    "*.toml.tmpl": "toml",
+    "*.ts.tmpl": "typescript",
+    "*.txt.tmpl": "plaintext",
+    "*.xml.tmpl": "xml",
+    "*.yaml.tmpl": "yaml",
+    "*.yml.tmpl": "yaml",
+    "**/.ssh/config.tmpl": "sshconfig",
+    "**/.ssh/known_hosts.tmpl": "sshconfig",
+    "*gitignore*": "gitignore",
+    "*npmrc.tmpl": "properties",
+    "*profile.tmpl": "shellscript",
+    "*zshenv.tmpl": "shellscript",
+    "*zshrc.tmpl": "shellscript",
+    "brewfile.tmpl": "ruby",
+    "config.tmpl": "properties"
   }
 }
