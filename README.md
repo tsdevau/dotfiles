@@ -3,7 +3,7 @@
 
 <br/>
 <div align="center">
-<img src="https://raw.githubusercontent.com/tsdevau/dotfiles/main/.assets/tsdevau.png" width="150">
+<img src="https://raw.githubusercontent.com/tsdevau/dotfiles/main/assets/tsdevau.png" width="150">
 &nbsp;
 &nbsp;
 &nbsp;
@@ -11,7 +11,7 @@
 &nbsp;
 &nbsp;
 &nbsp;
-<img src="https://raw.githubusercontent.com/tsdevau/dotfiles/main/.assets/tpstech.png" width="150">
+<img src="https://raw.githubusercontent.com/tsdevau/dotfiles/main/assets/tpstech.png" width="150">
 
 </div>
 
