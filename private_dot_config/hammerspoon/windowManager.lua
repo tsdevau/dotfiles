@@ -349,7 +349,7 @@ local function launchAndArrangeDevDefault()
 
   hs.layout.apply(defaultLayout)
   outlook:hide()
-  finder:mainWindow():sendToBack()
+  finder:kill()
   restoreAXUIElementState()
   ACTIVE_WINDOW_LAYOUT = 2
 end
@@ -369,7 +369,7 @@ local function launchAndArrangeDev4Panel()
   local originalAppState = {}
 
   local function WezTerm()
-    local f = isExternalDisplay and moveRightHalfBottom35(max) or moveMaximize(max)
+    local f = isExternalDisplay and moveLeftHalfBottom35(max) or moveMaximize(max)
     return hs.geometry.rect(f.x, f.y, f.w, f.h)
   end
 
@@ -388,7 +388,7 @@ local function launchAndArrangeDev4Panel()
 
   local function Finder()
     if finder then
-      local f = isExternalDisplay and moveLeftHalfBottom35(max) or moveToCentre(max, finder:focusedWindow():frame())
+      local f = isExternalDisplay and moveRightHalfBottom35(max) or moveToCentre(max, finder:focusedWindow():frame())
       return hs.geometry.rect(f.x, f.y, f.w, f.h)
     end
     return nil
