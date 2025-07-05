@@ -3,7 +3,7 @@
     ".chezmoiignore": "gitignore",
     "*.conf.tmpl": "properties",
     "*.desktop.tmpl": "ini",
-    "*.env.tmpl": "dotenv",
+    "*.env*.tmpl": "dotenv",
     "*.ini.tmpl": "ini",
     "*.js.tmpl": "javascript",
     "*.json.tmpl": "json",
