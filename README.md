@@ -1,14 +1,19 @@
 # Dotfiles
+**My personal [Chezmoi](https://www.chezmoi.io/) dotfiles, configurations, themes, and developer tools for macOS.**
 
+<br/>
 <div align="center">
-<img src="https://raw.githubusercontent.com/tsdevau/dotfiles/main/.assets/tsdevau.png" width="200">
-<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/sample.png" width="400">
-<img src="https://raw.githubusercontent.com/tsdevau/dotfiles/main/.assets/tpstech.png" width="200">
+<img src="https://raw.githubusercontent.com/tsdevau/dotfiles/main/.assets/tsdevau.png" width="150">
+&nbsp;
+&nbsp;
+&nbsp;
+<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/sample.png" width="300">
+&nbsp;
+&nbsp;
+&nbsp;
+<img src="https://raw.githubusercontent.com/tsdevau/dotfiles/main/.assets/tpstech.png" width="150">
+
 </div>
-
-**My personal [Chezmoi](https://www.chezmoi.io/) dotfiles, themes, and developer tools for macOS.**
-
----
 
 ## 🌟 Overview
 
@@ -23,8 +28,6 @@ This repository contains my personal [Chezmoi](https://www.chezmoi.io/) configur
 - **XDG Compliance**: Follows the XDG Base Directory Specification for a clean and organised home directory.
 - **Modern Shell Environment**: A powerful and customisable Zsh setup featuring the Starship prompt, `fzf`, `zoxide`, and various plugins.
 - **Automated Setup**: Scripts for initial setup and ongoing maintenance, including Homebrew installation, package updates, and environment configuration.
-
----
 
 ## 🚀 Getting Started
 
@@ -43,8 +46,6 @@ chezmoi init --apply https://github.com/tsdevau/dotfiles.git
 ```
 
 This will clone the repository and apply the dotfiles to your home directory.
-
----
 
 ## 📂 Repository Structure
 
@@ -77,8 +78,6 @@ The `.chezmoiscripts/` directory contains scripts that automate the setup proces
 -   `run_once_after_06-configure-shell-plugins.sh`: Installs Zsh plugins.
 -   `run_once_after_99-apply-macos-defaults.sh`: Applies custom macOS system defaults.
 
----
-
 ## 📦 Package Management
 
 This setup uses a declarative approach to package management. All packages are defined in the `.chezmoidata/` directory and installed using a templated `Brewfile`.
@@ -89,8 +88,6 @@ To add a new package:
 2.  Run `chezmoi apply`.
 3.  The `run_once_after_03-install-homebrew-bundle.sh.tmpl` script will automatically detect the changes and install the new packages.
 
----
-
 ## 🔒 1Password Integration
 
 This configuration leverages 1Password for secure management of secrets. The Git configuration, for example, retrieves the GPG signing key directly from 1Password:
@@ -100,8 +97,6 @@ signingkey = {{ onepasswordRead "op://Personal/l4c4htdjojwcfanbjr2hqxeufm/Sectio
 ```
 
 This ensures that sensitive information is never stored directly in the repository.
-
----
 
 ## 🧑‍💻 User Configuration
 
@@ -115,14 +110,12 @@ You can customise the configuration by editing the files in the `.chezmoidata/` 
     "visual": "code --wait"
   },
   "user": {
-    "email": "github@tsdev.au",
-    "githubUsername": "tsdevau",
-    "name": "Tim Stone"
+    "email": "mrjones@example.com",
+    "githubUsername": "mrjones",
+    "name": "Mr. Jones"
   }
 }
 ```
-
----
 
 ## 🛠️ Commands
 
@@ -133,8 +126,6 @@ Here are some common commands for managing your dotfiles with Chezmoi:
 -   `chezmoi edit ~/.config/git/config`: Edit a managed file directly.
 -   `chezmoi update`: Pull the latest changes from the source repository.
 -   `chezmoi doctor`: Check for any issues with your setup.
-
----
 
 ## 🎨 Theming
 
@@ -152,8 +143,6 @@ This configuration uses the [Catppuccin](https://github.com/catppuccin) theme ac
 ## 🤝 Contributing
 
 While this is a personal configuration, I'm happy to receive suggestions and contributions. Feel free to open an issue or a pull request if you have ideas for improvements.
-
----
 
 ## 📜 License
 
