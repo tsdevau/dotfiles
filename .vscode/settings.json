@@ -1,5 +1,6 @@
 {
   "files.associations": {
+    ".chezmoiignore": "gitignore",
     "*.conf.tmpl": "properties",
     "*.desktop.tmpl": "ini",
     "*.env.tmpl": "dotenv",
