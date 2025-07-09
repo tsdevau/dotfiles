@@ -1,5 +1,4 @@
 {
-  "SQL-Formatter-VSCode.dialect": "postgresql",
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
@@ -69,7 +68,8 @@
     "editor.defaultFormatter": "yy0931.vscode-sqlite3-editor"
   },
   "[svelte]": {
-    "editor.defaultFormatter": "svelte.svelte-vscode"
+    // "editor.defaultFormatter": "svelte.svelte-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
@@ -140,32 +140,11 @@
       "tag": "+"
     }
   ],
-  "color-highlight.useARGB": false,
-  "cSpell.customDictionaries": {
-    "custom-dictionary-user": {
-      "addWords": true,
-      "name": "custom-dictionary-user",
-      "path": "~/.config/cspell/custom-dictionary-user.txt",
-      "scope": "user"
-    }
-  },
-  "cSpell.dictionaries": ["astro", "css", "en-au", "html", "json", "markdown", "svelte", "typescript_ts", "typescript"],
-  "cSpell.enabled": true,
-  "cSpell.enabledNotifications": {
-    "Average Word Length too Long": false,
-    "Lines too Long": false,
-    "Maximum Word Length Exceeded": false
-  },
-  "cSpell.language": "en-AU",
-  "cSpell.suggestionMenuType": "quickFix",
-  "cSpell.textDecorationColor": "#60A5FA",
-  "cSpell.useCustomDecorations": true,
   "chat.agent.enabled": true,
   "chat.editor.fontSize": 14,
   "chat.editor.wordWrap": "on",
   "code-runner.enableAppInsights": false,
   "code-runner.executorMap": {
-    "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     "ahk": "autohotkey",
     "applescript": "osascript",
     "autoit": "autoit3",
@@ -179,8 +158,9 @@
     "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
     "dart": "dart",
     "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     "fsharp": "fsi",
     "go": "go run",
     "groovy": "groovy",
@@ -236,6 +216,7 @@
     "typescript",
     "typescriptreact"
   ],
+  "color-highlight.useARGB": false,
   "console-ninja.allowConsoleLogToTriggerPredictions": true,
   "console-ninja.allowedHosts": ["/^.*\\\\.tpstech\\\\.services$/"],
   "console-ninja.captureFunctions": true,
@@ -246,315 +227,334 @@
   "console-ninja.output.showLogsOnlyFromOpenedFiles": true,
   "console-ninja.outputMode": "In View",
   "console-ninja.searchUrl": "https://www.google.com/search?udm=14&q={query}",
+  "cSpell.customDictionaries": {
+    "custom-dictionary-user": {
+      "addWords": true,
+      "name": "custom-dictionary-user",
+      "path": "~/.config/cspell/custom-dictionary-user.txt",
+      "scope": "user"
+    }
+  },
+  "cSpell.dictionaries": ["astro", "css", "en-au", "html", "json", "markdown", "svelte", "typescript_ts", "typescript"],
+  "cSpell.enabled": true,
+  "cSpell.enabledNotifications": {
+    "Average Word Length too Long": false,
+    "Lines too Long": false,
+    "Maximum Word Length Exceeded": false
+  },
+  "cSpell.language": "en-AU",
+  "cSpell.suggestionMenuType": "quickFix",
+  "cSpell.textDecorationColor": "#60A5FA",
+  "cSpell.useCustomDecorations": true,
   "css.completion.completePropertyWithSemicolon": true,
   "css.lint.duplicateProperties": "warning",
   "css.lint.unknownAtRules": "ignore",
   "dance.defaultMode": "helix/normal",
   "dance.menus": {
-    "match": {
-      "title": "Match",
+    "goto": {
       "items": {
-        "m": {
-          "command": "dance.seek.enclosing",
-          "text": "Goto matching bracket"
+        ".": {
+          "args": [
+            {
+              "register": " insert"
+            }
+          ],
+          "command": "workbench.action.navigatePreviousInEditLocations",
+          "text": "to last buffer modification position"
         },
         "a": {
-          "command": "dance.openMenu",
+          "command": "workbench.action.openPreviousRecentlyUsedEditorInGroup",
+          "text": "to last buffer"
+        },
+        "A": {
+          "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+          "text": "to last buffer..."
+        },
+        "b": {
+          "command": "dance.select.lastVisibleLine",
+          "text": "to window bottom"
+        },
+        "c": {
+          "command": "dance.select.middleVisibleLine",
+          "text": "to window center"
+        },
+        "d": {
+          "command": "editor.action.revealDefinition",
+          "text": "to definition"
+        },
+        "e": {
+          "args": [
+            {
+              "count": 2147483647
+            }
+          ],
+          "command": "dance.select.lineEnd",
+          "text": "to last line"
+        },
+        "f": {
+          "command": "dance.selections.open",
+          "text": "to file/URLs in selections"
+        },
+        "g": {
+          "args": [
+            {
+              "count": 1
+            }
+          ],
+          "command": "dance.select.lineStart",
+          "text": "to line number else file start"
+        },
+        "h": {
+          "command": "cursorHome",
+          "text": "to line start"
+        },
+        "j": {
+          "command": "dance.select.lastLine",
+          "text": "to last line"
+        },
+        "l": {
+          "command": "dance.select.lineEnd",
+          "text": "to line end"
+        },
+        "n": {
+          "command": "workbench.action.nextEditor",
+          "text": "to next buffer"
+        },
+        "p": {
+          "command": "workbench.action.previousEditor",
+          "text": "to previous buffer"
+        },
+        "r": {
+          "command": "editor.action.goToReferences",
+          "text": "to references"
+        },
+        "s": {
+          "command": "cursorHome",
+          // "args": [
+          //   {
+          //     "skipBlank": true
+          //   }
+          // ]
+          "text": "to first non-blank in line"
+        },
+        "t": {
+          "command": "dance.select.firstVisibleLine",
+          "text": "to window top"
+        }
+      },
+      "title": "Goto"
+    },
+    "match": {
+      "items": {
+        "a": {
           "args": [
             {
               "menu": "object",
               "title": "Match around"
             }
           ],
+          "command": "dance.openMenu",
           "text": "Select around object"
         },
         "i": {
-          "command": "dance.openMenu",
           "args": [
             {
               "menu": "object",
-              "title": "Match inside",
               "pass": [
                 {
                   "inner": true
                 }
-              ]
+              ],
+              "title": "Match inside"
             }
           ],
+          "command": "dance.openMenu",
           "text": "Select inside object"
+        },
+        "m": {
+          "command": "dance.seek.enclosing",
+          "text": "Goto matching bracket"
         }
-      }
+      },
+      "title": "Match"
     },
     "object": {
-      "title": "Select object...",
       "items": {
-        "()": {
+        "!": {
           "command": "dance.seek.object",
-          "args": [
-            {
-              "input": "\\((?#inner)\\)"
-            }
-          ],
-          "text": "parenthesis block"
-        },
-        "{}": {
-          "command": "dance.seek.object",
-          "args": [
-            {
-              "input": "\\{(?#inner)\\}"
-            }
-          ],
-          "text": "braces block"
-        },
-        "[]": {
-          "command": "dance.seek.object",
-          "args": [
-            {
-              "input": "\\[(?#inner)\\]"
-            }
-          ],
-          "text": "brackets block"
-        },
-        "<>": {
-          "command": "dance.seek.object",
-          "args": [
-            {
-              "input": "<(?#inner)>"
-            }
-          ],
-          "text": "angle block"
-        },
-        "\"": {
-          "command": "dance.seek.object",
-          "args": [
-            {
-              "input": "(?#noescape)\"(?#inner)(?#noescape)\""
-            }
-          ],
-          "text": "double quote string"
+          "text": "custom object desc"
         },
         "'": {
-          "command": "dance.seek.object",
           "args": [
             {
               "input": "(?#noescape)'(?#inner)(?#noescape)'"
             }
           ],
+          "command": "dance.seek.object",
           "text": "single quote string"
         },
-        "`": {
+        "\"": {
+          "args": [
+            {
+              "input": "(?#noescape)\"(?#inner)(?#noescape)\""
+            }
+          ],
           "command": "dance.seek.object",
+          "text": "double quote string"
+        },
+        "()": {
+          "args": [
+            {
+              "input": "\\((?#inner)\\)"
+            }
+          ],
+          "command": "dance.seek.object",
+          "text": "parenthesis block"
+        },
+        "[]": {
+          "args": [
+            {
+              "input": "\\[(?#inner)\\]"
+            }
+          ],
+          "command": "dance.seek.object",
+          "text": "brackets block"
+        },
+        "{}": {
+          "args": [
+            {
+              "input": "\\{(?#inner)\\}"
+            }
+          ],
+          "command": "dance.seek.object",
+          "text": "braces block"
+        },
+        "`": {
           "args": [
             {
               "input": "(?#noescape)`(?#inner)(?#noescape)`"
             }
           ],
+          "command": "dance.seek.object",
           "text": "grave quote string"
         },
-        "w": {
-          "command": "dance.seek.object",
+        "<>": {
           "args": [
             {
-              "input": "[\\p{L}_\\d]+(?<after>[^\\S\\n]+)"
+              "input": "<(?#inner)>"
             }
           ],
-          "text": "word"
-        },
-        "W": {
           "command": "dance.seek.object",
-          "args": [
-            {
-              "input": "[\\S]+(?<after>[^\\S\\n]+)"
-            }
-          ],
-          "text": "WORD"
-        },
-        "p": {
-          "command": "dance.seek.object",
-          "args": [
-            {
-              "input": "(?#predefined=paragraph)"
-            }
-          ],
-          "text": "paragraph"
+          "text": "angle block"
         },
         "a": {
-          "command": "dance.seek.object",
           "args": [
             {
               "input": "(?#predefined=argument)"
             }
           ],
+          "command": "dance.seek.object",
           "text": "argument"
         },
-        "!": {
+        "p": {
+          "args": [
+            {
+              "input": "(?#predefined=paragraph)"
+            }
+          ],
           "command": "dance.seek.object",
-          "text": "custom object desc"
+          "text": "paragraph"
+        },
+        "w": {
+          "args": [
+            {
+              "input": "[\\p{L}_\\d]+(?<after>[^\\S\\n]+)"
+            }
+          ],
+          "command": "dance.seek.object",
+          "text": "word"
+        },
+        "W": {
+          "args": [
+            {
+              "input": "[\\S]+(?<after>[^\\S\\n]+)"
+            }
+          ],
+          "command": "dance.seek.object",
+          "text": "WORD"
         }
-      }
+      },
+      "title": "Select object..."
     },
     "view": {
-      "title": "View",
       "items": {
-        "cz": {
-          "text": "Align view center",
-          "command": "dance.view.line",
-          "args": [
-            {
-              "at": "center"
-            }
-          ]
+        "?": {
+          "command": "dance.search.backward",
+          "text": "Reverse search for regex pattern"
         },
-        "t": {
-          "text": "Align view top",
-          "command": "dance.view.line",
-          "args": [
-            {
-              "at": "top"
-            }
-          ]
+        "/": {
+          "command": "dance.search",
+          "text": "Search for regex pattern"
         },
         "b": {
-          "text": "Align view bottom",
-          "command": "dance.view.line",
           "args": [
             {
               "at": "bottom"
             }
-          ]
+          ],
+          "command": "dance.view.line",
+          "text": "Align view bottom"
         },
-        "k": {
-          "text": "Scroll view up",
-          "command": "editorScroll",
+        "cz": {
           "args": [
             {
-              "by": "line",
-              "revealCursor": true,
-              "to": "up"
+              "at": "center"
             }
-          ]
+          ],
+          "command": "dance.view.line",
+          "text": "Align view center"
         },
         "j": {
-          "text": "Scroll view down",
-          "command": "editorScroll",
           "args": [
             {
               "by": "line",
               "revealCursor": true,
               "to": "down"
             }
-          ]
+          ],
+          "command": "editorScroll",
+          "text": "Scroll view down"
         },
-        "/": {
-          "text": "Search for regex pattern",
-          "command": "dance.search"
-        },
-        "?": {
-          "text": "Reverse search for regex pattern",
-          "command": "dance.search.backward"
+        "k": {
+          "args": [
+            {
+              "by": "line",
+              "revealCursor": true,
+              "to": "up"
+            }
+          ],
+          "command": "editorScroll",
+          "text": "Scroll view up"
         },
         "n": {
-          "text": "Select next search match",
-          "command": "dance.search.next"
+          "command": "dance.search.next",
+          "text": "Select next search match"
         },
         "N": {
-          "text": "Select previous search match",
-          "command": "dance.search.previous"
-        }
-      }
-    },
-    "goto": {
-      "title": "Goto",
-      "items": {
-        "g": {
-          "text": "to line number else file start",
-          "command": "dance.select.lineStart",
-          "args": [
-            {
-              "count": 1
-            }
-          ]
-        },
-        "e": {
-          "text": "to last line",
-          "command": "dance.select.lineEnd",
-          "args": [
-            {
-              "count": 2147483647
-            }
-          ]
-        },
-        "f": {
-          "text": "to file/URLs in selections",
-          "command": "dance.selections.open"
-        },
-        "h": {
-          "text": "to line start",
-          "command": "cursorHome"
-        },
-        "l": {
-          "text": "to line end",
-          "command": "dance.select.lineEnd"
-        },
-        "s": {
-          "text": "to first non-blank in line",
-          "command": "cursorHome"
-          // "args": [
-          //   {
-          //     "skipBlank": true
-          //   }
-          // ]
-        },
-        "d": {
-          "text": "to definition",
-          "command": "editor.action.revealDefinition"
-        },
-        "r": {
-          "text": "to references",
-          "command": "editor.action.goToReferences"
-        },
-        "j": {
-          "text": "to last line",
-          "command": "dance.select.lastLine"
+          "command": "dance.search.previous",
+          "text": "Select previous search match"
         },
         "t": {
-          "text": "to window top",
-          "command": "dance.select.firstVisibleLine"
-        },
-        "c": {
-          "text": "to window center",
-          "command": "dance.select.middleVisibleLine"
-        },
-        "b": {
-          "text": "to window bottom",
-          "command": "dance.select.lastVisibleLine"
-        },
-        "a": {
-          "text": "to last buffer",
-          "command": "workbench.action.openPreviousRecentlyUsedEditorInGroup"
-        },
-        "A": {
-          "text": "to last buffer...",
-          "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
-        },
-        "n": {
-          "text": "to next buffer",
-          "command": "workbench.action.nextEditor"
-        },
-        "p": {
-          "text": "to previous buffer",
-          "command": "workbench.action.previousEditor"
-        },
-        ".": {
-          "text": "to last buffer modification position",
-          "command": "workbench.action.navigatePreviousInEditLocations",
           "args": [
             {
-              "register": " insert"
+              "at": "top"
             }
-          ]
+          ],
+          "command": "dance.view.line",
+          "text": "Align view top"
         }
-      }
+      },
+      "title": "View"
     }
   },
   "dance.modes": {
@@ -570,20 +570,14 @@
         ]
       ]
     },
-    "helix/select": {
-      "cursorStyle": "block",
-      "lineNumbers": "relative",
-      "selectionBehavior": "character"
-    },
     "helix/normal": {
       "cursorStyle": "block",
-      "lineNumbers": "relative",
-      "selectionBehavior": "character",
       "decorations": {
         "applyTo": "main",
         "backgroundColor": "$editor.hoverHighlightBackground",
         "isWholeLine": true
       },
+      "lineNumbers": "relative",
       "onEnterMode": [
         [
           ".selections.restore",
@@ -600,9 +594,9 @@
             "register": " ^",
             "style": {
               "borderColor": "$editor.selectionBackground",
+              "borderRadius": "1px",
               "borderStyle": "solid",
-              "borderWidth": "2px",
-              "borderRadius": "1px"
+              "borderWidth": "2px"
             },
             "until": [
               [
@@ -615,7 +609,13 @@
             ]
           }
         ]
-      ]
+      ],
+      "selectionBehavior": "character"
+    },
+    "helix/select": {
+      "cursorStyle": "block",
+      "lineNumbers": "relative",
+      "selectionBehavior": "character"
     }
   },
   "debug.console.fontSize": 16,
@@ -625,9 +625,9 @@
   "debug.toolBarLocation": "floating",
   "diffCommit.customInstructions": "Use Australian English spelling",
   "diffCommit.model": "claude-sonnet-4-0",
-  "diffCommit.provider": "anthropic",
   "diffCommit.ollamaHostname": "http://localhost:11434/",
   "diffCommit.ollamaModel": "qwen3:4b",
+  "diffCommit.provider": "anthropic",
   "diffCommit.temperature": 0.3,
   "diffEditor.codeLens": true,
   "diffEditor.experimental.showMoves": true,
@@ -711,19 +711,19 @@
     "gregoire.dance": 1
   },
   "files.associations": {
-    "*.css": "tailwindcss",
-    ".env": "env",
-    ".env.*": "env"
+    ".env": "dotenv",
+    ".env.*": "dotenv",
+    "*.css": "tailwindcss"
   },
   "files.watcherExclude": {
-    "**/*cache/**": true,
-    "**/*coverage/**": true,
-    "**/*webpack*/**": true,
     "**/.astro/**": true,
     "**/.git/**": true,
     "**/.next/**": true,
     "**/.solid/**": true,
     "**/.svelte-kit/**": true,
+    "**/*cache/**": true,
+    "**/*coverage/**": true,
+    "**/*webpack*/**": true,
     "**/bin/**": true,
     "**/build/**": true,
     "**/dist/**": true,
@@ -830,8 +830,8 @@
     "inputs": [],
     "servers": {
       "Apple MCP Utils": {
-        "command": "/opt/homebrew/bin/bunx",
-        "args": ["--no-cache", "apple-mcp@latest"]
+        "args": ["--no-cache", "apple-mcp@latest"],
+        "command": "/opt/homebrew/bin/bunx"
       },
       "Console Ninja": {
         "args": ["--no-cache", "node ~/.console-ninja/mcp/"],
@@ -895,6 +895,7 @@
   "scm.inputMinLineCount": 12,
   "security.promptForLocalFileProtocolHandling": false,
   "security.workspace.trust.untrustedFiles": "prompt",
+  "SQL-Formatter-VSCode.dialect": "postgresql",
   "svelte.enable-ts-plugin": true,
   "tailwindCSS.classFunctions": ["twMerge", "tw", "clsx", "cva", "cn"],
   "tailwindCSS.emmetCompletions": true,
@@ -921,20 +922,20 @@
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.env.osx": {},
-  "terminal.integrated.profiles.osx": {
-    "bash": {
-      "path": "/bin/bash",
-      "args": ["-l"],
-      "icon": "terminal-bash"
-    },
-    "zsh": {
-      "path": "/bin/zsh",
-      "args": ["-l"],
-      "icon": "terminal"
-    }
-  },
   "terminal.integrated.fontFamily": "'MesloLGM Nerd Font Mono', 'Helvetica Neue'",
   "terminal.integrated.fontSize": 16,
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "args": ["-l"],
+      "icon": "terminal-bash",
+      "path": "/bin/bash"
+    },
+    "zsh": {
+      "args": ["-l"],
+      "icon": "terminal",
+      "path": "/bin/zsh"
+    }
+  },
   "terminal.integrated.suggest.enabled": false,
   "typescript.implementationsCodeLens.enabled": true,
   "typescript.preferences.importModuleSpecifier": "non-relative",
@@ -943,9 +944,15 @@
   "typescript.referencesCodeLens.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.customTitleBarVisibility": "never",
-  "window.title": "${activeEditorShort}${separator}${activeRepositoryName} / ${activeRepositoryBranchName}",
+  "window.title": "${activeEditorMedium}${separator}${activeRepositoryName} / ${activeRepositoryBranchName}",
   "window.titleBarStyle": "native",
   "workbench.activityBar.orientation": "vertical",
+  "workbench.colorCustomizations": {
+    "tab.activeBackground": "#313244",
+    "tab.activeBorder": "#cba6f7",
+    "tab.border": "#cba6f7",
+    "tab.inactiveBackground": "#18182500"
+  },
   "workbench.colorTheme": "Catppuccin by tpsTech Mocha",
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": true,
