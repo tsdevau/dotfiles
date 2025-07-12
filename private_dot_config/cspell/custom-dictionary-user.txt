@@ -17,6 +17,7 @@ frontmatter
 Googlebot
 gsap
 iconify
+lucide
 macbook
 maskable
 Maudsland
