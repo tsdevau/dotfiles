@@ -1,0 +1,21 @@
+{
+  "globalShortcut": "",
+  "mcpServers": {
+    "apple-mcp": {
+      "command": "/opt/homebrew/bin/bunx",
+      "args": ["--no-cache", "apple-mcp@latest"]
+    },
+    "Context7": {
+      "command": "/opt/homebrew/bin/bunx",
+      "args": ["--no-cache", "@upstash/context7-mcp"]
+    },
+    "desktop-commander": {
+      "command": "/opt/homebrew/bin/bunx",
+      "args": ["--no-cache", "@wonderwhy-er/desktop-commander"]
+    },
+    "sequential-thinking": {
+      "command": "/opt/homebrew/bin/bunx",
+      "args": ["--no-cache", "@modelcontextprotocol/server-sequential-thinking"]
+    }
+  }
+}
