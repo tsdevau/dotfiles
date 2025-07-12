@@ -826,28 +826,6 @@
   "markdown.preview.fontFamily": "'Helvetica Neue', -apple-system, 'Segoe WPC', sans-serif",
   "markdown.preview.fontSize": 16,
   "markdown.preview.lineHeight": 1.2,
-  "mcp": {
-    "inputs": [],
-    "servers": {
-      "Apple MCP Utils": {
-        "args": ["--no-cache", "apple-mcp@latest"],
-        "command": "/opt/homebrew/bin/bunx"
-      },
-      "Console Ninja": {
-        "args": ["--no-cache", "node ~/.console-ninja/mcp/"],
-        "command": "/opt/homebrew/bin/bunx"
-      },
-      "Context7": {
-        "args": ["--no-cache", "@upstash/context7-mcp@latest"],
-        "command": "/opt/homebrew/bin/bunx",
-        "type": "stdio"
-      },
-      "Wallaby": {
-        "args": ["--no-cache", "node ~/.wallaby/mcp/"],
-        "command": "/opt/homebrew/bin/bunx"
-      }
-    }
-  },
   "multiCommand.commands": [
     {
       "command": "multiCommand.saveAndNormalMode",
@@ -963,5 +941,9 @@
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 16,
-  "workbench.tree.renderIndentGuides": "always"
+  "workbench.tree.renderIndentGuides": "always",
+  "window.newWindowProfile": "Default",
+  "[plaintext]": {
+    "editor.defaultFormatter": "lkrms.inifmt"
+  }
 }
