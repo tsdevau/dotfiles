@@ -1,13 +1,13 @@
 @jsr:registry=https://npm.jsr.io/
-cache=~/.local/cache/npm
+cache={{ .chezmoi.homeDir }}/.local/cache/npm
 global=true
 init-author-email={{- .user.npm.authorEmail }}
 init-author-name={{- .user.npm.authorName }}
 init-author-url={{- .user.npm.authorUrl }}
 init-license=Apache-2.0
-init-module=~/.config/npm/npm-init.js
+init-module={{ .chezmoi.homeDir }}/.config/npm/npm-init.js
 init-private=true
 init-type=module
 init-version=0.0.1
 registry=https://registry.npmjs.org/
-userconfig=~/.config/npm/npmrc
+userconfig={{ .chezmoi.homeDir }}/.config/npm/npmrc
