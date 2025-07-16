@@ -3,33 +3,27 @@
   "servers": {
     "Apple MCP Utils": {
       "args": ["--no-cache", "apple-mcp@latest"],
-      "command": "/opt/homebrew/bin/bunx",
-      "type": "stdio"
+      "command": "bunx"
     },
     "Console Ninja": {
       "args": ["--no-cache", "node ~/.console-ninja/mcp/"],
-      "command": "/opt/homebrew/bin/bunx",
-      "type": "stdio"
+      "command": "bunx"
     },
     "Context7": {
       "args": ["--no-cache", "@upstash/context7-mcp@latest"],
-      "command": "/opt/homebrew/bin/bunx",
-      "type": "stdio"
+      "command": "bunx"
     },
-    "Playwright": {
+    "playwright": {
       "args": ["--no-cache", "@playwright/mcp@latest"],
-      "command": "/opt/homebrew/bin/bunx",
-      "type": "stdio"
+      "command": "bunx"
     },
     "Sequential Thinking": {
       "args": ["--no-cache", "@modelcontextprotocol/server-sequential-thinking"],
-      "command": "/opt/homebrew/bin/bunx",
-      "type": "stdio"
+      "command": "bunx"
     },
     "Wallaby": {
       "args": ["--no-cache", "node ~/.wallaby/mcp/"],
-      "command": "/opt/homebrew/bin/bunx",
-      "type": "stdio"
+      "command": "bunx"
     }
   }
 }
