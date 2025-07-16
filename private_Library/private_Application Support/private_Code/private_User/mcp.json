@@ -1,15 +1,15 @@
 {
   "inputs": [],
   "servers": {
-    "Apple MCP Utils": {
+    "apple-mcp": {
       "args": ["--no-cache", "apple-mcp@latest"],
       "command": "bunx"
     },
-    "Console Ninja": {
+    "console-ninja": {
       "args": ["--no-cache", "node ~/.console-ninja/mcp/"],
       "command": "bunx"
     },
-    "Context7": {
+    "context7": {
       "args": ["--no-cache", "@upstash/context7-mcp@latest"],
       "command": "bunx"
     },
@@ -17,11 +17,11 @@
       "args": ["--no-cache", "@playwright/mcp@latest"],
       "command": "bunx"
     },
-    "Sequential Thinking": {
+    "sequential-thinking": {
       "args": ["--no-cache", "@modelcontextprotocol/server-sequential-thinking"],
       "command": "bunx"
     },
-    "Wallaby": {
+    "wallaby": {
       "args": ["--no-cache", "node ~/.wallaby/mcp/"],
       "command": "bunx"
     }
