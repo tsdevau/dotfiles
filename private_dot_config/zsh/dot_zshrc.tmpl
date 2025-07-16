@@ -31,6 +31,9 @@ if command -v brew >/dev/null 2>&1; then
     source "${HOME}/.orbstack/shell/init.zsh" 2>/dev/null || :
   fi
 fi
+if command -v claude >/dev/null 2>&1; then
+  FPATH+="${XDG_DATA_HOME}/claude/completions:$FPATH"
+fi
 
 # Initialize Completions
 if [[ ! -d "${XDG_CACHE_HOME}/zsh" ]]; then
