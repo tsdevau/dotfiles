@@ -15,6 +15,15 @@ if command -v op >/dev/null 2>&1; then
   op signin
 fi
 
+# Install Anthropic Claude-Code CLI
+if ! command -v claude >/dev/null 2>&1; then
+  echo "Installing Anthropic Claude-Code CLI..."
+  curl -fsSL https://claude.ai/install.sh | bash
+else
+  echo "Updating Anthropic Claude-Code CLI..."
+  claude install
+fi
+
 # Install global pnpm packages using template data from .chezmoi.toml
 # pnpm packages hash: {{ include ".chezmoidata/pnpm.jsonc" | sha256sum }}
 if command -v pnpm >/dev/null 2>&1; then
