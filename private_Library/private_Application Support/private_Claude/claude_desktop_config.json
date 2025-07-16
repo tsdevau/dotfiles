@@ -16,6 +16,10 @@
     "sequential-thinking": {
       "command": "/opt/homebrew/bin/bunx",
       "args": ["--no-cache", "@modelcontextprotocol/server-sequential-thinking"]
+    },
+    "playwright": {
+      "args": ["--no-cache", "@playwright/mcp@latest"],
+      "command": "/opt/homebrew/bin/bunx"
     }
   }
 }
