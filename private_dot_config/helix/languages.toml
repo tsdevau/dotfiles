@@ -294,7 +294,14 @@ file-types = [
 language-servers = ["vscode-json-language-server", "uwu_colors", "typos"]
 indent = { tab-width = 2, unit = " " }
 auto-format = true
-formatter = { command = "prettier", args = ["--parser", "json"] }
+# formatter = { command = "prettier", args = ["--parser", "json"] }
+formatter = { command = "dprint", args = [
+  "fmt",
+  "--config",
+  "~/.config/dprint/dprint.json",
+  "--stdin",
+  "json",
+] }
 
 [[grammar]]
 name = "json"
@@ -310,7 +317,14 @@ language-servers = ["vscode-json-language-server", "uwu_colors", "typos"]
 comment-token = "//"
 indent = { tab-width = 2, unit = " " }
 auto-format = true
-formatter = { command = "prettier", args = ["--parser", "json"] }
+# formatter = { command = "prettier", args = ["--parser", "json"] }
+formatter = { command = "dprint", args = [
+  "fmt",
+  "--config",
+  "~/.config/dprint/dprint.json",
+  "--stdin",
+  "json",
+] }
 
 [[grammar]]
 name = "json5"
@@ -333,7 +347,14 @@ grammar = "json"
 language-servers = ["vscode-json-language-server", "uwu_colors", "typos"]
 indent = { tab-width = 2, unit = " " }
 auto-format = true
-formatter = { command = "prettier", args = ["--parser", "jsonc"] }
+# formatter = { command = "prettier", args = ["--parser", "jsonc"] }
+formatter = { command = "dprint", args = [
+  "fmt",
+  "--config",
+  "~/.config/dprint/dprint.json",
+  "--stdin",
+  "json",
+] }
 
 ### KDL ###
 [[language]]
