@@ -1,33 +1,53 @@
 {
-  "typescript": {
-    "semiColons": "asi",
-    "quoteProps": "asNeeded",
-    "arrowFunction.useParentheses": "force",
-    "jsx.multiLineParens": "always"
-  },
+  "dockerfile": {},
+  "excludes": [
+    "**/node_modules",
+    "**/*-lock.json"
+  ],
+  "graphql": {},
   "json": {
     "lineWidth": 120,
+    "preferSingleLine": false,
     "trailingCommas": "never"
   },
+  "malva": {},
   "markdown": {
-    "lineWidth": 120,
     "emphasisKind": "underscores",
+    "lineWidth": 120,
     "strongKind": "asterisks"
   },
-  "toml": {},
-  "dockerfile": {},
-  "ruff": {},
-  "malva": {},
-  "markup": {},
-  "yaml": {
-    "printWidth": 120
+  "markup_fmt": {
+    "astro.scriptIndent": true,
+    "astro.styleIndent": true,
+    "astroAttrShorthand": true,
+    "closingBracketSameLine": false,
+    "closingTagLineBreakForEmpty": "always",
+    "component.selfClosing": true,
+    "formatComments": true,
+    "html.normal.selfClosing": true,
+    "html.scriptIndent": true,
+    "html.styleIndent": true,
+    "html.void.selfClosing": true,
+    "indentWidth": 2,
+    "mathml.selfClosing": true,
+    "maxAttrsPerLine": 1,
+    "printWidth": 120,
+    "quotes": "double",
+    "scriptIndent": true,
+    "singleAttrsSameLine": true,
+    "strictSvelteAttr": true,
+    "styleIndent": true,
+    "svelte.scriptIndent": true,
+    "svelte.styleIndent": true,
+    "svelteAttrShorthand": true,
+    "svg.selfClosing": true,
+    "useTabs": false,
+    "vBindStyle": "long",
+    "vOnStyle": "long",
+    "vSlotStyle": "long",
+    "vue.scriptIndent": true,
+    "vue.styleIndent": true
   },
-  "graphql": {},
-  "stylua": {
-    "lineWidth": 120,
-    "verify": true
-  },
-  "excludes": ["**/node_modules", "**/*-lock.json"],
   "plugins": [
     "https://plugins.dprint.dev/typescript-0.95.4.wasm",
     "https://plugins.dprint.dev/json-0.20.0.wasm",
@@ -40,5 +60,32 @@
     "https://plugins.dprint.dev/g-plane/pretty_yaml-v0.5.1.wasm",
     "https://plugins.dprint.dev/g-plane/pretty_graphql-v0.2.1.wasm",
     "https://plugins.dprint.dev/RubixDev/stylua-v0.2.1.wasm"
-  ]
+  ],
+  "ruff": {},
+  "stylua": {
+    "lineWidth": 120,
+    "verify": true
+  },
+  "toml": {},
+  "typescript": {
+    "arrowFunction.useParentheses": "force",
+    "commentLine.forceSpaceAfterSlashes": true,
+    "indentWidth": 2,
+    "jsx.bracketPosition": "nextLine",
+    "jsx.multiLineParens": "prefer",
+    "lineWidth": 120,
+    "nextControlFlowPosition": "sameLine",
+    "operatorPosition": "nextLine",
+    "preferSingleLine": false,
+    "quoteProps": "asNeeded",
+    "quoteStyle": "alwaysDouble",
+    "semiColons": "asi",
+    "singleBodyPosition": "nextLine",
+    "trailingCommas": "onlyMultiLine",
+    "useBraces": "always",
+    "useTabs": false
+  },
+  "yaml": {
+    "printWidth": 120
+  }
 }
