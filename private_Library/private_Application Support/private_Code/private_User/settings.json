@@ -12,7 +12,7 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dprint.dprint"
   },
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
@@ -21,13 +21,13 @@
     "editor.defaultFormatter": "lkrms.inifmt"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dprint.dprint"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dprint.dprint"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dprint.dprint"
   },
   "[kdl]": {
     "editor.defaultFormatter": "kdl-org.kdl"
@@ -72,13 +72,13 @@
   },
   "[svelte]": {
     // "editor.defaultFormatter": "svelte.svelte-vscode"
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dprint.dprint"
   },
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dprint.dprint"
   },
   "[xml]": {
     "editor.defaultFormatter": "PrateekMahendrakar.prettyxml"
@@ -645,7 +645,7 @@
     "source.organizeImports": "explicit"
   },
   "editor.cursorSmoothCaretAnimation": "on",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "dprint.dprint",
   "editor.fontFamily": "'MesloLGM Nerd Font Mono', 'RobotoMono Nerd Font', 'FiraMono Nerd Font'",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
@@ -859,7 +859,7 @@
   //   "christian-kohler.npm-intellisense",
   //   "christian-kohler.path-intellisense",
   //   "dbaeumer.vscode-eslint",
-  //   "esbenp.prettier-vscode",
+  //   "dprint.dprint",
   //   "meganrogge.template-string-converter",
   //   "mskelton.npm-outdated",
   //   "naumovs.color-highlight",
