@@ -19,8 +19,8 @@ export ZDOTDIR="$HOME/.config/zsh"
 export HOMEBREW_PREFIX="/opt/homebrew"
 
 # Set PATH
-if [[ -d "$HOMEBREW_PREFIX/bin" ]]; then
-  eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
+if [[ -d "$HOMEBREW_PREFIX/bin" ]]           ; then
+eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
 fi
 
 export PATH="${HOMEBREW_PREFIX}/opt/python@3.13/libexec/bin:${HOMEBREW_PREFIX}/opt/dotnet@8/bin:${HOME}/.local/bin:${XDG_DATA_HOME}/pnpm:${XDG_DATA_HOME}/bun/bin:${XDG_DATA_HOME}/cargo/bin:${XDG_DATA_HOME}/rustup:${XDG_DATA_HOME}/go/bin:${XDG_DATA_HOME}/dotnet/tools:${PATH}"
@@ -46,8 +46,8 @@ export TERMINFO="${XDG_DATA_HOME}/terminfo"
 export BUN_INSTALL="${XDG_DATA_HOME}/bun"
 export BUN_BIN="${BUN_INSTALL}/bin"
 case ":$PATH:" in
-*":$BUN_BIN:"*) ;;
-*) export PATH="$BUN_BIN:$PATH" ;;
+*":$BUN_BIN:"*)                           ;;
+*) export PATH="$BUN_BIN:$PATH"           ;;
 esac
 
 # Code::Stats Configuration
@@ -88,20 +88,20 @@ export GOMODCACHE="${XDG_CACHE_HOME}/go/mod"
 export GOPATH="${XDG_DATA_HOME}/go"
 export GOBIN="${GOPATH}/bin"
 case ":$PATH:" in
-*":$GOBIN:"*) ;;
-*) export PATH="$GOBIN:$PATH" ;;
+*":$GOBIN:"*)                                ;;
+*) export PATH="$GOBIN:$PATH"                ;;
 esac
 
 # GPG environment
 export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
 # Avoid issues with "gpg" as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656
-if [[ -n "$TTY" ]]; then
-  # zsh
-  export GPG_TTY=$TTY
+if [[ -n "$TTY" ]]                          ; then
+# zsh
+export GPG_TTY=$TTY
 else
-  # bash
-  export GPG_TTY=$(tty)
+# bash
+export GPG_TTY=$(tty)
 fi
 
 # NPM environment
@@ -124,9 +124,11 @@ export OP_BIOMETRIC_UNLOCK_ENABLE="true"
 export PNPM_CONFIG_HOME="${XDG_CONFIG_HOME}/pnpm"
 export PNPM_HOME="${XDG_DATA_HOME}/pnpm"
 case ":$PATH:" in
-*":$PNPM_HOME:"*) ;;
-*) export PATH="$PNPM_HOME:$PATH" ;;
+*":$PNPM_HOME:"*)                                 ;;
+*) export PATH="$PNPM_HOME:$PATH"                 ;;
 esac
+# TEMPORARY ATTEMPT TO FIX THE V8 Array Length Overflow Errors with v10.13.1
+export PATH="/opt/homebrew/opt/pnpm@9/bin:$PATH"
 
 # Python environment
 export PYTHONUSERBASE="${XDG_DATA_HOME}/python"
@@ -140,8 +142,8 @@ export RUFF_CACHE_DIR="${XDG_CACHE_HOME}/ruff"
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 export RUSTUP_HOME="${XDG_DATA_HOME}/rustup"
 case ":$PATH:" in
-*":$CARGO_HOME/bin:"*) ;;
-*) export PATH="$CARGO_HOME/bin:$PATH" ;;
+*":$CARGO_HOME/bin:"*)                       ;;
+*) export PATH="$CARGO_HOME/bin:$PATH"       ;;
 esac
 
 # SQLite environment
