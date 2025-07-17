@@ -127,8 +127,6 @@ case ":$PATH:" in
 *":$PNPM_HOME:"*)                                 ;;
 *) export PATH="$PNPM_HOME:$PATH"                 ;;
 esac
-# TEMPORARY ATTEMPT TO FIX THE V8 Array Length Overflow Errors with v10.13.1
-export PATH="/opt/homebrew/opt/pnpm@9/bin:$PATH"
 
 # Python environment
 export PYTHONUSERBASE="${XDG_DATA_HOME}/python"
