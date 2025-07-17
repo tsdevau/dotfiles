@@ -1,0 +1,8 @@
+{
+  "tools": {
+    "autoApprove": ["context7", "sequential-thinking", "playwright"]
+  },
+  "permissions": {
+    "defaultMode": "acceptEdits"
+  }
+}

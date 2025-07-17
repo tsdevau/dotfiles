@@ -1,5 +1,0 @@
-tools:
-  auto_approve:
-    - context7
-    - sequential-thinking
-    - playwright
