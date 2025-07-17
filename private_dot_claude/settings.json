@@ -1,8 +1,8 @@
 {
-  "tools": {
-    "autoApprove": ["context7", "sequential-thinking", "playwright"]
-  },
+  "cleanupPeriodDays": 365,
+  "enabledMcpjsonServers": ["context7", "sequential-thinking", "playwright"],
   "permissions": {
-    "defaultMode": "acceptEdits"
+    "defaultMode": "acceptEdits",
+    "deny": ["Bash(npm :*)", "Bash(pnpm :*)", "Bash(yarn :*)", "Bash(npx :*)"]
   }
 }
