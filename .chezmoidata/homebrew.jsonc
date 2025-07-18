@@ -78,6 +78,7 @@
       { "name": "typescript" },
       { "name": "typos-cli" },
       { "name": "typos-lsp" },
+      { "name": "uv" }, // Fucking stupid python package for SuperClaude
       { "name": "vivid" },
       { "name": "vscode-langservers-extracted" },
       { "name": "wget" },
