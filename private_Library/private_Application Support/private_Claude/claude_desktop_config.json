@@ -5,6 +5,10 @@
       "command": "bunx",
       "args": ["--no-cache", "apple-mcp@latest"]
     },
+    "cloudflare": {
+      "command": "bunx",
+      "args": ["--no-cache", "mcp-remote", "https://bindings.mcp.cloudflare.com/sse"]
+    },
     "context7": {
       "command": "bunx",
       "args": ["--no-cache", "@upstash/context7-mcp"]
@@ -13,13 +17,13 @@
       "command": "bunx",
       "args": ["--no-cache", "@wonderwhy-er/desktop-commander"]
     },
-    "sequential-thinking": {
-      "command": "bunx",
-      "args": ["--no-cache", "@modelcontextprotocol/server-sequential-thinking"]
-    },
     "playwright": {
       "args": ["--no-cache", "@playwright/mcp@latest"],
       "command": "bunx"
+    },
+    "sequential-thinking": {
+      "command": "bunx",
+      "args": ["--no-cache", "@modelcontextprotocol/server-sequential-thinking"]
     }
   }
 }
