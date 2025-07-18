@@ -34,11 +34,11 @@ brew bundle --file "$BREWFILE"
 # Clean up based on the Brewfile bundle
 brew bundle cleanup --file "$BREWFILE" --force
 
+# Upgrade all dependency packages
+brew upgrade
+
+
 # Clean up Homebrew
 brew cleanup
-
-# Restart any installed services that are required
-# Manually adding services here until I can find a better way
-brew services restart borders
 
 echo -e "\033[32mHomebrew packages installation and cleanup completed successfully.\033[0m"

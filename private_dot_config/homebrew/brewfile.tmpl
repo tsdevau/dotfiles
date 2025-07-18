@@ -6,11 +6,11 @@ tap {{ . | quote }}
 {{- end }}
 
 {{- range .homebrew.formulae }}
-brew {{ .name | quote }}{{ if hasKey . "head" }}, args: ["HEAD"]{{ end }}
+brew {{ .name | quote }}{{if hasKey . "os" }} if OS.{{- .os -}}?{{ end }}{{ if hasKey . "restart_service" }}, restart_service: :changed{{ end }}{{ if hasKey . "head" }}, args: ["HEAD"]{{ end }}
 {{- end }}
 
 {{- range .homebrew.casks }}
-cask {{ .name | quote }}{{ if hasKey . "head" }}, args: ["HEAD"]{{ end }}
+cask {{ .name | quote }}{{if hasKey . "os" }} if OS.{{- .os -}}?{{ end }}{{ if hasKey . "head" }}, args: ["HEAD"]{{ end }}
 {{- end }}
 
 {{- range .mas.apps }}
