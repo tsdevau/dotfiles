@@ -12,7 +12,7 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[html]": {
-    "editor.defaultFormatter": "dprint.dprint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
@@ -21,13 +21,13 @@
     "editor.defaultFormatter": "lkrms.inifmt"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "dprint.dprint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "dprint.dprint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "dprint.dprint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[kdl]": {
     "editor.defaultFormatter": "kdl-org.kdl"
@@ -72,20 +72,20 @@
   },
   "[svelte]": {
     // "editor.defaultFormatter": "svelte.svelte-vscode"
-    "editor.defaultFormatter": "dprint.dprint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "dprint.dprint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[xml]": {
     "editor.defaultFormatter": "PrateekMahendrakar.prettyxml"
   },
   "1password.items.cacheValues": false,
   "accessibility.verbosity.inlineChat": false,
-  "astro.content-intellisense": true,
+    "astro.content-intellisense": true,
   "better-comments.tags": [
     {
       "backgroundColor": "transparent",
@@ -645,7 +645,7 @@
     "source.organizeImports": "explicit"
   },
   "editor.cursorSmoothCaretAnimation": "on",
-  "editor.defaultFormatter": "dprint.dprint",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "'MesloLGM Nerd Font Mono', 'RobotoMono Nerd Font', 'FiraMono Nerd Font'",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
@@ -859,7 +859,7 @@
   //   "christian-kohler.npm-intellisense",
   //   "christian-kohler.path-intellisense",
   //   "dbaeumer.vscode-eslint",
-  //   "dprint.dprint",
+  //   "esbenp.prettier-vscode",
   //   "meganrogge.template-string-converter",
   //   "mskelton.npm-outdated",
   //   "naumovs.color-highlight",
