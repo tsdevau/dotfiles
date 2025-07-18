@@ -6,7 +6,7 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[dotenv]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+    "editor.defaultFormatter": "lkrms.inifmt"
   },
   "[env]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
@@ -85,7 +85,7 @@
   },
   "1password.items.cacheValues": false,
   "accessibility.verbosity.inlineChat": false,
-    "astro.content-intellisense": true,
+  "astro.content-intellisense": true,
   "better-comments.tags": [
     {
       "backgroundColor": "transparent",
