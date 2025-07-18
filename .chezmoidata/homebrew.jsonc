@@ -10,14 +10,6 @@
 
     // @type { name: <string>, restart_service?: <boolean>, os?: <mac|linux> }[]
     "formulae": [
-      { "name": "1password-cli" },
-      { "name": "affine" },
-      { "name": "affine-cli" },
-      { "name": "alacritty" },
-      { "name": "autojump" },
-      { "name": "autojump-zsh-plugin" },
-      { "name": "awscli" },
-      { "name": "aws-sam-cli" },
       { "name": "bash-language-server" },
       { "name": "bat" },
       { "name": "borders", "restart_service": true },
