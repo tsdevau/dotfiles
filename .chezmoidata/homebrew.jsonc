@@ -1,5 +1,6 @@
 {
   "homebrew": {
+    // @type <string>[]
     "taps": [
       // Keep formatted as single line
       "FelixKratz/formulae",
@@ -7,14 +8,22 @@
       "supabase/tap"
     ],
 
+    // @type { name: <string>, restart_service?: <boolean>, os?: <mac|linux> }[]
     "formulae": [
+      { "name": "1password-cli" },
+      { "name": "affine" },
+      { "name": "affine-cli" },
+      { "name": "alacritty" },
+      { "name": "autojump" },
+      { "name": "autojump-zsh-plugin" },
+      { "name": "awscli" },
+      { "name": "aws-sam-cli" },
       { "name": "bash-language-server" },
       { "name": "bat" },
       { "name": "borders", "restart_service": true },
       { "name": "bun" },
       { "name": "cargo-all-features" },
       { "name": "chezmoi" },
-      { "name": "cowsay", "os": "linux" },
       { "name": "curl" },
       { "name": "dotnet@8" },
       { "name": "dprint" },
@@ -87,6 +96,7 @@
       { "name": "zoxide" }
     ],
 
+    // @type { name: <string>, restart_service?: <boolean>, os?: <mac|linux> }[]
     "casks": [
       { "name": "1password" },
       { "name": "1password-cli" },
