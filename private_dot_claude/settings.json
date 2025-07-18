@@ -1,8 +1,22 @@
 {
   "cleanupPeriodDays": 365,
-  "enabledMcpjsonServers": ["context7", "sequential-thinking", "playwright"],
   "permissions": {
-    "defaultMode": "acceptEdits",
-    "deny": ["Bash(npm :*)", "Bash(pnpm :*)", "Bash(yarn :*)", "Bash(npx :*)"]
-  }
+    "allow": [
+      "mcp__context7__get-library-docs",
+      "mcp__context7__resolve-library-id",
+      "Bash(grep :*)"
+    ],
+    "deny": [
+      "Bash(npm :*)",
+      "Bash(pnpm :*)",
+      "Bash(yarn :*)",
+      "Bash(npx :*)"
+    ],
+    "defaultMode": "acceptEdits"
+  },
+  "enabledMcpjsonServers": [
+    "context7",
+    "sequential-thinking",
+    "playwright"
+  ]
 }
