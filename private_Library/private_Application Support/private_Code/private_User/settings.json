@@ -20,15 +20,6 @@
   "[ini]": {
     "editor.defaultFormatter": "lkrms.inifmt"
   },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "[kdl]": {
     "editor.defaultFormatter": "kdl-org.kdl"
   },
@@ -76,9 +67,6 @@
   },
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[xml]": {
     "editor.defaultFormatter": "PrateekMahendrakar.prettyxml"
@@ -147,6 +135,7 @@
   "chat.agent.enabled": true,
   "chat.editor.fontSize": 14,
   "chat.editor.wordWrap": "on",
+  "claudeCodeChat.thinking.intensity": "think",
   "code-runner.enableAppInsights": false,
   "code-runner.executorMap": {
     "ahk": "autohotkey",
@@ -838,19 +827,18 @@
       "sequence": ["editor.action.formatDocument", "workbench.action.files.save", "dance.modes.set.normal"]
     }
   ],
+  "npm.scriptRunner": "bun",
   "npm-intellisense.importLinebreak": "\\n",
   "npm-intellisense.importQuotes": "\"",
   "npm-intellisense.packageSubfoldersIntellisense": true,
   "npm-intellisense.scanDevDependencies": true,
   "npm-outdated.majorUpdateProtection": false,
-  "npm-outdated.parallelProcessesLimit": 50,
-  "npm.packageManager": "pnpm",
+  "npm.packageManager": "bun",
   "prettier.bracketSameLine": true,
   "prettier.printWidth": 120,
   "prettier.quoteProps": "consistent",
   "prettier.semi": false,
   "prettier.singleAttributePerLine": true,
-  "prettier.trailingComma": "all",
   "quokka.automaticRestart": true,
   "quokka.fontSize": 16,
   "redhat.telemetry.enabled": false,
@@ -925,11 +913,11 @@
   "typescript.preferGoToSourceDefinition": true,
   "typescript.referencesCodeLens.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.customTitleBarVisibility": "never",
   "window.newWindowProfile": "Default",
-  "window.title": "${activeEditorMedium}${separator}${activeRepositoryName} / ${activeRepositoryBranchName}",
   "window.titleBarStyle": "native",
-  "workbench.activityBar.location": "bottom",
-  "workbench.activityBar.orientation": "bottom",
+  "workbench.activityBar.location": "top",
+  "workbench.activityBar.orientation": "top",
   "workbench.colorCustomizations": {
     "tab.activeBackground": "#313244",
     "tab.activeBorder": "#cba6f7",
@@ -947,6 +935,5 @@
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 16,
-  "workbench.tree.renderIndentGuides": "always",
-  "claudeCodeChat.thinking.intensity": "ultrathink"
+  "workbench.tree.renderIndentGuides": "always"
 }
