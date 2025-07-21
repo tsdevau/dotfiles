@@ -14,9 +14,11 @@
     ],
     "defaultMode": "acceptEdits"
   },
+  "model": "sonnet",
   "enabledMcpjsonServers": [
+    "cloudflare",
     "context7",
-    "sequential-thinking",
-    "playwright"
+    "playwright",
+    "sequential-thinking"
   ]
 }
