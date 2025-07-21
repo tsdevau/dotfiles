@@ -15,7 +15,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[ignore]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+    "editor.defaultFormatter": "lkrms.inifmt"
   },
   "[ini]": {
     "editor.defaultFormatter": "lkrms.inifmt"
@@ -682,7 +682,7 @@
     }
   ],
   "editor.semanticHighlighting.enabled": true,
-  "editor.showFoldingControls": "never",
+  "editor.showFoldingControls": "always",
   "editor.suggest.localityBonus": true,
   "editor.suggest.shareSuggestSelections": true,
   "editor.suggest.showWords": false,
@@ -925,11 +925,11 @@
   "typescript.preferGoToSourceDefinition": true,
   "typescript.referencesCodeLens.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "window.customTitleBarVisibility": "never",
   "window.newWindowProfile": "Default",
   "window.title": "${activeEditorMedium}${separator}${activeRepositoryName} / ${activeRepositoryBranchName}",
   "window.titleBarStyle": "native",
-  "workbench.activityBar.orientation": "vertical",
+  "workbench.activityBar.location": "bottom",
+  "workbench.activityBar.orientation": "bottom",
   "workbench.colorCustomizations": {
     "tab.activeBackground": "#313244",
     "tab.activeBorder": "#cba6f7",
@@ -937,14 +937,16 @@
     "tab.inactiveBackground": "#18182500"
   },
   "workbench.colorTheme": "Catppuccin by tpsTech Mocha",
+  "workbench.editor.closeEmptyGroups": false,
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": true,
   "workbench.editor.highlightModifiedTabs": true,
-  "workbench.editor.openPositioning": "last",
+  "workbench.editor.openPositioning": "right",
   "workbench.editor.tabActionLocation": "left",
   "workbench.editor.tabSizing": "fixed",
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 16,
-  "workbench.tree.renderIndentGuides": "always"
+  "workbench.tree.renderIndentGuides": "always",
+  "claudeCodeChat.thinking.intensity": "ultrathink"
 }

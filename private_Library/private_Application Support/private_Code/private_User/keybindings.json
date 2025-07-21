@@ -243,10 +243,6 @@
     "when": "editorTextFocus && selectionAnchorSet"
   },
   {
-    "key": "cmd+k cmd+k",
-    "command": "claude-dev.SidebarProvider.focus"
-  },
-  {
     "key": "cmd+k cmd+o",
     "command": "editor.action.sortLinesAscending"
   },
@@ -475,13 +471,21 @@
     "key": "alt+cmd+enter",
     "command": "git.sync",
     "when": "workbench.scm.active"
-},
-{
+  },
+  {
     "key": "shift+enter",
     "command": "workbench.action.terminal.sendSequence",
     "args": {
-        "text": "\\\r\n"
+      "text": "\\\r\n"
     },
     "when": "terminalFocus"
-}
+  },
+  {
+    "key": "shift+cmd+f",
+    "command": "workbench.action.replaceInFiles"
+  },
+  {
+    "key": "shift+cmd+f",
+    "command": "-workbench.action.findInFiles"
+  }
 ]

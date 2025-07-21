@@ -2,7 +2,7 @@
   "inputs": [],
   "servers": {
     "apple-mcp": {
-      "args": ["--no-cache", "apple-mcp@latest"],
+      "args": ["--no-cache", "@dhravya/apple-mcp"],
       "command": "bunx"
     },
     "console-ninja": {
