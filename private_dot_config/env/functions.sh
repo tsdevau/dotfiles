@@ -8,10 +8,10 @@ if [[ ! $(uname -s) = "Darwin" ]]; then
   fi
 fi
 
-# Recursively delete ".DS_Store" files from the current directory.
-rmds() {
+# Recursively delete ".DS_Store" and ".dbxignore" files from the current directory.
+rmdsdb() {
   if [[ $(uname -s) = "Darwin" ]]; then
-    find . -name ".DS_Store" -type f -delete
+    find . \( -name ".DS_Store" -o -name ".dbxignore" \) -type f -delete
   else
     echo "This function is only applicable on macOS."
   fi
