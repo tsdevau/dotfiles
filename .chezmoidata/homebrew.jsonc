@@ -51,7 +51,7 @@
       { "name": "ollama" },
       { "name": "opencv" },
       { "name": "openssl" },
-      { "name": "pnpm" },
+      // { "name": "pnpm" }, // Removed
       { "name": "poppler" },
       { "name": "prettier" },
       { "name": "prettierd" },

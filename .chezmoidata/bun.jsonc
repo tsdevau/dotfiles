@@ -1,5 +1,5 @@
 {
-  "pnpm": {
+  "bun": {
     "packages": [
       // Keep formatted as single line
       "@cspell/dict-en-au",

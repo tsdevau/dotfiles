@@ -120,13 +120,13 @@ export OLLAMA_MODELS="${XDG_DATA_HOME}/ollama/models"
 # 1Password CLI environment
 export OP_BIOMETRIC_UNLOCK_ENABLE="true"
 
-# PNPM environment
-export PNPM_CONFIG_HOME="${XDG_CONFIG_HOME}/pnpm"
-export PNPM_HOME="${XDG_DATA_HOME}/pnpm"
-case ":$PATH:" in
-*":$PNPM_HOME:"*)                                 ;;
-*) export PATH="$PNPM_HOME:$PATH"                 ;;
-esac
+# PNPM environment - REMOVED - Switched to Bun
+# export PNPM_CONFIG_HOME="${XDG_CONFIG_HOME}/pnpm"
+# export PNPM_HOME="${XDG_DATA_HOME}/pnpm"
+# case ":$PATH:" in
+# *":$PNPM_HOME:"*)                                 ;;
+# *) export PATH="$PNPM_HOME:$PATH"                 ;;
+# esac
 
 # Python environment
 export PYTHONUSERBASE="${XDG_DATA_HOME}/python"
