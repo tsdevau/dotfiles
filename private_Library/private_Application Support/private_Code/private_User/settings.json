@@ -913,6 +913,7 @@
   "typescript.preferGoToSourceDefinition": true,
   "typescript.referencesCodeLens.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "versionlens.npm.caching.duration": 15,
   "window.customTitleBarVisibility": "never",
   "window.newWindowProfile": "Default",
   "window.titleBarStyle": "native",
@@ -935,5 +936,7 @@
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 16,
-  "workbench.tree.renderIndentGuides": "always"
+  "workbench.tree.renderIndentGuides": "always",
+  "sqlite3-editor.ui.alignNumberRight": true,
+  "sqlite3-editor.ui.tableHeaderMaxLines": 1
 }
