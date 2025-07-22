@@ -35,18 +35,18 @@ alias ghcs="gh copilot suggest "
 alias grep="grep --color=always"
 alias ip="ip -c"
 alias less="less -FX"
-alias npm="bun"
-alias npx="bunx --no-cache"
-alias pnpm="bun"
+alias npm="bun" # Force use of Bun as package manager
+alias npx="bunx --no-cache" # Force use of Bun as package manager
+alias pnpm="bun" # Force use of Bun as package manager
 alias "pnpm dlx"="bunx --no-cache"
 alias wget="wget --hsts-file=\"${XDG_CACHE_HOME}/wget/wget-hsts\""
 # alias y="yadm"
 alias yarn="yarn --use-yarnrc \"${XDG_CONFIG_HOME}/yarn/config\""
 
 # Convenience aliases for common mis-typed commands and shortcuts
-alias b="bun run"
-alias bpm="bun pm"
-alias byn="bun"
+alias br="bun run" # Bun run command
+alias bpm="bun pm" # Bun package manager
+alias byn="bun" # I always mistype 'bun' as 'byn'
 alias cls="clear"
 alias code.="{{ .editors.gui }} ."
 alias neofetch="fastfetch"
