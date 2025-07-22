@@ -93,7 +93,7 @@ To add a new package:
 This configuration leverages 1Password for secure management of secrets. The Git configuration, for example, retrieves the GPG signing key directly from 1Password:
 
 ```toml
-signingkey = {{ onepasswordRead "op://Personal/l4c4htdjojwcfanbjr2hqxeufm/Section_yfmxturzjnv4gl3aqas3jjhamy/signingkey" }}
+signingkey = \{\{ `onepasswordRead "op://Personal/l4c4htdjojwcfanbjr2hqxeufm/Section_yfmxturzjnv4gl3aqas3jjhamy/signingkey"` \}\}
 ```
 
 This ensures that sensitive information is never stored directly in the repository.
