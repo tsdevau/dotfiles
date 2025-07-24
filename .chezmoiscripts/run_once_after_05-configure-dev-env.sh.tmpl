@@ -49,6 +49,15 @@ if command -v rustc >/dev/null 2>&1; then
     rustup component add {{ . }}
   fi
   {{ end }}
+
+  # Install global cargo packages
+  {{ range .rust.cargo }}
+  if command -v cargo >/dev/null 2>&1; then
+    cargo install {{ . }}
+  fi
+  {{ end }}
+
 fi
+
 
 echo "Development environment setup completed"

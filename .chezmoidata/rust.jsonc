@@ -12,6 +12,7 @@
         "name": "stable",
         "profile": "default"
       }
-    ]
+    ],
+    "cargo": ["cc-usage-rs"]
   }
 }
