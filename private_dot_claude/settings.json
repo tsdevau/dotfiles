@@ -12,9 +12,8 @@
       "Bash(yarn :*)",
       "Bash(npx :*)"
     ],
-    "defaultMode": "acceptEdits"
+    "defaultMode": "plan"
   },
-  "model": "sonnet",
   "enabledMcpjsonServers": [
     "cloudflare",
     "context7",
