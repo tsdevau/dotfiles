@@ -428,11 +428,6 @@
     "when": "editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'normal')"
   },
   {
-    "key": "cmd+s",
-    "command": "multiCommand.saveAndNormalMode",
-    "when": "editorTextFocus && dance.mode != 'helix/normal'"
-  },
-  {
     "key": "shift+=",
     "command": "editor.emmet.action.incrementNumberByOne",
     "when": "editorTextFocus && dance.mode == 'helix/normal'"
