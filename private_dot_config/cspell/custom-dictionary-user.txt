@@ -8,6 +8,7 @@ Bankings
 bindable
 Bingbot
 Boonah
+bunx
 Cashup
 Cashups
 EFTPOS
@@ -17,6 +18,7 @@ frontmatter
 Googlebot
 gsap
 iconify
+Lookups
 lucide
 macbook
 maskable
