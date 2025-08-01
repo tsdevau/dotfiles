@@ -3,32 +3,37 @@
   "mcpServers": {
     "apple-mcp": {
       "command": "bunx",
-      "args": ["--no-cache", "@dhravya/apple-mcp@latest"],
+      "args": ["@dhravya/apple-mcp"],
       "type": "stdio"
     },
     "cloudflare": {
       "command": "bunx",
-      "args": ["--no-cache", "mcp-remote", "https://bindings.mcp.cloudflare.com/sse"],
+      "args": ["mcp-remote", "https://bindings.mcp.cloudflare.com/sse"],
       "type": "sse"
     },
     "context7": {
       "command": "bunx",
-      "args": ["--no-cache", "@upstash/context7-mcp@latest"],
+      "args": ["@upstash/context7-mcp"],
       "type": "stdio"
     },
     "desktop-commander": {
       "command": "bunx",
-      "args": ["--no-cache", "@wonderwhy-er/desktop-commander@latest"],
+      "args": ["@wonderwhy-er/desktop-commander"],
+      "type": "stdio"
+    },
+    "duckduckgo": {
+      "command": "bunx",
+      "args": ["duckduckgo-mcp-server"],
       "type": "stdio"
     },
     "playwright": {
-      "args": ["--no-cache", "@playwright/mcp@latest"],
       "command": "bunx",
+      "args": ["@playwright/mcp"],
       "type": "stdio"
     },
     "sequential-thinking": {
       "command": "bunx",
-      "args": ["--no-cache", "@modelcontextprotocol/server-sequential-thinking"],
+      "args": ["@modelcontextprotocol/server-sequential-thinking"],
       "type": "stdio"
     }
   }
