@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "cleanupPeriodDays": 365,
   "permissions": {
     "allow": [
@@ -12,12 +13,16 @@
       "Bash(yarn :*)",
       "Bash(npx :*)"
     ],
-    "defaultMode": "plan"
+    "defaultMode": "default"
   },
   "enabledMcpjsonServers": [
     "cloudflare",
     "context7",
+    "duckduckgo",
     "playwright",
     "sequential-thinking"
-  ]
+  ],
+  "feedbackSurveyState": {
+    "lastShownTime": 1754053369681
+  }
 }
