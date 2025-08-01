@@ -71,7 +71,6 @@
   "[xml]": {
     "editor.defaultFormatter": "PrateekMahendrakar.prettyxml"
   },
-  "1password.items.cacheValues": false,
   "accessibility.verbosity.inlineChat": false,
   "astro.content-intellisense": true,
   "better-comments.tags": [
@@ -242,375 +241,6 @@
   "css.completion.completePropertyWithSemicolon": true,
   "css.lint.duplicateProperties": "warning",
   "css.lint.unknownAtRules": "ignore",
-  "dance.defaultMode": "helix/normal",
-  "dance.menus": {
-    "goto": {
-      "items": {
-        ".": {
-          "args": [
-            {
-              "register": " insert"
-            }
-          ],
-          "command": "workbench.action.navigatePreviousInEditLocations",
-          "text": "to last buffer modification position"
-        },
-        "a": {
-          "command": "workbench.action.openPreviousRecentlyUsedEditorInGroup",
-          "text": "to last buffer"
-        },
-        "A": {
-          "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
-          "text": "to last buffer..."
-        },
-        "b": {
-          "command": "dance.select.lastVisibleLine",
-          "text": "to window bottom"
-        },
-        "c": {
-          "command": "dance.select.middleVisibleLine",
-          "text": "to window center"
-        },
-        "d": {
-          "command": "editor.action.revealDefinition",
-          "text": "to definition"
-        },
-        "e": {
-          "args": [
-            {
-              "count": 2147483647
-            }
-          ],
-          "command": "dance.select.lineEnd",
-          "text": "to last line"
-        },
-        "f": {
-          "command": "dance.selections.open",
-          "text": "to file/URLs in selections"
-        },
-        "g": {
-          "args": [
-            {
-              "count": 1
-            }
-          ],
-          "command": "dance.select.lineStart",
-          "text": "to line number else file start"
-        },
-        "h": {
-          "command": "cursorHome",
-          "text": "to line start"
-        },
-        "j": {
-          "command": "dance.select.lastLine",
-          "text": "to last line"
-        },
-        "l": {
-          "command": "dance.select.lineEnd",
-          "text": "to line end"
-        },
-        "n": {
-          "command": "workbench.action.nextEditor",
-          "text": "to next buffer"
-        },
-        "p": {
-          "command": "workbench.action.previousEditor",
-          "text": "to previous buffer"
-        },
-        "r": {
-          "command": "editor.action.goToReferences",
-          "text": "to references"
-        },
-        "s": {
-          "command": "cursorHome",
-          // "args": [
-          //   {
-          //     "skipBlank": true
-          //   }
-          // ]
-          "text": "to first non-blank in line"
-        },
-        "t": {
-          "command": "dance.select.firstVisibleLine",
-          "text": "to window top"
-        }
-      },
-      "title": "Goto"
-    },
-    "match": {
-      "items": {
-        "a": {
-          "args": [
-            {
-              "menu": "object",
-              "title": "Match around"
-            }
-          ],
-          "command": "dance.openMenu",
-          "text": "Select around object"
-        },
-        "i": {
-          "args": [
-            {
-              "menu": "object",
-              "pass": [
-                {
-                  "inner": true
-                }
-              ],
-              "title": "Match inside"
-            }
-          ],
-          "command": "dance.openMenu",
-          "text": "Select inside object"
-        },
-        "m": {
-          "command": "dance.seek.enclosing",
-          "text": "Goto matching bracket"
-        }
-      },
-      "title": "Match"
-    },
-    "object": {
-      "items": {
-        "!": {
-          "command": "dance.seek.object",
-          "text": "custom object desc"
-        },
-        "'": {
-          "args": [
-            {
-              "input": "(?#noescape)'(?#inner)(?#noescape)'"
-            }
-          ],
-          "command": "dance.seek.object",
-          "text": "single quote string"
-        },
-        "\"": {
-          "args": [
-            {
-              "input": "(?#noescape)\"(?#inner)(?#noescape)\""
-            }
-          ],
-          "command": "dance.seek.object",
-          "text": "double quote string"
-        },
-        "()": {
-          "args": [
-            {
-              "input": "\\((?#inner)\\)"
-            }
-          ],
-          "command": "dance.seek.object",
-          "text": "parenthesis block"
-        },
-        "[]": {
-          "args": [
-            {
-              "input": "\\[(?#inner)\\]"
-            }
-          ],
-          "command": "dance.seek.object",
-          "text": "brackets block"
-        },
-        "{}": {
-          "args": [
-            {
-              "input": "\\{(?#inner)\\}"
-            }
-          ],
-          "command": "dance.seek.object",
-          "text": "braces block"
-        },
-        "`": {
-          "args": [
-            {
-              "input": "(?#noescape)`(?#inner)(?#noescape)`"
-            }
-          ],
-          "command": "dance.seek.object",
-          "text": "grave quote string"
-        },
-        "<>": {
-          "args": [
-            {
-              "input": "<(?#inner)>"
-            }
-          ],
-          "command": "dance.seek.object",
-          "text": "angle block"
-        },
-        "a": {
-          "args": [
-            {
-              "input": "(?#predefined=argument)"
-            }
-          ],
-          "command": "dance.seek.object",
-          "text": "argument"
-        },
-        "p": {
-          "args": [
-            {
-              "input": "(?#predefined=paragraph)"
-            }
-          ],
-          "command": "dance.seek.object",
-          "text": "paragraph"
-        },
-        "w": {
-          "args": [
-            {
-              "input": "[\\p{L}_\\d]+(?<after>[^\\S\\n]+)"
-            }
-          ],
-          "command": "dance.seek.object",
-          "text": "word"
-        },
-        "W": {
-          "args": [
-            {
-              "input": "[\\S]+(?<after>[^\\S\\n]+)"
-            }
-          ],
-          "command": "dance.seek.object",
-          "text": "WORD"
-        }
-      },
-      "title": "Select object..."
-    },
-    "view": {
-      "items": {
-        "?": {
-          "command": "dance.search.backward",
-          "text": "Reverse search for regex pattern"
-        },
-        "/": {
-          "command": "dance.search",
-          "text": "Search for regex pattern"
-        },
-        "b": {
-          "args": [
-            {
-              "at": "bottom"
-            }
-          ],
-          "command": "dance.view.line",
-          "text": "Align view bottom"
-        },
-        "cz": {
-          "args": [
-            {
-              "at": "center"
-            }
-          ],
-          "command": "dance.view.line",
-          "text": "Align view center"
-        },
-        "j": {
-          "args": [
-            {
-              "by": "line",
-              "revealCursor": true,
-              "to": "down"
-            }
-          ],
-          "command": "editorScroll",
-          "text": "Scroll view down"
-        },
-        "k": {
-          "args": [
-            {
-              "by": "line",
-              "revealCursor": true,
-              "to": "up"
-            }
-          ],
-          "command": "editorScroll",
-          "text": "Scroll view up"
-        },
-        "n": {
-          "command": "dance.search.next",
-          "text": "Select next search match"
-        },
-        "N": {
-          "command": "dance.search.previous",
-          "text": "Select previous search match"
-        },
-        "t": {
-          "args": [
-            {
-              "at": "top"
-            }
-          ],
-          "command": "dance.view.line",
-          "text": "Align view top"
-        }
-      },
-      "title": "View"
-    }
-  },
-  "dance.modes": {
-    "helix/insert": {
-      "cursorStyle": "line",
-      "lineNumbers": "on",
-      "onLeaveMode": [
-        [
-          ".selections.save",
-          {
-            "register": " insert"
-          }
-        ]
-      ]
-    },
-    "helix/normal": {
-      "cursorStyle": "block",
-      "decorations": {
-        "applyTo": "main",
-        "backgroundColor": "$editor.hoverHighlightBackground",
-        "isWholeLine": true
-      },
-      "lineNumbers": "relative",
-      "onEnterMode": [
-        [
-          ".selections.restore",
-          {
-            "register": " ^",
-            "try": true
-          }
-        ]
-      ],
-      "onLeaveMode": [
-        [
-          ".selections.save",
-          {
-            "register": " ^",
-            "style": {
-              "borderColor": "$editor.selectionBackground",
-              "borderRadius": "1px",
-              "borderStyle": "solid",
-              "borderWidth": "2px"
-            },
-            "until": [
-              [
-                "mode-did-change",
-                {
-                  "include": "helix/normal"
-                }
-              ],
-              ["selections-did-change"]
-            ]
-          }
-        ]
-      ],
-      "selectionBehavior": "character"
-    },
-    "helix/select": {
-      "cursorStyle": "block",
-      "lineNumbers": "relative",
-      "selectionBehavior": "character"
-    }
-  },
   "debug.console.fontSize": 16,
   "debug.inlineValues": "on",
   "debug.showVariableTypes": true,
@@ -733,9 +363,6 @@
   "github.copilot.chat.agent.thinkingTool": true,
   "github.copilot.chat.codeGeneration.instructions": [
     {
-      "file": "AGENTS.md"
-    },
-    {
       "file": "CLAUDE.md"
     },
     {
@@ -743,15 +370,6 @@
     },
     {
       "text": "Use Australian English spelling for comments, filenames, variables, etc."
-    },
-    {
-      "text": "Use camelCase for variable names."
-    },
-    {
-      "text": "Use PascalCase for class names."
-    },
-    {
-      "text": "Use kebab-case for filenames."
     },
     {
       "text": "Use double quotes."
@@ -819,21 +437,12 @@
   "markdown.preview.fontFamily": "'Helvetica Neue', -apple-system, 'Segoe WPC', sans-serif",
   "markdown.preview.fontSize": 16,
   "markdown.preview.lineHeight": 1.2,
-  "multiCommand.commands": [
-    {
-      "command": "multiCommand.saveAndNormalMode",
-      "description": "Format, save file and switch to normal mode",
-      "label": "Format, Save and Set Normal Mode",
-      "sequence": ["editor.action.formatDocument", "workbench.action.files.save", "dance.modes.set.normal"]
-    }
-  ],
-  "npm.scriptRunner": "bun",
   "npm-intellisense.importLinebreak": "\\n",
   "npm-intellisense.importQuotes": "\"",
   "npm-intellisense.packageSubfoldersIntellisense": true,
   "npm-intellisense.scanDevDependencies": true,
-  "npm-outdated.majorUpdateProtection": false,
   "npm.packageManager": "bun",
+  "npm.scriptRunner": "bun",
   "prettier.bracketSameLine": true,
   "prettier.printWidth": 120,
   "prettier.quoteProps": "consistent",
@@ -843,6 +452,8 @@
   "quokka.fontSize": 16,
   "redhat.telemetry.enabled": false,
   "remote.autoForwardPortsSource": "hybrid",
+  "roo-cline.allowedCommands": ["bun run test", "bun install", "tsc --no-emit", "git log", "git diff", "git show"],
+  "roo-cline.deniedCommands": ["npm*", "pnpm*", "yarn*"],
   // "remote.SSH.defaultExtensions": [
   //   "christian-kohler.npm-intellisense",
   //   "christian-kohler.path-intellisense",
@@ -866,6 +477,8 @@
   "security.promptForLocalFileProtocolHandling": false,
   "security.workspace.trust.untrustedFiles": "prompt",
   "SQL-Formatter-VSCode.dialect": "postgresql",
+  "sqlite3-editor.ui.alignNumberRight": true,
+  "sqlite3-editor.ui.tableHeaderMaxLines": 1,
   "svelte.enable-ts-plugin": true,
   "tailwindCSS.classFunctions": ["twMerge", "tw", "clsx", "cva", "cn"],
   "tailwindCSS.emmetCompletions": true,
@@ -936,7 +549,5 @@
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 16,
-  "workbench.tree.renderIndentGuides": "always",
-  "sqlite3-editor.ui.alignNumberRight": true,
-  "sqlite3-editor.ui.tableHeaderMaxLines": 1
+  "workbench.tree.renderIndentGuides": "always"
 }
