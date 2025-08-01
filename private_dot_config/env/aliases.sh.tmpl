@@ -36,9 +36,9 @@ alias grep="grep --color=always"
 alias ip="ip -c"
 alias less="less -FX"
 alias npm="bun" # Force use of Bun as package manager
-alias npx="bunx --no-cache" # Force use of Bun as package manager
+alias npx="bunx" # Force use of Bun as package manager
 alias pnpm="bun" # Force use of Bun as package manager
-alias "pnpm dlx"="bunx --no-cache"
+alias "pnpm dlx"="bunx"
 alias wget="wget --hsts-file=\"${XDG_CACHE_HOME}/wget/wget-hsts\""
 # alias y="yadm"
 alias yarn="yarn --use-yarnrc \"${XDG_CONFIG_HOME}/yarn/config\""
@@ -53,7 +53,7 @@ alias neofetch="fastfetch"
 alias zshenv="source ${HOME}/.zshenv"
 alias zshrc="source ${ZDOTDIR}/.zshrc"
 alias reload="exec ${SHELL} -l"
-alias ccusage="bunx --no-cache ccusage"
+alias ccusage="bunx ccusage"
 
 # Configuration file aliases for common settings
 alias aerospaceconfig="chezmoi edit \"${XDG_CONFIG_HOME}/aerospace/aerospace.toml\""
