@@ -2,27 +2,12 @@
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "cleanupPeriodDays": 365,
   "permissions": {
-    "allow": [
-      "mcp__context7__get-library-docs",
-      "mcp__context7__resolve-library-id",
-      "Bash(grep :*)"
-    ],
-    "deny": [
-      "Bash(npm :*)",
-      "Bash(pnpm :*)",
-      "Bash(yarn :*)",
-      "Bash(npx :*)"
-    ],
+    "allow": ["mcp__context7__get-library-docs", "mcp__context7__resolve-library-id", "Bash(grep :*)"],
+    "deny": [],
     "defaultMode": "default"
   },
-  "enabledMcpjsonServers": [
-    "cloudflare",
-    "context7",
-    "duckduckgo",
-    "playwright",
-    "sequential-thinking"
-  ],
+  "enabledMcpjsonServers": ["cloudflare", "context7", "duckduckgo", "playwright", "sequential-thinking"],
   "feedbackSurveyState": {
-    "lastShownTime": 1754053369681
+    "lastShownTime": 1754085302137
   }
 }
