@@ -2,27 +2,27 @@
   "inputs": [],
   "servers": {
     "apple-mcp": {
-      "args": ["--no-cache", "@dhravya/apple-mcp"],
+      "args": ["@dhravya/apple-mcp"],
       "command": "bunx"
     },
     "console-ninja": {
-      "args": ["--no-cache", "node ~/.console-ninja/mcp/"],
+      "args": ["node ~/.console-ninja/mcp/"],
       "command": "bunx"
     },
     "context7": {
-      "args": ["--no-cache", "@upstash/context7-mcp@latest"],
+      "args": ["@upstash/context7-mcp@latest"],
       "command": "bunx"
     },
     "playwright": {
-      "args": ["--no-cache", "@playwright/mcp@latest"],
+      "args": ["@playwright/mcp@latest"],
       "command": "bunx"
     },
     "sequential-thinking": {
-      "args": ["--no-cache", "@modelcontextprotocol/server-sequential-thinking"],
+      "args": ["@modelcontextprotocol/server-sequential-thinking"],
       "command": "bunx"
     },
     "wallaby": {
-      "args": ["--no-cache", "node ~/.wallaby/mcp/"],
+      "args": ["node ~/.wallaby/mcp/"],
       "command": "bunx"
     }
   }
