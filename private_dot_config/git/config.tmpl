@@ -45,7 +45,8 @@ last = log -1 HEAD
 visual = !gitk
 amend = commit --amend
 undo = reset --soft HEAD~1
-cleanup = "!git branch --merged | grep -v '\\*\\|main\\|master\\|develop' | xargs -n 1 git branch -d"
+cleanup = "!git fetch --prune && git for-each-ref --format='%(refname:short) %(upstream:track)' refs/heads | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
+
 
 [attributes]
 # Set default attributes for files
