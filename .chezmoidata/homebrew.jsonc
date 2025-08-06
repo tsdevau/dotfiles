@@ -51,7 +51,7 @@
       { "name": "ollama" },
       { "name": "opencv" },
       { "name": "openssl" },
-      // { "name": "pnpm" }, // Removed
+      // { "name": "pnpm" }, // Removed in preference of bun
       { "name": "poppler" },
       { "name": "prettier" },
       { "name": "prettierd" },
@@ -119,6 +119,7 @@
       { "name": "orbstack" },
       // {"name": "orcaslicer"},
       { "name": "raycast" },
+      { "name": "synology-drive" },
       { "name": "tableplus" },
       { "name": "visual-studio-code" },
       { "name": "vivaldi" },
