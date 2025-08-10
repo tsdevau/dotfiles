@@ -72,6 +72,9 @@ export EZA_CONFIG_DIR="${XDG_CONFIG_HOME}/eza"
 # FFMPEG environment
 export FFMPEG_DATADIR="${XDG_DATA_HOME}/ffmpeg"
 
+# Firecrawl MCP
+export FIRECRAWL_API_KEY={{- onepasswordRead "op://tsdevau/Firecrawl/FIRECRAWL_API_KEY" | quote }}
+
 # FZF Configuration
 export FZF_ALT_C_COMMAND="fd --type d --hidden --follow --strip-cwd-prefix --exclude node_modules --exclude .astro --exclude cache --exclude .git --exclude cargo --exclude .Trash --exclude Trash"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --only-dirs --show-symlinks --level=3 --icons=always --color=always | head -200'"
