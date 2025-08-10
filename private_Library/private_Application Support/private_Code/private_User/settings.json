@@ -258,6 +258,7 @@
   "diffEditor.maxComputationTime": 0,
   "diffEditor.renderSideBySide": true,
   "editor.accessibilitySupport": "off",
+  "editor.aiStats.enabled": true,
   "editor.bracketPairColorization.enabled": true,
   "editor.codeActionsOnSave": {
     "source.addMissingImports": "explicit",
@@ -418,6 +419,7 @@
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.gitAuthentication": true,
   "github.gitProtocol": "ssh",
+  "githubPullRequests.createOnPublishBranch": "never",
   "hammerspoon.console.focusOutputWindow": false,
   "hammerspoon.spoons.path": "~/.config/hammerspoon/Spoons",
   "javascript.preferences.importModuleSpecifier": "non-relative",
@@ -549,6 +551,5 @@
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 16,
-  "workbench.tree.renderIndentGuides": "always",
-  "githubPullRequests.createOnPublishBranch": "never"
+  "workbench.tree.renderIndentGuides": "always"
 }
