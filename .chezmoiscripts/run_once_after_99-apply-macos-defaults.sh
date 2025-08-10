@@ -147,7 +147,7 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 1
 ####################################################################################################
 
 # Set the default save location for screen captures
-defaults write com.apple.screencapture location -string "${HOME}/CloudStorage/Dropbox/screenshots"
+defaults write com.apple.screencapture location -string "${HOME}/Library/CloudStorage/SynologyDrive-home/screenshots"
 
 # Set the default file format for screen captures (options: PNG, BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
