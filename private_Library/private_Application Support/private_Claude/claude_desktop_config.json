@@ -26,6 +26,10 @@
       "args": ["duckduckgo-mcp-server"],
       "type": "stdio"
     },
+    "firecrawl": {
+      "command": "bunx",
+      "args": ["firecrawl-mcp"]
+    },
     "playwright": {
       "command": "bunx",
       "args": ["@playwright/mcp"],
