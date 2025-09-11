@@ -3,38 +3,33 @@
   "mcpServers": {
     "apple-mcp": {
       "command": "bunx",
-      "args": ["@dhravya/apple-mcp"],
-      "type": "stdio"
-    },
-    "cloudflare": {
-      "command": "bunx",
-      "args": ["mcp-remote", "https://bindings.mcp.cloudflare.com/sse"],
-      "type": "sse"
+      "args": [
+        "@dhravya/apple-mcp"
+      ]
     },
     "context7": {
       "command": "bunx",
-      "args": ["@upstash/context7-mcp"],
-      "type": "stdio"
+      "args": [
+        "@upstash/context7-mcp"
+      ]
     },
     "desktop-commander": {
       "command": "bunx",
-      "args": ["@wonderwhy-er/desktop-commander"],
-      "type": "stdio"
-    },
-    "duckduckgo": {
-      "command": "bunx",
-      "args": ["duckduckgo-mcp-server"],
-      "type": "stdio"
+      "args": [
+        "@wonderwhy-er/desktop-commander"
+      ]
     },
     "playwright": {
       "command": "bunx",
-      "args": ["@playwright/mcp"],
-      "type": "stdio"
+      "args": [
+        "@playwright/mcp"
+      ]
     },
     "sequential-thinking": {
       "command": "bunx",
-      "args": ["@modelcontextprotocol/server-sequential-thinking"],
-      "type": "stdio"
+      "args": [
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
     }
   }
 }
