@@ -5,12 +5,14 @@ astro
 astrojs
 backsplashes
 Bankings
+Bento
 bindable
 Bingbot
 Boonah
 bunx
 Cashup
 Cashups
+cycjimmy
 EFTPOS
 Financials
 fontsource
