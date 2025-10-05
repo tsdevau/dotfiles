@@ -537,6 +537,7 @@
   "workbench.editor.tabActionLocation": "left",
   "workbench.editor.tabSizing": "fit",
   "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 16,
   "workbench.tree.renderIndentGuides": "always"
