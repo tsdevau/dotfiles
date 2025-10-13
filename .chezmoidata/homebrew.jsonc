@@ -49,6 +49,7 @@
       { "name": "neovim" },
       { "name": "node" },
       { "name": "ollama" },
+      { "name": "opencode" },
       { "name": "opencv" },
       { "name": "openssl" },
       // { "name": "pnpm" }, // Removed in preference of bun

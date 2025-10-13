@@ -26,6 +26,7 @@ macbook
 maskable
 Maudsland
 microfibre
+Morphism
 MYOB
 nasties
 neurodivergent
@@ -40,6 +41,8 @@ reinfestation
 renderable
 resoiling
 sanitisation
+signup
+signups
 sketchybar
 Spacebar
 tailwindcss
@@ -53,4 +56,5 @@ Unoptimised
 uptime
 webp
 westbrook
+worktree
 xero

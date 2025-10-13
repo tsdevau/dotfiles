@@ -55,5 +55,7 @@
 		}
 	},
 	"locale": "en-US",
-	"userThemeMode": "dark"
+	"userThemeMode": "dark",
+	"dxt:allowlistEnabled": false,
+	"dxt:allowlistLastUpdated": "2025-10-13T06:11:49.210Z"
 }
