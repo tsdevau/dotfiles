@@ -5,6 +5,14 @@
       "args": ["@dhravya/apple-mcp"],
       "command": "bunx"
     },
+    "chrome-devtools": {
+      "args": "chrome-devtools-mcp@latest",
+      "command": "bunx"
+    },
+    "cloudflare": {
+      "type": "http",
+      "url": "https://docs.mcp.cloudflare.com/mcp"
+    },
     "console-ninja": {
       "args": ["node ~/.console-ninja/mcp/"],
       "command": "bunx"
@@ -20,6 +28,14 @@
     "sequential-thinking": {
       "args": ["@modelcontextprotocol/server-sequential-thinking"],
       "command": "bunx"
+    },
+    "stripe": {
+      "type": "http",
+      "url": "https://mcp.stripe.com"
+    },
+    "svelte": {
+      "type": "http",
+      "url": "https://mcp.svelte.dev/mcp"
     },
     "wallaby": {
       "args": ["node ~/.wallaby/mcp/"],
