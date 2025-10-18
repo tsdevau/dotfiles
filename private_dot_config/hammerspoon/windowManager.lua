@@ -211,7 +211,7 @@ end)
 ---Launch and arrange default applications in a predefined default layout
 local function launchAndArrangeDefault()
   local outlook = hs.application.open("com.microsoft.Outlook", 1, true)
-  local warp = hs.application.open("dev.warp.Warp-Stable", 2, true)
+  local wezterm = hs.application.open("com.github.wez.wezterm", 2, true)
   local vivaldi = hs.application.open("com.vivaldi.Vivaldi", 1, true)
   local vscode = hs.application.find("com.microsoft.VSCode", false, false)
   local finder = hs.application.find("com.apple.finder", false, false)
@@ -246,7 +246,7 @@ local function launchAndArrangeDefault()
   end
 
   local defaultLayout = {
-    { warp,    nil, screen:name(), nil, Warp(),    nil },
+    { wezterm, nil, screen:name(), nil, Warp(),    nil },
     { outlook, nil, screen:name(), nil, Outlook(), nil },
     { vivaldi, nil, screen:name(), nil, Vivaldi(), nil },
     (vscode and { vscode, nil, screen:name(), nil, VSCode(), nil }) or {},
@@ -282,7 +282,7 @@ end
 ---Launch and arrange Development applications in a predefined development layout
 local function launchAndArrangeDevDefault()
   local outlook = hs.application.find("com.microsoft.Outlook", false, false)
-  local warp = hs.application.open("dev.warp.Warp-Stable", 2, true)
+  local wezterm = hs.application.open("com.github.wez.wezterm", 2, true)
   local vivaldi = hs.application.open("com.vivaldi.Vivaldi", 1, true)
   local vscode = hs.application.open("com.microsoft.VSCode", 1, true)
   local finder = hs.application.open("com.apple.finder", 1, true)
@@ -320,7 +320,7 @@ local function launchAndArrangeDevDefault()
   end
 
   local defaultLayout = {
-    { warp,    nil, screen:name(), nil, Warp(),    nil },
+    { wezterm, nil, screen:name(), nil, Warp(),    nil },
     { finder,  nil, screen:name(), nil, Finder(),  nil },
     { vivaldi, nil, screen:name(), nil, Vivaldi(), nil },
     { vscode,  nil, screen:name(), nil, VSCode(),  nil },
@@ -357,7 +357,7 @@ end
 ---Launch and arrange Development applications in 4 visible windows development layout
 local function launchAndArrangeDev4Panel()
   local outlook = hs.application.find("com.microsoft.Outlook", false, false)
-  local warp = hs.application.open("dev.warp.Warp-Stable", 2, true)
+  local wezterm = hs.application.open("com.github.wez.wezterm", 2, true)
   local vivaldi = hs.application.open("com.vivaldi.Vivaldi", 1, true)
   local vscode = hs.application.open("com.microsoft.VSCode", 1, true)
   local finder = hs.application.open("com.apple.finder", 1, true)
@@ -395,7 +395,7 @@ local function launchAndArrangeDev4Panel()
   end
 
   local defaultLayout = {
-    { warp,    nil, screen:name(), nil, Warp(),    nil },
+    { wezterm, nil, screen:name(), nil, Warp(),    nil },
     { finder,  nil, screen:name(), nil, Finder(),  nil },
     { vivaldi, nil, screen:name(), nil, Vivaldi(), nil },
     { vscode,  nil, screen:name(), nil, VSCode(),  nil },
