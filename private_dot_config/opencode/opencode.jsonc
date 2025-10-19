@@ -1,7 +1,51 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  // Theme configuration
-  "theme": "opencode",
-  "model": "anthropic/claude-sonnet-4-20250514",
-  "autoupdate": true
+  "autoupdate": true,
+  "keybinds": {
+    "leader": "ctrl+x"
+  },
+  "lsp": {
+    "astro": {
+      "command": ["astro-ls", "--stdio"],
+      "extensions": [".astro"],
+      "initialization": {
+        "typescript": {
+          "tsdk": "./node_modules/typescript/lib"
+        },
+        "environment": "node"
+      }
+    }
+  },
+  "model": "anthropic/claude-sonnet-4-5-20250929",
+  "provider": {
+    "anthropic": {
+      "models": {
+        "claude-sonnet-4-5-20250929": {
+          "options": {
+            "thinking": {
+              "type": "enabled",
+              "budgetTokens": 20000
+            }
+          }
+        },
+        "claude-opus-4-1-20250805": {
+          "options": {
+            "thinking": {
+              "type": "enabled",
+              "budgetTokens": 20000
+            }
+          }
+        },
+        "claude-haiku-4-5-20251001": {
+          "options": {
+            "thinking": {
+              "type": "enabled",
+              "budgetTokens": 20000
+            }
+          }
+        }
+      }
+    }
+  },
+  "theme": "catppuccin"
 }
