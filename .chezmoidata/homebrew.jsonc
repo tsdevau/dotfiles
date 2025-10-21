@@ -101,6 +101,7 @@
       { "name": "chatgpt" },
       { "name": "claude" },
       // { "name": "cursor" },
+      { "name": "display-pilot" },
       { "name": "dropbox" },
       { "name": "dropzone" },
       { "name": "ghostty" },
