@@ -3,7 +3,7 @@
     "packages": [
       // Keep formatted as single line
       "@cspell/dict-en-au",
-      "@google/gemini-cli",
+      // "@google/gemini-cli",
       "tsx",
       "wrangler"
     ]

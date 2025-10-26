@@ -2,6 +2,7 @@
 
 echo "Setting up development environment..."
 
+
 # Check for bat cache and build it if required
 # bat config hash: {{ includeTemplate "private_dot_config/bat/config" | sha256sum }}
 if command -v bat >/dev/null 2>&1; then
