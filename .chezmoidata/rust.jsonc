@@ -13,6 +13,6 @@
         "profile": "default"
       }
     ],
-    "cargo": ["cc-usage-rs"]
+    "cargo": ["ccusage-rs"]
   }
 }
