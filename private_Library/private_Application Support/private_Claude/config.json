@@ -57,5 +57,11 @@
 	"locale": "en-US",
 	"userThemeMode": "dark",
 	"dxt:allowlistEnabled": false,
+<<<<<<< Updated upstream
 	"dxt:allowlistLastUpdated": "2025-10-24T06:54:56.780Z"
+||||||| Stash base
+	"dxt:allowlistLastUpdated": "2025-10-19T06:43:59.358Z"
+=======
+	"dxt:allowlistLastUpdated": "2025-10-26T02:34:33.640Z"
+>>>>>>> Stashed changes
 }

@@ -16,35 +16,61 @@
       }
     }
   },
-  "model": "anthropic/claude-sonnet-4-5-20250929",
-  "provider": {
-    "anthropic": {
-      "models": {
-        "claude-sonnet-4-5-20250929": {
-          "options": {
-            "thinking": {
-              "type": "enabled",
-              "budgetTokens": 20000
-            }
-          }
-        },
-        "claude-opus-4-1-20250805": {
-          "options": {
-            "thinking": {
-              "type": "enabled",
-              "budgetTokens": 20000
-            }
-          }
-        },
-        "claude-haiku-4-5-20251001": {
-          "options": {
-            "thinking": {
-              "type": "enabled",
-              "budgetTokens": 20000
-            }
-          }
-        }
-      }
+  "mcp": {
+    "apple-mcp": {
+      "command": ["bunx", "@dhravya/apple-mcp"],
+      "enabled": true,
+      "type": "local"
+    },
+    "browsermcp": {
+      "command": ["bunx", "@browsermcp/mcp@latest"],
+      "enabled": true,
+      "type": "local"
+    },
+    "chrome-devtools": {
+      "command": ["bunx", "chrome-devtools-mcp@latest"],
+      "enabled": true,
+      "type": "local"
+    },
+    "cloudflare": {
+      "enabled": true,
+      "url": "https://docs.mcp.cloudflare.com/mcp",
+      "type": "remote"
+    },
+    "console-ninja": {
+      "command": ["node", "~/.console-ninja/mcp/"],
+      "enabled": true,
+      "type": "local"
+    },
+    "context7": {
+      "command": ["bunx", "@upstash/context7-mcp@latest"],
+      "enabled": true,
+      "type": "local"
+    },
+    "playwright": {
+      "command": ["bunx", "@playwright/mcp@latest"],
+      "enabled": false,
+      "type": "local"
+    },
+    "sequential-thinking": {
+      "command": ["bunx", "@modelcontextprotocol/server-sequential-thinking"],
+      "enabled": true,
+      "type": "local"
+    },
+    "stripe": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://mcp.stripe.com"
+    },
+    "svelte": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://mcp.svelte.dev/mcp"
+    },
+    "wallaby": {
+      "command": ["node", "~/.wallaby/mcp/"],
+      "enabled": false,
+      "type": "local"
     }
   },
   "theme": "catppuccin"
