@@ -268,7 +268,7 @@
   },
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "'MesloLGM Nerd Font Mono', 'RobotoMono Nerd Font', 'FiraMono Nerd Font'",
+  "editor.fontFamily": "'Iosevka Nerd Font Mono', 'MesloLGM Nerd Font Mono', 'RobotoMono Nerd Font', 'FiraMono Nerd Font'",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
   "editor.formatOnSave": true,
@@ -491,11 +491,11 @@
     "typescript",
     "typescriptreact"
   ],
-  "terminal.external.osxExec": "Warp.app",
+  "terminal.external.osxExec": "WezTerm.app",
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.env.osx": {},
-  "terminal.integrated.fontFamily": "'MesloLGM Nerd Font Mono', 'Helvetica Neue'",
+  "terminal.integrated.fontFamily": "'Iosevka Nerd Font Mono', 'MesloLGM Nerd Font Mono', 'Helvetica Neue'",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.profiles.osx": {
     "bash": {
