@@ -134,6 +134,8 @@
       { "name": "zed@preview" },
       { "name": "zerotier-one" },
       // { "name": "zoom" },
+      { "name": "font-iosevka-nerd-font" },
+      { "name": "font-iosevka-term-nerd-font" },
       { "name": "font-jetbrains-mono-nerd-font" },
       { "name": "font-meslo-lg-nerd-font" },
       { "name": "font-roboto" },
