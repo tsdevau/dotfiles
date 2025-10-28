@@ -9,7 +9,7 @@
 		"isStandardView": false,
 		"isStandardViewSuperkeys": false,
 		"autoUpdate": true,
-		"version": "1.7.0"
+		"version": "1.8.0"
 	},
 	"neurons": [
 		{
@@ -716,5 +716,8 @@
 				"chipId": "2430607b8b4089c5"
 			}
 		}
-	]
+	],
+	"capabilities": {
+		"sk20": false
+	}
 }

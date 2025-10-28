@@ -216,10 +216,11 @@ local function launchAndArrangeDefault()
   local vscode = hs.application.find("com.microsoft.VSCode", false, false)
   local finder = hs.application.find("com.apple.finder", false, false)
   local samsungDisplay = "SAMSUNG"
+  local benqDisplay = "BenQ RD320UA"
   local builtInRetinaDisplay = "Built-in Retina Display"
   local screen = hs.screen.primaryScreen()
   local max = screen:frame()
-  local isExternalDisplay = screen:name() == samsungDisplay
+  local isExternalDisplay = screen:name() == benqDisplay or screen:name() == samsungDisplay
   local originalAppState = {}
 
   local function Outlook()
@@ -227,7 +228,7 @@ local function launchAndArrangeDefault()
     return hs.geometry.rect(f.x, f.y, f.w, f.h)
   end
 
-  local function Warp()
+  local function WezTerm()
     local f = isExternalDisplay and moveLeftHalfBottom35(max) or moveMaximize(max)
     return hs.geometry.rect(f.x, f.y, f.w, f.h)
   end
@@ -246,7 +247,7 @@ local function launchAndArrangeDefault()
   end
 
   local defaultLayout = {
-    { wezterm, nil, screen:name(), nil, Warp(),    nil },
+    { wezterm, nil, screen:name(), nil, WezTerm(), nil },
     { outlook, nil, screen:name(), nil, Outlook(), nil },
     { vivaldi, nil, screen:name(), nil, Vivaldi(), nil },
     (vscode and { vscode, nil, screen:name(), nil, VSCode(), nil }) or {},
@@ -287,13 +288,14 @@ local function launchAndArrangeDevDefault()
   local vscode = hs.application.open("com.microsoft.VSCode", 1, true)
   local finder = hs.application.open("com.apple.finder", 1, true)
   local samsungDisplay = "SAMSUNG"
+  local benqDisplay = "BenQ RD320UA"
   local builtInRetinaDisplay = "Built-in Retina Display"
   local screen = hs.screen.primaryScreen()
   local max = screen:frame()
-  local isExternalDisplay = screen:name() == samsungDisplay
+  local isExternalDisplay = screen:name() == benqDisplay or screen:name() == samsungDisplay
   local originalAppState = {}
 
-  local function Warp()
+  local function WezTerm()
     local f = isExternalDisplay and moveRightHalfBottom35(max) or moveMaximize(max)
     return hs.geometry.rect(f.x, f.y, f.w, f.h)
   end
@@ -320,7 +322,7 @@ local function launchAndArrangeDevDefault()
   end
 
   local defaultLayout = {
-    { wezterm, nil, screen:name(), nil, Warp(),    nil },
+    { wezterm, nil, screen:name(), nil, WezTerm(), nil },
     { finder,  nil, screen:name(), nil, Finder(),  nil },
     { vivaldi, nil, screen:name(), nil, Vivaldi(), nil },
     { vscode,  nil, screen:name(), nil, VSCode(),  nil },
@@ -362,13 +364,14 @@ local function launchAndArrangeDev4Panel()
   local vscode = hs.application.open("com.microsoft.VSCode", 1, true)
   local finder = hs.application.open("com.apple.finder", 1, true)
   local samsungDisplay = "SAMSUNG"
+  local benqDisplay = "BenQ RD320UA"
   local builtInRetinaDisplay = "Built-in Retina Display"
   local screen = hs.screen.primaryScreen()
   local max = screen:frame()
-  local isExternalDisplay = screen:name() == samsungDisplay
+  local isExternalDisplay = screen:name() == benqDisplay or screen:name() == samsungDisplay
   local originalAppState = {}
 
-  local function Warp()
+  local function WezTerm()
     local f = isExternalDisplay and moveLeftHalfBottom35(max) or moveMaximize(max)
     return hs.geometry.rect(f.x, f.y, f.w, f.h)
   end
@@ -395,7 +398,7 @@ local function launchAndArrangeDev4Panel()
   end
 
   local defaultLayout = {
-    { wezterm, nil, screen:name(), nil, Warp(),    nil },
+    { wezterm, nil, screen:name(), nil, WezTerm(), nil },
     { finder,  nil, screen:name(), nil, Finder(),  nil },
     { vivaldi, nil, screen:name(), nil, Vivaldi(), nil },
     { vscode,  nil, screen:name(), nil, VSCode(),  nil },

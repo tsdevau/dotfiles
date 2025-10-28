@@ -154,6 +154,7 @@ config.window_frame = {
 }
 
 config.font = wezterm.font_with_fallback({
+	{ family = "Iosevka Nerd Font Mono" },
 	{ family = "MesloLGM Nerd Font Mono" },
 	{ family = "JetBrainsMono Nerd Font Mono" },
 })
@@ -161,26 +162,26 @@ config.font_size = 16.0
 config.font_rules = {
 	{
 		intensity = "Bold",
-		font = wezterm.font_with_fallback({ family = "MesloLGM Nerd Font Mono", weight = "Bold" }),
+		font = wezterm.font_with_fallback({ { family = "Iosevka Nerd Font Mono", weight = "Bold" }, { family = "MesloLGM Nerd Font Mono", weight = "Bold" } }),
 	},
 	{
 		italic = true,
-		font = wezterm.font_with_fallback({ family = "MesloLGM Nerd Font Mono", style = "Italic" }),
+		font = wezterm.font_with_fallback({ { family = "Iosevka Nerd Font Mono", style = "Italic" }, { family = "MesloLGM Nerd Font Mono", style = "Italic" } }),
 	},
 	{
 		intensity = "Bold",
 		italic = true,
-		font = wezterm.font_with_fallback({ family = "MesloLGM Nerd Font Mono", weight = "Bold", style = "Italic" }),
+		font = wezterm.font_with_fallback({ { family = "Iosevka Nerd Font Mono", weight = "Bold", style = "Italic" }, { family = "MesloLGM Nerd Font Mono", weight = "Bold", style = "Italic" } }),
 	},
 	{
 		intensity = "Half",
 		italic = false,
-		font = wezterm.font_with_fallback({ family = "MesloLGM Nerd Font Mono", weight = "Light" }),
+		font = wezterm.font_with_fallback({ { family = "Iosevka Nerd Font Mono", weight = "Light" }, { family = "MesloLGM Nerd Font Mono", weight = "Light" } }),
 	},
 	{
 		intensity = "Half",
 		italic = true,
-		font = wezterm.font_with_fallback({ family = "MesloLGM Nerd Font Mono", weight = "Light", style = "Italic" }),
+		font = wezterm.font_with_fallback({ { family = "Iosevka Nerd Font Mono", weight = "Light", style = "Italic" }, { family = "MesloLGM Nerd Font Mono", weight = "Light", style = "Italic" } }),
 	},
 }
 
