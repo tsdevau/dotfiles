@@ -134,7 +134,7 @@
   "chat.agent.enabled": true,
   "chat.editor.fontSize": 14,
   "chat.editor.wordWrap": "on",
-  "claudeCodeChat.thinking.intensity": "think",
+  "chat.mcp.autostart": "never",
   "code-runner.enableAppInsights": false,
   "code-runner.executorMap": {
     "ahk": "autohotkey",
@@ -310,7 +310,7 @@
   "editor.suggest.showWords": false,
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
-  "editor.wordWrap": "on",
+  "editor.wordWrap": "off",
   "emmet.includeLanguages": {
     "astro": "html",
     "postcss": "css",
