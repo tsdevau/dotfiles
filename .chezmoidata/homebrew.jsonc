@@ -125,6 +125,7 @@
       { "name": "orbstack" },
       // {"name": "orcaslicer"},
       { "name": "raycast" },
+      { "name": "readdle-spark" },
       { "name": "synology-drive" },
       { "name": "tableplus" },
       { "name": "telegram" },
