@@ -39,7 +39,7 @@
     },
     "console-ninja": {
       "command": ["node", "~/.console-ninja/mcp/"],
-      "enabled": true,
+      "enabled": false,
       "type": "local"
     },
     "context7": {
@@ -58,7 +58,7 @@
       "type": "local"
     },
     "stripe": {
-      "enabled": true,
+      "enabled": false,
       "type": "remote",
       "url": "https://mcp.stripe.com"
     },
