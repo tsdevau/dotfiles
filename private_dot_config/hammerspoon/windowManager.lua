@@ -210,7 +210,7 @@ end)
 
 ---Launch and arrange default applications in a predefined default layout
 local function launchAndArrangeDefault()
-  local outlook = hs.application.open("com.microsoft.Outlook", 1, true)
+  local email = hs.application.open("com.readdle.spark-desktop", 1, true)
   local wezterm = hs.application.open("com.github.wez.wezterm", 2, true)
   local vivaldi = hs.application.open("com.vivaldi.Vivaldi", 1, true)
   local vscode = hs.application.find("com.microsoft.VSCode", false, false)
@@ -223,7 +223,7 @@ local function launchAndArrangeDefault()
   local isExternalDisplay = screen:name() == benqDisplay or screen:name() == samsungDisplay
   local originalAppState = {}
 
-  local function Outlook()
+  local function Email()
     local f = isExternalDisplay and moveLeftHalfTop65(max) or moveMaximize(max)
     return hs.geometry.rect(f.x, f.y, f.w, f.h)
   end
@@ -248,7 +248,7 @@ local function launchAndArrangeDefault()
 
   local defaultLayout = {
     { wezterm, nil, screen:name(), nil, WezTerm(), nil },
-    { outlook, nil, screen:name(), nil, Outlook(), nil },
+    { email,   nil, screen:name(), nil, Email(),   nil },
     { vivaldi, nil, screen:name(), nil, Vivaldi(), nil },
     (vscode and { vscode, nil, screen:name(), nil, VSCode(), nil }) or {},
   }
@@ -282,7 +282,7 @@ end
 
 ---Launch and arrange Development applications in a predefined development layout
 local function launchAndArrangeDevDefault()
-  local outlook = hs.application.find("com.microsoft.Outlook", false, false)
+  local email = hs.application.find("com.readdle.spark-desktop", false, false)
   local wezterm = hs.application.open("com.github.wez.wezterm", 2, true)
   local vivaldi = hs.application.open("com.vivaldi.Vivaldi", 1, true)
   local vscode = hs.application.open("com.microsoft.VSCode", 1, true)
@@ -350,7 +350,7 @@ local function launchAndArrangeDevDefault()
   end
 
   hs.layout.apply(defaultLayout)
-  outlook:hide()
+  email:hide()
   finder:kill()
   restoreAXUIElementState()
   ACTIVE_WINDOW_LAYOUT = 2
@@ -358,7 +358,7 @@ end
 
 ---Launch and arrange Development applications in 4 visible windows development layout
 local function launchAndArrangeDev4Panel()
-  local outlook = hs.application.find("com.microsoft.Outlook", false, false)
+  local email = hs.application.find("com.readdle.spark-desktop", false, false)
   local wezterm = hs.application.open("com.github.wez.wezterm", 2, true)
   local vivaldi = hs.application.open("com.vivaldi.Vivaldi", 1, true)
   local vscode = hs.application.open("com.microsoft.VSCode", 1, true)
@@ -426,7 +426,7 @@ local function launchAndArrangeDev4Panel()
   end
 
   hs.layout.apply(defaultLayout)
-  outlook:hide()
+  email:hide()
   restoreAXUIElementState()
   ACTIVE_WINDOW_LAYOUT = 3
 end
