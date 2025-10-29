@@ -2,8 +2,8 @@ require("hs.ipc")
 hs.loadSpoon("EmmyLua")
 MEH = { "ctrl", "alt", "shift" }
 HYPER = { "cmd", "ctrl", "alt", "shift" }
-WINDOW_GAP = 20
-ACTIVE_WINDOW_LAYOUT = 1
+WINDOW_GAP = 8
+ACTIVE_WINDOW_LAYOUT = 3
 
 -- Reload Hammerspoon configuration on change
 local function reloadConfig(paths, flags)
