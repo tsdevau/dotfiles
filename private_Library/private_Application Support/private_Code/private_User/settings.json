@@ -364,29 +364,6 @@
   "git.path": "/opt/homebrew/bin/git",
   "git.suggestSmartCommit": false,
   "github.copilot.chat.agent.thinkingTool": true,
-  "github.copilot.chat.codeGeneration.instructions": [
-    {
-      "file": "CLAUDE.md"
-    },
-    {
-      "text": "Add trailing slash to all routes when deployed with Cloudflare Pages."
-    },
-    {
-      "text": "Use Australian English spelling for comments, filenames, variables, etc."
-    },
-    {
-      "text": "Use double quotes."
-    },
-    {
-      "text": "NEVER use semi-colons."
-    },
-    {
-      "text": "Prefer 'function' over arrow functions, EXCEPT in callbacks."
-    },
-    {
-      "text": "Keep code modular and DRY."
-    }
-  ],
   "github.copilot.chat.codesearch.enabled": true,
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
@@ -452,8 +429,6 @@
   "prettier.quoteProps": "consistent",
   "prettier.semi": false,
   "prettier.singleAttributePerLine": true,
-  "quokka.automaticRestart": true,
-  "quokka.fontSize": 16,
   "redhat.telemetry.enabled": false,
   "remote.autoForwardPortsSource": "hybrid",
   "scm.defaultViewMode": "tree",
@@ -521,7 +496,6 @@
   "window.newWindowProfile": "Default",
   "window.titleBarStyle": "native",
   "workbench.activityBar.location": "top",
-  "workbench.activityBar.orientation": "top",
   "workbench.colorCustomizations": {
     "tab.activeBackground": "#313244",
     "tab.activeBorder": "#cba6f7",
