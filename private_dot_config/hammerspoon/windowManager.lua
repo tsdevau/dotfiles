@@ -12,6 +12,21 @@ AppEventType = {
   hs.application.watcher.launching,
 }
 
+-- Application Constants
+EMAIL = hs.application.open("com.readdle.spark-desktop", 3, true)
+TERMINAL = hs.application.open("com.github.wez.wezterm", 3, true)
+BROWSER = hs.application.open("com.vivaldi.Vivaldi", 3, true)
+-- EDITOR = hs.application.open("com.microsoft.VSCode", 3, true)
+EDITOR = hs.application.open("com.cursor.Cursor", 3, true)
+FINDER = hs.application.find("com.apple.finder", 3, true)
+BENQ_DISPLAY = "BenQ RD320UA"
+BUILT_IN_RETINA_DISPLAY = "Built-in Retina Display"
+SAMSUNG_DISPLAY = "SAMSUNG"
+SCREEN = hs.screen.primaryScreen()
+MAX = SCREEN:frame()
+IS_EXTERNAL_DISPLAY = SCREEN:name() == BENQ_DISPLAY or SCREEN:name() == SAMSUNG_DISPLAY
+ORIGINAL_APP_STATE = {}
+
 ---Move and resize focused windows while handling AXEnhancedUserInterface
 ---and animation duration to avoid issues with some applications.
 ---@param action fun(max: hs.geometry, frame?: hs.geometry): hs.geometry - Function that returns the new frame for the focused window
@@ -19,8 +34,6 @@ AppEventType = {
 local function resizeAndMoveWithAXEnhancedUI(action)
   local window = hs.window.focusedWindow()
   local frame = window:frame()
-  local screen = window:screen()
-  local max = screen:frame()
 
   local app = window:application()
   if not app then
@@ -39,7 +52,7 @@ local function resizeAndMoveWithAXEnhancedUI(action)
   axApp.AXEnhancedUserInterface = false
   hs.window.animationDuration = 0
 
-  local calculatedFrame = action(max, frame) or {}
+  local calculatedFrame = action(MAX, frame) or {}
   for k, v in pairs(calculatedFrame) do
     frame[k] = v
   end
@@ -210,54 +223,41 @@ end)
 
 ---Launch and arrange default applications in a predefined default layout
 local function launchAndArrangeDefault()
-  local email = hs.application.open("com.readdle.spark-desktop", 1, true)
-  local wezterm = hs.application.open("com.github.wez.wezterm", 2, true)
-  local vivaldi = hs.application.open("com.vivaldi.Vivaldi", 1, true)
-  local vscode = hs.application.find("com.microsoft.VSCode", false, false)
-  local finder = hs.application.find("com.apple.finder", false, false)
-  local samsungDisplay = "SAMSUNG"
-  local benqDisplay = "BenQ RD320UA"
-  local builtInRetinaDisplay = "Built-in Retina Display"
-  local screen = hs.screen.primaryScreen()
-  local max = screen:frame()
-  local isExternalDisplay = screen:name() == benqDisplay or screen:name() == samsungDisplay
-  local originalAppState = {}
-
   local function Email()
-    local f = isExternalDisplay and moveLeftHalfTop65(max) or moveMaximize(max)
+    local f = IS_EXTERNAL_DISPLAY and moveLeftHalfTop65(MAX) or moveMaximize(MAX)
     return hs.geometry.rect(f.x, f.y, f.w, f.h)
   end
 
-  local function WezTerm()
-    local f = isExternalDisplay and moveRightHalfBottom35(max) or moveMaximize(max)
+  local function Terminal()
+    local f = IS_EXTERNAL_DISPLAY and moveRightHalfBottom35(MAX) or moveMaximize(MAX)
     return hs.geometry.rect(f.x, f.y, f.w, f.h)
   end
 
-  local function Vivaldi()
-    local f = isExternalDisplay and moveRightHalfTop65(max) or moveMaximize(max)
+  local function Browser()
+    local f = IS_EXTERNAL_DISPLAY and moveRightHalfTop65(MAX) or moveMaximize(MAX)
     return hs.geometry.rect(f.x, f.y, f.w, f.h)
   end
 
-  local function VSCode()
-    if vscode then
-      local f = isExternalDisplay and moveLeftHalf(max) or moveMaximize(max)
+  local function Editor()
+    if EDITOR then
+      local f = IS_EXTERNAL_DISPLAY and moveLeftHalf(MAX) or moveMaximize(MAX)
       return hs.geometry.rect(f.x, f.y, f.w, f.h)
     end
     return nil
   end
 
   local defaultLayout = {
-    { wezterm, nil, screen:name(), nil, WezTerm(), nil },
-    { email,   nil, screen:name(), nil, Email(),   nil },
-    { vivaldi, nil, screen:name(), nil, Vivaldi(), nil },
-    (vscode and { vscode, nil, screen:name(), nil, VSCode(), nil }) or {},
+    { TERMINAL, nil, SCREEN:name(), nil, Terminal(), nil },
+    { EMAIL,    nil, SCREEN:name(), nil, Email(),    nil },
+    { BROWSER,  nil, SCREEN:name(), nil, Browser(),  nil },
+    (EDITOR and { EDITOR, nil, SCREEN:name(), nil, Editor(), nil }) or {},
   }
 
   -- Save the original AXEnhancedUserInterface state and disable it to apply layout
   for i, app in ipairs(defaultLayout) do
     local axApp = hs.axuielement.applicationElement(app[1])
     if axApp then
-      originalAppState[i] = { app[1], axApp.AXEnhancedUserInterface, hs.window.animationDuration }
+      ORIGINAL_APP_STATE[i] = { app[1], axApp.AXEnhancedUserInterface, hs.window.animationDuration }
       axApp.AXEnhancedUserInterface = false
       hs.window.animationDuration = 0
     end
@@ -265,7 +265,7 @@ local function launchAndArrangeDefault()
 
   -- Function to restore the original AXEnhancedUserInterface state
   local function restoreAXUIElementState()
-    for _, app in ipairs(originalAppState) do
+    for _, app in ipairs(ORIGINAL_APP_STATE) do
       local axApp = hs.axuielement.applicationElement(app[1])
       if axApp then
         hs.window.animationDuration = app[3]
@@ -275,64 +275,51 @@ local function launchAndArrangeDefault()
   end
 
   hs.layout.apply(defaultLayout)
-  finder:kill()
+  FINDER:kill()
   restoreAXUIElementState()
   ACTIVE_WINDOW_LAYOUT = 1
 end
 
 ---Launch and arrange Development applications in a predefined development layout
 local function launchAndArrangeDevDefault()
-  local email = hs.application.find("com.readdle.spark-desktop", false, false)
-  local wezterm = hs.application.open("com.github.wez.wezterm", 2, true)
-  local vivaldi = hs.application.open("com.vivaldi.Vivaldi", 1, true)
-  local vscode = hs.application.open("com.microsoft.VSCode", 1, true)
-  local finder = hs.application.open("com.apple.finder", 1, true)
-  local samsungDisplay = "SAMSUNG"
-  local benqDisplay = "BenQ RD320UA"
-  local builtInRetinaDisplay = "Built-in Retina Display"
-  local screen = hs.screen.primaryScreen()
-  local max = screen:frame()
-  local isExternalDisplay = screen:name() == benqDisplay or screen:name() == samsungDisplay
-  local originalAppState = {}
-
-  local function WezTerm()
-    local f = isExternalDisplay and moveRightHalfBottom35(max) or moveMaximize(max)
+  local function Terminal()
+    local f = IS_EXTERNAL_DISPLAY and moveRightHalfBottom35(MAX) or moveMaximize(MAX)
     return hs.geometry.rect(f.x, f.y, f.w, f.h)
   end
 
-  local function Vivaldi()
-    local f = isExternalDisplay and moveRightHalfTop65(max) or moveMaximize(max)
+  local function Browser()
+    local f = IS_EXTERNAL_DISPLAY and moveRightHalfTop65(MAX) or moveMaximize(MAX)
     return hs.geometry.rect(f.x, f.y, f.w, f.h)
   end
 
-  local function VSCode()
-    if vscode then
-      local f = isExternalDisplay and moveLeftHalf(max) or moveMaximize(max)
+  local function Editor()
+    if EDITOR then
+      local f = IS_EXTERNAL_DISPLAY and moveLeftHalf(MAX) or moveMaximize(MAX)
       return hs.geometry.rect(f.x, f.y, f.w, f.h)
     end
     return nil
   end
 
   local function Finder()
-    if finder then
-      local f = isExternalDisplay and moveLeftHalfBottom35(max) or moveToCentre(max, finder:focusedWindow():frame())
+    if FINDER then
+      local f = IS_EXTERNAL_DISPLAY and moveLeftHalfBottom35(MAX) or moveToCentre(MAX, FINDER:focusedWindow():frame())
       return hs.geometry.rect(f.x, f.y, f.w, f.h)
     end
     return nil
   end
 
   local defaultLayout = {
-    { wezterm, nil, screen:name(), nil, WezTerm(), nil },
-    { finder,  nil, screen:name(), nil, Finder(),  nil },
-    { vivaldi, nil, screen:name(), nil, Vivaldi(), nil },
-    { vscode,  nil, screen:name(), nil, VSCode(),  nil },
+    { TERMINAL, nil, SCREEN:name(), nil, Terminal(), nil },
+    { FINDER,   nil, SCREEN:name(), nil, Finder(),   nil },
+    { BROWSER,  nil, SCREEN:name(), nil, Browser(),  nil },
+    { EDITOR,   nil, SCREEN:name(), nil, Editor(),   nil },
   }
 
   -- Save the original AXEnhancedUserInterface state and disable it to apply layout
   for i, app in ipairs(defaultLayout) do
     local axApp = hs.axuielement.applicationElement(app[1])
     if axApp then
-      originalAppState[i] = { app[1], axApp.AXEnhancedUserInterface, hs.window.animationDuration }
+      ORIGINAL_APP_STATE[i] = { app[1], axApp.AXEnhancedUserInterface, hs.window.animationDuration }
       axApp.AXEnhancedUserInterface = false
       hs.window.animationDuration = 0
     end
@@ -340,7 +327,7 @@ local function launchAndArrangeDevDefault()
 
   -- Function to restore the original AXEnhancedUserInterface state
   local function restoreAXUIElementState()
-    for _, app in ipairs(originalAppState) do
+    for _, app in ipairs(ORIGINAL_APP_STATE) do
       local axApp = hs.axuielement.applicationElement(app[1])
       if axApp then
         hs.window.animationDuration = app[3]
@@ -350,65 +337,52 @@ local function launchAndArrangeDevDefault()
   end
 
   hs.layout.apply(defaultLayout)
-  email:hide()
-  finder:kill()
+  EMAIL:hide()
+  FINDER:kill()
   restoreAXUIElementState()
   ACTIVE_WINDOW_LAYOUT = 2
 end
 
 ---Launch and arrange Development applications in 4 visible windows development layout
 local function launchAndArrangeDev4Panel()
-  local email = hs.application.find("com.readdle.spark-desktop", false, false)
-  local wezterm = hs.application.open("com.github.wez.wezterm", 2, true)
-  local vivaldi = hs.application.open("com.vivaldi.Vivaldi", 1, true)
-  local vscode = hs.application.open("com.microsoft.VSCode", 1, true)
-  local finder = hs.application.open("com.apple.finder", 1, true)
-  local samsungDisplay = "SAMSUNG"
-  local benqDisplay = "BenQ RD320UA"
-  local builtInRetinaDisplay = "Built-in Retina Display"
-  local screen = hs.screen.primaryScreen()
-  local max = screen:frame()
-  local isExternalDisplay = screen:name() == benqDisplay or screen:name() == samsungDisplay
-  local originalAppState = {}
-
-  local function WezTerm()
-    local f = isExternalDisplay and moveRightHalfBottom35(max) or moveMaximize(max)
+  local function Terminal()
+    local f = IS_EXTERNAL_DISPLAY and moveRightHalfBottom35(MAX) or moveMaximize(MAX)
     return hs.geometry.rect(f.x, f.y, f.w, f.h)
   end
 
-  local function Vivaldi()
-    local f = isExternalDisplay and moveRightHalfTop65(max) or moveMaximize(max)
+  local function Browser()
+    local f = IS_EXTERNAL_DISPLAY and moveRightHalfTop65(MAX) or moveMaximize(MAX)
     return hs.geometry.rect(f.x, f.y, f.w, f.h)
   end
 
-  local function VSCode()
-    if vscode then
-      local f = isExternalDisplay and moveLeftHalfTop65(max) or moveMaximize(max)
+  local function Editor()
+    if EDITOR then
+      local f = IS_EXTERNAL_DISPLAY and moveLeftHalfTop65(MAX) or moveMaximize(MAX)
       return hs.geometry.rect(f.x, f.y, f.w, f.h)
     end
     return nil
   end
 
   local function Finder()
-    if finder then
-      local f = isExternalDisplay and moveLeftHalfBottom35(max) or moveToCentre(max, finder:focusedWindow():frame())
+    if FINDER then
+      local f = IS_EXTERNAL_DISPLAY and moveLeftHalfBottom35(MAX) or moveToCentre(MAX, FINDER:focusedWindow():frame())
       return hs.geometry.rect(f.x, f.y, f.w, f.h)
     end
     return nil
   end
 
   local defaultLayout = {
-    { wezterm, nil, screen:name(), nil, WezTerm(), nil },
-    { finder,  nil, screen:name(), nil, Finder(),  nil },
-    { vivaldi, nil, screen:name(), nil, Vivaldi(), nil },
-    { vscode,  nil, screen:name(), nil, VSCode(),  nil },
+    { TERMINAL, nil, SCREEN:name(), nil, Terminal(), nil },
+    { FINDER,   nil, SCREEN:name(), nil, Finder(),   nil },
+    { BROWSER,  nil, SCREEN:name(), nil, Browser(),  nil },
+    { EDITOR,   nil, SCREEN:name(), nil, Editor(),   nil },
   }
 
   -- Save the original AXEnhancedUserInterface state and disable it to apply layout
   for i, app in ipairs(defaultLayout) do
     local axApp = hs.axuielement.applicationElement(app[1])
     if axApp then
-      originalAppState[i] = { app[1], axApp.AXEnhancedUserInterface, hs.window.animationDuration }
+      ORIGINAL_APP_STATE[i] = { app[1], axApp.AXEnhancedUserInterface, hs.window.animationDuration }
       axApp.AXEnhancedUserInterface = false
       hs.window.animationDuration = 0
     end
@@ -416,7 +390,7 @@ local function launchAndArrangeDev4Panel()
 
   -- Function to restore the original AXEnhancedUserInterface state
   local function restoreAXUIElementState()
-    for _, app in ipairs(originalAppState) do
+    for _, app in ipairs(ORIGINAL_APP_STATE) do
       local axApp = hs.axuielement.applicationElement(app[1])
       if axApp then
         hs.window.animationDuration = app[3]
@@ -426,7 +400,7 @@ local function launchAndArrangeDev4Panel()
   end
 
   hs.layout.apply(defaultLayout)
-  email:hide()
+  EMAIL:hide()
   restoreAXUIElementState()
   ACTIVE_WINDOW_LAYOUT = 3
 end
