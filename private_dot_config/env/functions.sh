@@ -21,7 +21,7 @@ rmdsdb() {
 trashall() {
   if [[ $(uname -s) = "Darwin" ]]; then
     echo -e "\033[31m*** STOP! *** This function will permanently delete all files in the Trash on all mounted volumes and clear all Apple System Logs.\033[0m"
-    read "Are you sure you want to proceed? (y/N): " confirm
+    read "confirm?Are you sure you want to proceed? (y/N): "
 
     if [[ "$confirm" =~ ^[yY]$ ]]; then
 
@@ -39,9 +39,9 @@ trashall() {
       sudo command rm -rf /private/var/log/asl/*.asl
       echo "Apple System Logs cleared."
 
-      echo "Clearing download history from Quarantine..."
-      sqlite3 "${HOME}/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV*" 'delete from LSQuarantineEvent'
-      echo "Download history cleared from Quarantine."
+      # echo "Clearing download history from Quarantine..."
+      # sqlite3 "${HOME}/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV*" 'delete from LSQuarantineEvent'
+      # echo "Download history cleared from Quarantine."
 
     else
       echo "Operation aborted by user."
