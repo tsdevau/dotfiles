@@ -21,7 +21,7 @@ rmdsdb() {
 trashall() {
   if [[ $(uname -s) = "Darwin" ]]; then
     echo -e "\033[31m*** STOP! *** This function will permanently delete all files in the Trash on all mounted volumes and clear all Apple System Logs.\033[0m"
-    read -p "Are you sure you want to proceed? (y/N): " confirm
+    read "Are you sure you want to proceed? (y/N): " confirm
 
     if [[ "$confirm" =~ ^[yY]$ ]]; then
 
