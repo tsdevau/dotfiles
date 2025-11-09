@@ -13,11 +13,11 @@ AppEventType = {
 }
 
 -- Application Constants
-EMAIL = hs.application.open("com.readdle.spark-desktop", 3, true)
+EMAIL = hs.application.find("com.microsoft.Outlook", 3, true)
 TERMINAL = hs.application.open("com.github.wez.wezterm", 3, true)
 BROWSER = hs.application.open("com.vivaldi.Vivaldi", 3, true)
--- EDITOR = hs.application.open("com.microsoft.VSCode", 3, true)
-EDITOR = hs.application.open("com.cursor.Cursor", 3, true)
+EDITOR = hs.application.find("com.cursor.Cursor", 3, true)
+-- EDITOR = hs.application.find("com.microsoft.VSCode", 3, true)
 FINDER = hs.application.find("com.apple.finder", 3, true)
 BENQ_DISPLAY = "BenQ RD320UA"
 BUILT_IN_RETINA_DISPLAY = "Built-in Retina Display"
