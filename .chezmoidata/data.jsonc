@@ -1,9 +1,9 @@
 {
   "editors": {
     // Change this for vscode, cursor, windsurf, zed, etc.
-    "gui": "code",
+    "gui": "cursor",
     "tui": "hx",
-    "visual": "code --wait"
+    "visual": "cursor --wait"
   },
   "language": "en_AU.UTF-8",
   "user": {
