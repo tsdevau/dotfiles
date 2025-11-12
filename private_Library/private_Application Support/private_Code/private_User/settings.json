@@ -256,7 +256,7 @@
   "diffEditor.codeLens": true,
   "diffEditor.experimental.showMoves": true,
   "diffEditor.experimental.useTrueInlineView": true,
-  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.ignoreTrimWhitespace": true,
   "diffEditor.maxComputationTime": 0,
   "diffEditor.renderSideBySide": true,
   "editor.accessibilitySupport": "off",
