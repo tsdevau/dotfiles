@@ -128,6 +128,7 @@
       { "name": "wezterm" },
       // { "name": "zed@preview" },
       { "name": "zerotier-one" },
+      { "name": "font-exo-2" },
       { "name": "font-iosevka-nerd-font" },
       { "name": "font-iosevka-term-nerd-font" },
       { "name": "font-jetbrains-mono-nerd-font" },
