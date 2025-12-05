@@ -94,6 +94,7 @@
     "casks": [
       { "name": "1password" },
       { "name": "1password-cli" },
+      { "name": "affinity" },
       { "name": "affinity-designer" },
       { "name": "alt-tab" },
       { "name": "bazecor" },
