@@ -15,7 +15,7 @@ AppEventType = {
 -- Application Constants
 EMAIL = hs.application.find("com.microsoft.Outlook", 3, true)
 TERMINAL = hs.application.open("com.github.wez.wezterm", 3, true)
-BROWSER = hs.application.open("com.vivaldi.Vivaldi", 3, true)
+BROWSER = hs.application.open("com.google.Chrome", 3, true)
 EDITOR = hs.application.find("com.cursor.Cursor", 3, true)
 -- EDITOR = hs.application.find("com.microsoft.VSCode", 3, true)
 FINDER = hs.application.find("com.apple.finder", 3, true)
