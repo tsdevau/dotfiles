@@ -3,33 +3,17 @@
   "mcpServers": {
     "apple-mcp": {
       "command": "bunx",
-      "args": [
-        "@dhravya/apple-mcp"
-      ]
-    },
-    "context7": {
-      "command": "bunx",
-      "args": [
-        "@upstash/context7-mcp"
-      ]
-    },
-    "desktop-commander": {
-      "command": "bunx",
-      "args": [
-        "@wonderwhy-er/desktop-commander"
-      ]
-    },
-    "playwright": {
-      "command": "bunx",
-      "args": [
-        "@playwright/mcp"
-      ]
+      "args": ["@dhravya/apple-mcp"]
     },
     "sequential-thinking": {
       "command": "bunx",
-      "args": [
-        "@modelcontextprotocol/server-sequential-thinking"
-      ]
+      "args": ["@modelcontextprotocol/server-sequential-thinking"]
+    }
+  },
+  "preferences": {
+    "quickEntryShortcut": "off",
+    "chillingSlothLocation": {
+      "customPath": "/Volumes/hijo-de-hugo/Users/tpstech/.local/cache/claude"
     }
   }
 }
