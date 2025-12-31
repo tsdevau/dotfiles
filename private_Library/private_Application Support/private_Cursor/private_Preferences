@@ -1,1 +1,13 @@
-{"migrated_user_scripts_toggle":true,"spellcheck":{"dictionaries":["en-AU"]}}
+{
+  "electron": {
+    "media": {
+      "device_id_salt": "77D04375708F5D681C79E9A4CD7B454F"
+    }
+  },
+  "migrated_user_scripts_toggle": true,
+  "spellcheck": {
+    "dictionaries": [
+      "en-AU"
+    ]
+  }
+}
