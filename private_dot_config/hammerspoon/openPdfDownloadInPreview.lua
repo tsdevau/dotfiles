@@ -2,9 +2,10 @@
 
 local downloadsPath = os.getenv("HOME") .. "/Downloads"
 
-local function handleDownload(paths)
-  for _, path in pairs(paths) do
-    if path:match("%.pdf$") then
+local function handleDownload(paths, flags)
+  for i, path in pairs(paths) do
+    local flagTable = flags[i]
+    if path:match("%.pdf$") and flagTable.itemCreated and flagTable.itemIsFile then
       -- Small delay to ensure file is fully written
       hs.timer.doAfter(0.5, function()
         hs.execute("open -a Preview '" .. path .. "'")
