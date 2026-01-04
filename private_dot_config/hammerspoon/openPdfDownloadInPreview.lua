@@ -1,4 +1,5 @@
 -- Auto-open PDFs in Preview when they download
+
 local downloadsPath = os.getenv("HOME") .. "/Downloads"
 
 local function handleDownload(paths)
