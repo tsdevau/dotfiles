@@ -20,6 +20,9 @@ hs.pathwatcher.new("~/.config/hammerspoon", reloadConfig):start()
 -- Window Management Module
 require("windowManager")
 
+-- Open PDF in Preview When Downloaded Module
+require("openPdfDownloadInPreview")
+
 -- Test Hotkey Modal
 local modalLeader = hs.hotkey.modal.new({ "alt" }, "Space")
 
