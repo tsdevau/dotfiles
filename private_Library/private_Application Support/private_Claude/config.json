@@ -1,0 +1,63 @@
+{
+	"darkMode": "dark",
+	"scale": 0,
+	"quickWindowPosition": {
+		"absolutePointInWorkspace": {
+			"x": 1574,
+			"y": 824
+		},
+		"monitor": {
+			"accelerometerSupport": "unknown",
+			"bounds": {
+				"x": 0,
+				"y": 0,
+				"width": 3840,
+				"height": 2160
+			},
+			"colorDepth": 24,
+			"colorSpace": "{primaries:P3, transfer:SRGB, matrix:RGB, range:FULL}",
+			"depthPerComponent": 8,
+			"detected": true,
+			"displayFrequency": 60.000003814697266,
+			"id": 3,
+			"internal": false,
+			"label": "SAMSUNG",
+			"maximumCursorSize": {
+				"width": 0,
+				"height": 0
+			},
+			"monochrome": false,
+			"nativeOrigin": {
+				"x": 0,
+				"y": 0
+			},
+			"rotation": 0,
+			"scaleFactor": 1,
+			"size": {
+				"width": 3840,
+				"height": 2160
+			},
+			"workArea": {
+				"x": 0,
+				"y": 25,
+				"width": 3840,
+				"height": 2135
+			},
+			"workAreaSize": {
+				"width": 3840,
+				"height": 2135
+			},
+			"touchSupport": "unknown"
+		},
+		"relativePointFromMonitor": {
+			"x": 1574,
+			"y": 799
+		}
+	},
+	"locale": "en-US",
+	"userThemeMode": "dark",
+	"dxt:allowlistEnabled": false,
+	"dxt:allowlistLastUpdated": "2026-01-04T05:27:41.991Z",
+	"dxt:allowlistCache": "djEw8bseOX3ij+gLWqyjIxme/UefyTFMsOWbf5/gow0a6Jw5zCa7YdKBD2Hp5maHHWNnFbbWqHcsqjojTfdQTZ4zqBXviv7D6ijgbwOTdpbjnwr9ZERxFI6nFGVlz3NXoB1rHhssOCdMXu3mDT2tbIRvXMtJ2H4U6i5K29GR32Jr2HLrElAVGd+vTp5W2vzuV8THRo0SX+6CezTpuAE4IXxuiG6pT63Sc4SsucJg95pUcgEvpOIWr0G88XhtIAeboC6JtCKNYmgajfsokuukEE60kMsScJawPIFh/V1g4SaxTLdgohTkWdHwuGXp0TMwCqVxI/YQDWNz11KXot0P18UAuQSat35kmaYYMIFsHL3ocSvBlGcEeTTAUtF2iJx74UZylQ/iMhjBumfI7eeDO2a1VzI2cmXOMSpawSwDERCrAfrAX66VnL/8TLl3wNG/P3AWS9pFgoFEet6gwOte+08bBVJr7qZGd9lAma7DPcrYuUdjsPz0oa3nguqu0lA0cRphgDDxzlfHGaSWe33PkNp4EPGvXu4gyDX5T7MmtEgC/oHgUx/Boo0zqcN2LXfXy9SkYgx2NBXIafWqu34uOBpZIE4CzvJSsoiKLHC9OFkKdMKKArnwC0FUtNFePNLRfq47El0dg3Ar1muFWlQafzfSLfEzrA230yuu25i2Z5m5a4g+1CYL2uWLbOE5lMp5aA9Z0z9HuRYHeg3WuTzL5r+GufqHqwSOFL+PFIuHmAfncOZqys0s98ricbR5j0rK1mXg",
+	"hasTrackedInitialActivation": true
+}

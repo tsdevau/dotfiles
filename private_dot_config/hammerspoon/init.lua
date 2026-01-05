@@ -5,19 +5,16 @@ HYPER = { "cmd", "ctrl", "alt", "shift" }
 WINDOW_GAP = 8
 ACTIVE_WINDOW_LAYOUT = 3
 
+-- Enable Spotlight for name searches
+hs.application.enableSpotlightForNameSearches(true)
+
+-- Open PDF in Preview when downloaded module
+require("openPdfDownloadInPreview")
+
 -- Reload Hammerspoon configuration on change
-local function reloadConfig(paths, flags)
-  for _, file in pairs(paths) do
-    if file:sub(-4) == ".lua" then
-      hs.reload()
-      return
-    end
-  end
-end
+require("reloadHammerspoonConfig")
 
-hs.pathwatcher.new("~/.config/hammerspoon", reloadConfig):start()
-
--- Window Management Module
+-- Window Management module
 require("windowManager")
 
 -- Test Hotkey Modal
