@@ -3,6 +3,7 @@
     "apps": [
       { "name": "1Password for Safari", "id": 1569813296 },
       { "name": "Blackmagic Disk Speed Test", "id": 425264550 },
+      { "name": "Coin Tick", "id": 1141688067 },
       { "name": "Dark Reader for Safari", "id": 1438243180 },
       // { name: "IP Scanner", id: 6443819966 }, // Not currently using it
       // { name: "LightBlue", id: 557428110 }, // Not currently using it
