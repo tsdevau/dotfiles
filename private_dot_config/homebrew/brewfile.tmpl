@@ -6,7 +6,7 @@ tap {{ . | quote }}
 {{- end }}
 
 {{- range .homebrew.formulae }}
-brew {{ .name | quote }}{{if hasKey . "os" }} if OS.{{- .os -}}?{{ end }}{{ if hasKey . "restart_service" }}, restart_service: :changed{{ end }}{{ if hasKey . "head" }}, args: ["HEAD"]{{ end }}
+brew {{ .name | quote }}{{if hasKey . "os" }} if OS.{{- .os -}}?{{ end }}{{ if and (hasKey . "restart_service") (not (hasPrefix (env "HOME") "/Volumes/")) }}, restart_service: :changed{{ end }}{{ if hasKey . "head" }}, args: ["HEAD"]{{ end }}
 {{- end }}
 
 {{- range .homebrew.casks }}
