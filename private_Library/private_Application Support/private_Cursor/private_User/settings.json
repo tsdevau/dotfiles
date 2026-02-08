@@ -62,7 +62,6 @@
     "editor.defaultFormatter": "yy0931.vscode-sqlite3-editor",
   },
   "[svelte]": {
-    // "editor.defaultFormatter": "svelte.svelte-vscode"
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[toml]": {
@@ -254,7 +253,7 @@
   "diffEditor.codeLens": true,
   "diffEditor.experimental.showMoves": true,
   "diffEditor.experimental.useTrueInlineView": true,
-  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.maxComputationTime": 0,
   "diffEditor.renderSideBySide": true,
   "editor.accessibilitySupport": "off",
@@ -493,7 +492,6 @@
   "window.customTitleBarVisibility": "never",
   "window.newWindowProfile": "Default",
   "window.titleBarStyle": "native",
-  "workbench.activityBar.location": "top",
   "workbench.colorCustomizations": {
     "tab.activeBackground": "#313244",
     "tab.activeBorder": "#cba6f7",
@@ -513,4 +511,5 @@
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 16,
   "workbench.tree.renderIndentGuides": "always",
+  "cursor.cpp.disabledLanguages": ["plaintext", "scminput"],
 }
