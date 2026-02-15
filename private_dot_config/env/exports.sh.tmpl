@@ -41,7 +41,17 @@ export MANPAGER='sh -c "sed -u -e '\''s/\x1B\[[0-9;]*m//g; s/.\x08//g'\'' | bat 
 export PAGER="bat"
 export TERMINFO_DIRS="${XDG_DATA_HOME}/terminfo:/usr/share/terminfo"
 export TERMINFO="${XDG_DATA_HOME}/terminfo"
-# export TMPDIR="/Volumes/hijo-de-hugo/Users/tpstech/.tmp"
+
+# TMPDIR override (Mac mini external boot volume).
+# If the volume isn't present (e.g. on the MacBook), ensure we don't keep a stale TMPDIR
+# pointing at it, as that breaks tools (e.g. 1Password CLI) that create temp dirs.
+_CHEZMOI_MINI_TMPDIR="/Volumes/hijo-de-hugo/Users/tpstech/.tmp"
+if [[ -d "${_CHEZMOI_MINI_TMPDIR}" && -w "${_CHEZMOI_MINI_TMPDIR}" ]]; then
+  export TMPDIR="${_CHEZMOI_MINI_TMPDIR}"
+elif [[ "${TMPDIR:-}" == "/Volumes/hijo-de-hugo/"* ]]; then
+  unset TMPDIR
+fi
+unset _CHEZMOI_MINI_TMPDIR
 
 
 # Bun environment
