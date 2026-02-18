@@ -5,7 +5,7 @@
       // Keep formatted as single line
       "FelixKratz/formulae",
       "oven-sh/bun",
-      "supabase/tap",
+      "supabase/tap"
     ],
 
     // @type { name: <string>, restart_service?: <boolean>, os?: <mac|linux> }[]
@@ -88,7 +88,7 @@
       { "name": "yaml-language-server" },
       { "name": "yazi" },
       { "name": "yq" },
-      { "name": "zoxide" },
+      { "name": "zoxide" }
     ],
 
     // @type { name: <string>, restart_service?: <boolean>, os?: <mac|linux> }[]
@@ -144,7 +144,7 @@
       { "name": "font-playfair-display" },
       { "name": "font-roboto" },
       { "name": "font-inter" },
-      { "name": "font-montserrat" },
-    ],
-  },
+      { "name": "font-montserrat" }
+    ]
+  }
 }
