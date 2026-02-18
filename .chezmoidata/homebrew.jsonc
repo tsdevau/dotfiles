@@ -5,7 +5,7 @@
       // Keep formatted as single line
       "FelixKratz/formulae",
       "oven-sh/bun",
-      "supabase/tap"
+      "supabase/tap",
     ],
 
     // @type { name: <string>, restart_service?: <boolean>, os?: <mac|linux> }[]
@@ -88,7 +88,7 @@
       { "name": "yaml-language-server" },
       { "name": "yazi" },
       { "name": "yq" },
-      { "name": "zoxide" }
+      { "name": "zoxide" },
     ],
 
     // @type { name: <string>, restart_service?: <boolean>, os?: <mac|linux> }[]
@@ -123,7 +123,6 @@
       { "name": "microsoft-teams" },
       { "name": "obsidian" },
       { "name": "orbstack" },
-      { "name": "philips-hue-sync" },
       { "name": "raycast" },
       { "name": "signal" },
       { "name": "synology-drive" },
@@ -146,6 +145,6 @@
       { "name": "font-roboto" },
       { "name": "font-inter" },
       { "name": "font-montserrat" },
-    ]
-  }
+    ],
+  },
 }
