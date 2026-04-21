@@ -1,75 +1,74 @@
 {
   "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode",
+    "editor.defaultFormatter": "astro-build.astro-vscode"
   },
   "[config]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[dotenv]": {
-    "editor.defaultFormatter": "lkrms.inifmt",
+    "editor.defaultFormatter": "lkrms.inifmt"
   },
   "[env]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[ignore]": {
-    "editor.defaultFormatter": "lkrms.inifmt",
+    "editor.defaultFormatter": "lkrms.inifmt"
   },
   "[ini]": {
-    "editor.defaultFormatter": "lkrms.inifmt",
+    "editor.defaultFormatter": "lkrms.inifmt"
   },
   "[kdl]": {
-    "editor.defaultFormatter": "kdl-org.kdl",
+    "editor.defaultFormatter": "kdl-org.kdl"
   },
   "[lua]": {
-    "editor.defaultFormatter": "sumneko.lua",
+    "editor.defaultFormatter": "sumneko.lua"
   },
   "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
   "[plaintext]": {
-    "editor.defaultFormatter": "lkrms.inifmt",
+    "editor.defaultFormatter": "lkrms.inifmt"
   },
   "[properties]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[scminput]": {
     "editor.rulers": [
       {
         "color": "#34D39955",
-        "column": 50,
+        "column": 50
       },
       {
         "color": "#60A5FA55",
-        "column": 72,
+        "column": 72
       },
       {
         "color": "#F8717155",
-        "column": 80,
-      },
+        "column": 80
+      }
     ],
-    "editor.wordWrap": "on",
+    "editor.wordWrap": "on"
   },
   "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[sql]": {
-    "editor.defaultFormatter": "ReneSaarsoo.sql-formatter-vsc",
+    "editor.defaultFormatter": "ReneSaarsoo.sql-formatter-vsc"
   },
   "[sqlite]": {
-    "editor.defaultFormatter": "yy0931.vscode-sqlite3-editor",
+    "editor.defaultFormatter": "yy0931.vscode-sqlite3-editor"
   },
   "[svelte]": {
-    // "editor.defaultFormatter": "svelte.svelte-vscode"
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[toml]": {
-    "editor.defaultFormatter": "tamasfe.even-better-toml",
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "[xml]": {
-    "editor.defaultFormatter": "PrateekMahendrakar.prettyxml",
+    "editor.defaultFormatter": "PrateekMahendrakar.prettyxml"
   },
   "accessibility.verbosity.inlineChat": false,
   "astro.content-intellisense": true,
@@ -79,57 +78,57 @@
       "bold": true,
       "color": "#f87171",
       "italic": false,
-      "tag": "!",
+      "tag": "!"
     },
     {
       "backgroundColor": "transparent",
       "bold": false,
       "color": "#60A5FA",
       "italic": false,
-      "tag": "INFO",
+      "tag": "INFO"
     },
     {
       "backgroundColor": "#f472b6",
       "bold": true,
       "color": "#333333",
       "italic": true,
-      "tag": "MARK",
+      "tag": "MARK"
     },
     {
       "backgroundColor": "transparent",
       "bold": true,
       "color": "#f472b6",
       "italic": false,
-      "tag": ".",
+      "tag": "."
     },
     {
       "backgroundColor": "transparent",
       "bold": false,
       "color": "#fb923c",
       "italic": false,
-      "tag": "TODO",
+      "tag": "TODO"
     },
     {
       "backgroundColor": "#fb923c",
       "bold": true,
       "color": "#333333",
       "italic": false,
-      "tag": "WARN",
+      "tag": "WARN"
     },
     {
       "backgroundColor": "transparent",
       "bold": false,
       "color": "#4ade80",
       "italic": false,
-      "tag": "*",
+      "tag": "*"
     },
     {
       "backgroundColor": "transparent",
       "bold": true,
       "color": "#c084fc",
       "italic": false,
-      "tag": "+",
-    },
+      "tag": "+"
+    }
   ],
   "chat.agent.enabled": true,
   "chat.editor.fontSize": 14,
@@ -189,7 +188,7 @@
     "typescript": "tsx",
     "v": "v run",
     "vbscript": "cscript //Nologo",
-    "zig": "zig run",
+    "zig": "zig run"
   },
   "code-runner.ignoreSelection": true,
   "code-runner.saveFileBeforeRun": true,
@@ -206,7 +205,7 @@
     "jsonc",
     "svelte",
     "typescript",
-    "typescriptreact",
+    "typescriptreact"
   ],
   "color-highlight.useARGB": false,
   "console-ninja.allowConsoleLogToTriggerPredictions": true,
@@ -223,15 +222,15 @@
       "addWords": true,
       "name": "custom-dictionary-user",
       "path": "~/.config/cspell/custom-dictionary-user.txt",
-      "scope": "user",
-    },
+      "scope": "user"
+    }
   },
   "cSpell.dictionaries": ["astro", "css", "en-au", "html", "json", "markdown", "svelte", "typescript_ts", "typescript"],
   "cSpell.enabled": true,
   "cSpell.enabledNotifications": {
     "Average Word Length too Long": false,
     "Lines too Long": false,
-    "Maximum Word Length Exceeded": false,
+    "Maximum Word Length Exceeded": false
   },
   "cSpell.language": "en-AU",
   "cSpell.suggestionMenuType": "quickFix",
@@ -254,7 +253,7 @@
   "diffEditor.codeLens": true,
   "diffEditor.experimental.showMoves": true,
   "diffEditor.experimental.useTrueInlineView": true,
-  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.maxComputationTime": 0,
   "diffEditor.renderSideBySide": true,
   "editor.accessibilitySupport": "off",
@@ -262,7 +261,7 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.codeActionsOnSave": {
     "source.addMissingImports": "explicit",
-    "source.organizeImports": "explicit",
+    "source.organizeImports": "explicit"
   },
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -283,23 +282,23 @@
   "editor.quickSuggestions": {
     "comments": "inline",
     "other": "on",
-    "strings": "on",
+    "strings": "on"
   },
   "editor.renderLineHighlight": "gutter",
   "editor.renderWhitespace": "boundary",
   "editor.rulers": [
     {
       "color": "#34D39955",
-      "column": 80,
+      "column": 80
     },
     {
       "color": "#60A5FA55",
-      "column": 100,
+      "column": 100
     },
     {
       "color": "#F8717155",
-      "column": 120,
-    },
+      "column": 120
+    }
   ],
   "editor.semanticHighlighting.enabled": true,
   "editor.showFoldingControls": "always",
@@ -308,12 +307,12 @@
   "editor.suggest.showWords": false,
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
-  "editor.wordWrap": "off",
+  "editor.wordWrap": "on",
   "emmet.includeLanguages": {
     "astro": "html",
     "postcss": "css",
     "svelte": "html",
-    "vue": "html",
+    "vue": "html"
   },
   "eslint.enable": true,
   "eslint.validate": [
@@ -325,19 +324,19 @@
     "jsonc",
     "svelte",
     "typescript",
-    "typescriptreact",
+    "typescriptreact"
   ],
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 1,
   "extensions.experimental.affinity": {
-    "gregoire.dance": 1,
+    "gregoire.dance": 1
   },
   "files.associations": {
     ".env": "dotenv",
     ".env.*": "dotenv",
-    "*.css": "tailwindcss",
+    "*.css": "tailwindcss"
   },
   "files.watcherExclude": {
     "**/.astro/**": true,
@@ -353,7 +352,7 @@
     "**/dist/**": true,
     "**/node_modules/**": true,
     "**/out/**": true,
-    "**/tmp/**": true,
+    "**/tmp/**": true
   },
   "git.autofetch": true,
   "git.closeDiffOnOperation": true,
@@ -365,33 +364,33 @@
   "github.copilot.chat.codesearch.enabled": true,
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
-      "text": "Use Australian English spelling.",
+      "text": "Use Australian English spelling."
     },
     {
-      "text": "Use conventional commit message format.",
+      "text": "Use conventional commit message format."
     },
     {
-      "text": "Use only one of [ 'chore', 'ci', 'docs', 'feat', 'fix', 'perf', 'refactor', 'style', 'test', 'wip'] as the commit type.",
+      "text": "Use only one of [ 'chore', 'ci', 'docs', 'feat', 'fix', 'perf', 'refactor', 'style', 'test', 'wip'] as the commit type."
     },
     {
-      "text": "Always include a scope.",
+      "text": "Always include a scope."
     },
     {
-      "text": "Never use '!' or 'BREAKING CHANGE' in the commit message.",
+      "text": "Never use '!' or 'BREAKING CHANGE' in the commit message."
     },
     {
-      "text": "Avoid unnecessary adjectives (eg 'enhance', 'comprehensive', etc).",
+      "text": "Avoid unnecessary adjectives (eg 'enhance', 'comprehensive', etc)."
     },
     {
-      "text": "Never use emojis.",
-    },
+      "text": "Never use emojis."
+    }
   ],
   "github.copilot.chat.languageContext.typescript.enabled": true,
   "github.copilot.enable": {
     "*": true,
     "markdown": true,
     "plaintext": false,
-    "scminput": false,
+    "scminput": false
   },
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.gitAuthentication": true,
@@ -432,7 +431,7 @@
   "scm.defaultViewMode": "tree",
   "scm.diffDecorationsGutterPattern": {
     "added": true,
-    "modified": true,
+    "modified": true
   },
   "scm.inputFontSize": 14,
   "scm.inputMaxLineCount": 50,
@@ -450,7 +449,7 @@
     ["cn\\(([^)]*)\\)", "cn"],
     ["cva\\(([^)]*)\\)", "cva"],
     ["tw\\(([^)]*)\\)", "tw"],
-    ["twMerge\\(([^)]*)\\)", "twMerge"],
+    ["twMerge\\(([^)]*)\\)", "twMerge"]
   ],
   "telemetry.telemetryLevel": "crash",
   "template-string-converter.autoRemoveTemplateString": true,
@@ -462,7 +461,7 @@
     "javascriptreact",
     "svelte",
     "typescript",
-    "typescriptreact",
+    "typescriptreact"
   ],
   "terminal.external.osxExec": "WezTerm.app",
   "terminal.integrated.cursorStyle": "line",
@@ -474,13 +473,13 @@
     "bash": {
       "args": ["-l"],
       "icon": "terminal-bash",
-      "path": "/bin/bash",
+      "path": "/bin/bash"
     },
     "zsh": {
       "args": ["-l"],
       "icon": "terminal",
-      "path": "/bin/zsh",
-    },
+      "path": "/bin/zsh"
+    }
   },
   "terminal.integrated.suggest.enabled": false,
   "typescript.implementationsCodeLens.enabled": true,
@@ -493,12 +492,11 @@
   "window.customTitleBarVisibility": "never",
   "window.newWindowProfile": "Default",
   "window.titleBarStyle": "native",
-  "workbench.activityBar.location": "top",
   "workbench.colorCustomizations": {
     "tab.activeBackground": "#313244",
     "tab.activeBorder": "#cba6f7",
     "tab.border": "#cba6f7",
-    "tab.inactiveBackground": "#18182500",
+    "tab.inactiveBackground": "#18182500"
   },
   "workbench.colorTheme": "Catppuccin by tpsTech Mocha",
   "workbench.editor.closeEmptyGroups": false,
@@ -513,4 +511,5 @@
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 16,
   "workbench.tree.renderIndentGuides": "always",
+  "cursor.cpp.disabledLanguages": ["plaintext", "scminput"]
 }

@@ -7,10 +7,10 @@ username = {{ .user.githubUsername }}
 signingkey = {{ onepasswordRead "op://tsdevau/ocxipduumpxlza7jozld45zmsu/signing-key" }}
 
 [core]
-pager = bat
 editor = {{ .editors.gui }} --wait
 excludesfile = {{ .chezmoi.homeDir -}}/.config/git/gitignore_global
 fileMode = false
+pager = bat
 
 [init]
 defaultBranch = main
@@ -19,8 +19,8 @@ defaultBranch = main
 rebase = false
 
 [push]
-default = simple
 autoSetupRemote = true
+default = simple
 
 [merge]
 conflictstyle = diff3
@@ -32,31 +32,31 @@ tool = vscode
 cmd = {{ .editors.gui }} --wait --diff $LOCAL $REMOTE
 
 [alias]
-st = status
-co = checkout
+amend = commit --amend
 br = branch
+cleanup = "!git fetch --prune && git for-each-ref --format='%(refname:short) %(upstream:track)' refs/heads | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
+co = checkout
 ct = commit
 cta = commit -a
-ctm = commit -m
 ctam = commit -am
+ctm = commit -m
 df = diff
-lg = log --oneline --graph --decorate --all
-unstage = reset HEAD --
 last = log -1 HEAD
-visual = !gitk
-amend = commit --amend
+lg = log --oneline --graph --decorate --all
+st = status
 undo = reset --soft HEAD~1
-cleanup = "!git fetch --prune && git for-each-ref --format='%(refname:short) %(upstream:track)' refs/heads | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
+unstage = reset HEAD --
+visual = !gitk
 
 
 [attributes]
 # Set default attributes for files
 
 [color]
-ui = auto
 branch = auto
 diff = auto
 status = auto
+ui = auto
 
 [color "branch"]
 current = yellow reverse
@@ -64,10 +64,10 @@ local = yellow
 remote = green
 
 [color "diff"]
-meta = yellow bold
 frag = magenta bold
-old = red bold
+meta = yellow bold
 new = green bold
+old = red bold
 
 [color "status"]
 added = yellow
@@ -81,6 +81,6 @@ helper = osxkeychain
 
 [filter "lfs"]
 clean = git-lfs clean -- %f
-smudge = git-lfs smudge -- %f
 process = git-lfs filter-process
 required = true
+smudge = git-lfs smudge -- %f
