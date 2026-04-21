@@ -108,6 +108,7 @@
       { "name": "dropzone" },
       { "name": "ghostty" },
       { "name": "google-chrome" },
+      { "name": "google-gemini" },
       { "name": "hammerspoon" },
       { "name": "iina" },
       // { "name": "insomnia" },
@@ -145,7 +146,7 @@
       { "name": "font-playfair-display" },
       { "name": "font-roboto" },
       { "name": "font-inter" },
-      { "name": "font-montserrat" },
+      { "name": "font-montserrat" }
     ]
   }
 }
