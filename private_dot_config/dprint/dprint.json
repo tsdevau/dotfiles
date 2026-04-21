@@ -1,11 +1,14 @@
 {
+  "$schema": "https://dprint.dev/schemas/v0.json",
   "dockerfile": {},
-  "excludes": [
-    "**/node_modules",
-    "**/*-lock.json"
-  ],
+  "excludes": ["**/node_modules", "**/*-lock.json"],
   "graphql": {},
   "json": {
+    "lineWidth": 120,
+    "preferSingleLine": false,
+    "trailingCommas": "never"
+  },
+  "jsonc": {
     "lineWidth": 120,
     "preferSingleLine": false,
     "trailingCommas": "never"
@@ -49,16 +52,16 @@
     "vue.styleIndent": true
   },
   "plugins": [
-    "https://plugins.dprint.dev/typescript-0.95.4.wasm",
-    "https://plugins.dprint.dev/json-0.20.0.wasm",
-    "https://plugins.dprint.dev/markdown-0.18.0.wasm",
+    "https://plugins.dprint.dev/typescript-0.95.15.wasm",
+    "https://plugins.dprint.dev/json-0.21.3.wasm",
+    "https://plugins.dprint.dev/markdown-0.21.1.wasm",
     "https://plugins.dprint.dev/toml-0.7.0.wasm",
-    "https://plugins.dprint.dev/dockerfile-0.3.2.wasm",
-    "https://plugins.dprint.dev/ruff-0.3.9.wasm",
-    "https://plugins.dprint.dev/g-plane/malva-v0.12.1.wasm",
-    "https://plugins.dprint.dev/g-plane/markup_fmt-v0.20.0.wasm",
-    "https://plugins.dprint.dev/g-plane/pretty_yaml-v0.5.1.wasm",
-    "https://plugins.dprint.dev/g-plane/pretty_graphql-v0.2.1.wasm",
+    "https://plugins.dprint.dev/dockerfile-0.3.3.wasm",
+    "https://plugins.dprint.dev/ruff-0.7.10.wasm",
+    "https://plugins.dprint.dev/g-plane/malva-v0.15.3.wasm",
+    "https://plugins.dprint.dev/g-plane/markup_fmt-v0.27.0.wasm",
+    "https://plugins.dprint.dev/g-plane/pretty_yaml-v0.6.0.wasm",
+    "https://plugins.dprint.dev/g-plane/pretty_graphql-v0.2.3.wasm",
     "https://plugins.dprint.dev/RubixDev/stylua-v0.2.1.wasm"
   ],
   "ruff": {},
@@ -85,6 +88,10 @@
     "useBraces": "always",
     "useTabs": false
   },
+  "indentWidth": 2,
+  "lineWidth": 120,
+  "newLineKind": "lf",
+  "useTabs": false,
   "yaml": {
     "printWidth": 120
   }
