@@ -1395,5 +1395,10 @@
     "key": "cmd+y",
     "command": "-sqlite3-editor.delegateToWebview",
     "when": "activeCustomEditorId == 'sqlite3-editor.editor' || activeCustomEditorId == 'sqlite3-editor.optional'"
+  },
+  {
+    "key": "alt+cmd+s",
+    "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
+    "when": "!isAuxiliaryWindowFocusedContext"
   }
 ]
