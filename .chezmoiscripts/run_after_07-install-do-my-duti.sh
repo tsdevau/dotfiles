@@ -5,3 +5,9 @@ echo "Installing doMyDuti..."
 curl -fsSL https://raw.githubusercontent.com/tsdevau/doMyDuti/main/install.sh | bash
 
 echo "doMyDuti installation completed"
+
+echo "Applying doMyDuti default configuration..."
+
+doMyDuti.sh --immediate
+
+echo "doMyDuti default configuration applied"
