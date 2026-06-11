@@ -213,7 +213,7 @@
   "console-ninja.autoClearLogViewerOnFileChanges": false,
   "console-ninja.captureFunctions": true,
   "console-ninja.dateTimeFormat": "HH:mm:ss",
-  "console-ninja.featureSet": "Community",
+  "console-ninja.featureSet": "Pro",
   "console-ninja.fontSize": 16,
   "console-ninja.outputMode": "In View",
   "console-ninja.searchUrl": "https://www.google.com/search?udm=14&q={query}",
