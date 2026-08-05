@@ -520,5 +520,6 @@
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 16,
   "workbench.tree.renderIndentGuides": "always",
-  "cursor.cpp.disabledLanguages": ["plaintext", "scminput"]
+  "cursor.cpp.disabledLanguages": ["plaintext", "scminput"],
+  "workbench.preferredDarkColorTheme": "Catppuccin by tpsTech Mocha"
 }

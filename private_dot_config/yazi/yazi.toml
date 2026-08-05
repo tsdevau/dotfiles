@@ -1,9 +1,10 @@
-[mgr]
+[manager]
 ratio = [0, 3, 3]
 show_hidden = false
 sort_by = "natural"
 sort_dir_first = true
-show_symlink = false
+sort_sensitive = false
+show_symlink = true
 linemode = "mtime_or_btime"
 
 [opener]
@@ -19,7 +20,7 @@ git = [
 [open]
 prepend_rules = [
   # Folders
-  { name = "*/", use = [
+  { url = "*/", use = [
     "open",
     "edit",
     "git",
@@ -60,7 +61,7 @@ prepend_rules = [
     "reveal",
   ] },
   # Fallback
-  { name = "*", use = [
+  { url = "*", use = [
     "open",
     "edit",
     "reveal",
