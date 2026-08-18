@@ -126,6 +126,7 @@
       { "name": "morgen", "greedy": true },
       // { "name": "obsidian", "greedy": true },
       { "name": "orbstack", "greedy": true },
+      { "name": "oscar", "greedy": true },
       { "name": "raycast", "greedy": true },
       // { "name": "signal", "greedy": true },
       { "name": "synology-drive", "greedy": true },
