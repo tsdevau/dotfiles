@@ -123,7 +123,7 @@
       { "name": "microsoft-auto-update", "greedy": true },
       { "name": "microsoft-office", "greedy": true },
       { "name": "microsoft-teams", "greedy": true },
-      { "name": "morgen", "greedy": true },
+      // { "name": "morgen", "greedy": true },
       // { "name": "obsidian", "greedy": true },
       { "name": "orbstack", "greedy": true },
       { "name": "oscar", "greedy": true },
