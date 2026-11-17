@@ -125,15 +125,16 @@
       { "name": "zerotier-one", "greedy": true },
       { "name": "font-audiowide", "greedy": true },
       { "name": "font-exo-2", "greedy": true },
+      { "name": "font-inter", "greedy": true },
       { "name": "font-iosevka-nerd-font", "greedy": true },
       { "name": "font-iosevka-term-nerd-font", "greedy": true },
       { "name": "font-jetbrains-mono-nerd-font", "greedy": true },
       { "name": "font-meslo-lg-nerd-font", "greedy": true },
+      { "name": "font-montserrat", "greedy": true },
       { "name": "font-orbitron", "greedy": true },
       { "name": "font-playfair-display", "greedy": true },
       { "name": "font-roboto", "greedy": true },
-      { "name": "font-inter", "greedy": true },
-      { "name": "font-montserrat", "greedy": true }
+      { "name": "font-yuji-mai", "greedy": true }
     ]
   }
 }
