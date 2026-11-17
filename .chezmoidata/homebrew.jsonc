@@ -45,7 +45,6 @@
       { "name": "lua" },
       { "name": "luajit" },
       { "name": "markdown-oxide" },
-      { "name": "marksman" },
       { "name": "mas" },
       { "name": "node" },
       // { "name": "ollama" },
