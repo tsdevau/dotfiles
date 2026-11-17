@@ -28,6 +28,14 @@ fi
 # Update Homebrew
 brew update
 
+# Trust all taps declared in the Brewfile
+while IFS= read -r tap; do
+  [ -z "$tap" ] && continue
+  echo -e "\033[34mEnsuring trust for tap: ${tap}\033[0m"
+  brew tap "$tap" >/dev/null 2>&1 || true
+  brew trust --tap "$tap"
+done < <(sed -nE 's/^tap[[:space:]]+"([^"]+)".*/\1/p' "$BREWFILE")
+
 # Install packages based on the Brewfile bundle
 brew bundle --file "$BREWFILE"
 
