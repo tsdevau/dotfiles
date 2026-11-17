@@ -2,7 +2,7 @@
 # MAS Apps hash: {{ include ".chezmoidata/mas.jsonc" | sha256sum }}
 
 {{- range .homebrew.taps }}
-tap {{ . | quote }}
+tap {{ . | quote }}, trusted: true
 {{- end }}
 
 {{- range .homebrew.formulae }}
