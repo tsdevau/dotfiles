@@ -2,9 +2,8 @@
   "homebrew": {
     // @type <string>[]
     "taps": [
-      // Keep formatted as single line
+      // Keep formatted as single item per line
       "FelixKratz/formulae",
-      "oven-sh/bun",
       "supabase/tap"
     ],
 
