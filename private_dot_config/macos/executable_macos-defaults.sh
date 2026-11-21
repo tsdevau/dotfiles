@@ -72,7 +72,7 @@ defaults write NSGlobalDomain AppleMeasurementUnits -string "Millimeters"
 ####################################################################################################
 
 # Set Cursor as the default text editor app
-defaults write com.apple.LaunchServices/com.apple.LaunchServices.secure LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=${TEXT_EDITOR};}'
+defaults write com.apple.LaunchServices/com.apple.LaunchServices.secure LSHandlers -array-add "{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=${TEXT_EDITOR};}"
 
 # Enable Spell Checking
 defaults write NSGlobalDomain NSAllowContinuousSpellChecking -bool true
