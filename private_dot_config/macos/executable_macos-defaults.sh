@@ -26,19 +26,36 @@ while true; do
 done 2>/dev/null &
 
 ####################################################################################################
+# Set Variables and Constants                                                                      #
+####################################################################################################
+
+# Set language locale
+LOCALE="en_AU"
+PREFERRED_LANGUAGES=("${LOCALE}" "en")
+
+# Set preferred timezone
+TIMEZONE="Australia/Brisbane"
+
+# Set default text editor application
+TEXT_EDITOR="com.todesktop.230313mzl4w4u92"
+
+# Set the default directory for screenshots
+SCREENSHOTS_DIR="${HOME}/Library/CloudStorage/SynologyDrive-home/screenshots"
+
+####################################################################################################
 # System Language & Format Preferences                                                             #
 ####################################################################################################
 
 # Set System Locale
-defaults write NSGlobalDomain AppleLocale -string "en_AU"
+defaults write NSGlobalDomain AppleLocale -string "${LOCALE}"
 
 # Set System Timezone
-sudo systemsetup -settimezone "Australia/Brisbane" 2>/dev/null 1>&2
+sudo systemsetup -settimezone "${TIMEZONE}" 2>/dev/null 1>&2
 
 # Set System Language preferences
-defaults write NSGlobalDomain AppleLanguages -array "en_AU" "en"
-defaults write NSGlobalDomain NSLinguisticDataAssetsRequested -array "en_AU" "en"
-defaults write NSGlobalDomain NSLinguisticDataAssetsRequestedByChecker -array "en_AU" "en"
+defaults write NSGlobalDomain AppleLanguages -array "${PREFERRED_LANGUAGES[@]}"
+defaults write NSGlobalDomain NSLinguisticDataAssetsRequested -array "${PREFERRED_LANGUAGES[@]}"
+defaults write NSGlobalDomain NSLinguisticDataAssetsRequestedByChecker -array "${PREFERRED_LANGUAGES[@]}"
 
 # Set System time preference to 24 hour time
 defaults write NSGlobalDomain AppleICUForce24HourTime -bool true
@@ -55,7 +72,7 @@ defaults write NSGlobalDomain AppleMeasurementUnits -string "Millimeters"
 ####################################################################################################
 
 # Set Cursor as the default text editor app
-defaults write com.apple.LaunchServices/com.apple.LaunchServices.secure LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=dev.zed.Zed;}'
+defaults write com.apple.LaunchServices/com.apple.LaunchServices.secure LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=${TEXT_EDITOR};}'
 
 # Enable Spell Checking
 defaults write NSGlobalDomain NSAllowContinuousSpellChecking -bool true
@@ -77,10 +94,6 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 # Disable automatic quote substitution
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-
-# Enable font smoothing
-defaults write -g CGFontRenderingFontSmoothingDisabled -bool false
-defaults write -g AppleFontSmoothing -int 3
 
 # User defined text snippets and symbol replacements
 defaults write NSGlobalDomain NSUserDictionaryReplacementItems -array
@@ -136,16 +149,21 @@ defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool tr
 # Enable HiDPI display modes (requires restart)
 defaults write com.apple.windowserver DisplayResolutionEnabled -bool true
 
-# Enable subpixel font rendering on non-Apple LCDs
+# Enable font smoothing
+# Available options: true (Enabled), false (Disabled)
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool false
+
+# Apply subpixel font rendering on non-Apple LCDs
+# Available options: 0 (None), 1 (Subpixel), 2 (Light), 3 (Strong)
 # Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
-defaults write NSGlobalDomain AppleFontSmoothing -int 1
+defaults write NSGlobalDomain AppleFontSmoothing -int 0
 
 ####################################################################################################
 # Screen Capture Preferences                                                                       #
 ####################################################################################################
 
 # Set the default save location for screen captures
-defaults write com.apple.screencapture location -string "${HOME}/CloudStorage/Dropbox/screenshots"
+defaults write com.apple.screencapture location -string "${SCREENSHOTS_DIR}"
 
 # Set the default file format for screen captures (options: PNG, BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
@@ -157,15 +175,14 @@ defaults write com.apple.screencapture disable-shadow -bool true
 # File & Finder Preferences                                                                        #
 ####################################################################################################
 
-# Show the ~/Library folder
-chflags nohidden ~/Library
-if xattr ~/Library | grep -q "com.apple.FinderInfo"; then
-  xattr -d com.apple.FinderInfo ~/Library
+# Show the ${HOME}/Library folder
+chflags nohidden ${HOME}/Library
+if xattr ${HOME}/Library | grep -q "com.apple.FinderInfo"; then
+  xattr -d com.apple.FinderInfo ${HOME}/Library
 fi
 
 # Set Home folder as the default location for new Finder windows
 defaults write com.apple.finder NewWindowTarget -string "PfHm"
-defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 # For other paths, use `PfLo` and `file:///full/path/here/`
 # defaults write com.apple.finder NewWindowTarget -string "PfLo"
 # defaults write com.apple.finder NewWindowTargetPath -string "file:///full/path/here/"
@@ -242,7 +259,12 @@ defaults write com.apple.finder ShowStatusBar -bool true
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool false
 
 # Set default Finder search scope to current folder
+# Search the current folder
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+# Search this Mac
+# defaults write com.apple.finder FXDefaultSearchScope -string "SCev"
+# Search using the previously used search scope
+# defaults write com.apple.finder FXDefaultSearchScope -string "SCsp"
 
 # Enable AirDrop over Ethernet and on unsupported Macs running Lion
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
@@ -312,7 +334,6 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 
 # Show hidden applications in Mission Control
 # defaults write com.apple.dock showhidden -bool true
-# defaults write com.apple.dock mru-spaces -bool false
 
 # Enable the Dock to automatically hide and show
 defaults write com.apple.dock autohide -bool true
@@ -422,3 +443,6 @@ defaults write com.apple.commerce AutoUpdate -bool true
 
 # Change the default directory for Hammerspoon to use XDG_CONFIG_HOME
 defaults write org.hammerspoon.Hammerspoon MJConfigFile "${XDG_CONFIG_HOME:-$HOME/.config}/hammerspoon/init.lua"
+
+# Disable annoying spelling corrections in Gemini Desktop Application
+defaults write com.google.GeminiMacOS WebAutomaticSpellingCorrectionEnabled -bool false
