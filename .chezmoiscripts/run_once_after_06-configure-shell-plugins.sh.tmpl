@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+
+{{ includeTemplate "script-logging.sh" }}
+
+log_header "Shell Environment Configuration"
+
+# Set zsh as default shell if not already set
+if [[ "$SHELL" != "/bin/zsh" || "$SHELL" != "$(which zsh)" ]]; then
+  log_info "Setting zsh as default shell..."
+
+  # Prefer /bin/zsh if available or use which zsh
+  if command -v /bin/zsh >/dev/null 2>&1; then
+    SHELL_PATH="/bin/zsh"
+  else
+    SHELL_PATH=$(which zsh)
+  fi
+  chsh -s "$SHELL_PATH"
+  log_success "Default shell set to $SHELL_PATH"
+else
+  log_success "Default shell is already configured to zsh"
+fi
+
+ZSH_PLUGINS_DIR="${ZDOTDIR:-$HOME/.config/zsh}/plugins"
+
+# Install zsh plugins
+if [[ ! -d "${ZSH_PLUGINS_DIR}/fzf-tab" ]]; then
+  log_info "Installing fzf-tab..."
+  git clone https://github.com/Aloxaf/fzf-tab.git "${ZSH_PLUGINS_DIR}/fzf-tab"
+  log_success "Installed fzf-tab"
+else
+  log_success "fzf-tab already installed"
+fi
+
+if [[ ! -d "${ZSH_PLUGINS_DIR}/zsh-autosuggestions" ]]; then
+  log_info "Installing zsh-autosuggestions..."
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git "${ZSH_PLUGINS_DIR}/zsh-autosuggestions"
+  log_success "Installed zsh-autosuggestions"
+else
+  log_success "zsh-autosuggestions already installed"
+fi
+
+if [[ ! -d "${ZSH_PLUGINS_DIR}/code-stats-zsh" ]]; then
+  log_info "Installing code-stats-zsh..."
+  git clone https://gitlab.com/code-stats/code-stats-zsh.git "${ZSH_PLUGINS_DIR}/code-stats-zsh"
+  log_success "Installed code-stats-zsh"
+else
+  log_success "code-stats-zsh already installed"
+fi
+
+if [[ ! -d "${ZSH_PLUGINS_DIR}/zsh-history-substring-search" ]]; then
+  log_info "Installing zsh-history-substring-search..."
+  git clone https://github.com/zsh-users/zsh-history-substring-search.git "${ZSH_PLUGINS_DIR}/zsh-history-substring-search"
+  log_success "Installed zsh-history-substring-search"
+else
+  log_success "zsh-history-substring-search already installed"
+fi
+
+if [[ ! -d "${ZSH_PLUGINS_DIR}/zsh-syntax-highlighting" ]]; then
+  log_info "Installing zsh-syntax-highlighting..."
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_PLUGINS_DIR}/zsh-syntax-highlighting"
+  log_success "Installed zsh-syntax-highlighting"
+else
+  log_success "zsh-syntax-highlighting already installed"
+fi
+
+log_done "Shell Configuration Complete"
