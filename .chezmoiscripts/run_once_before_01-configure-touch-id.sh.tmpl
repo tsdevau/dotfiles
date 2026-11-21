@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+{{ includeTemplate "script-logging.sh" }}
+
+log_header "Touch ID & Watch ID Configuration"
+log_info "Configuring Touch ID and Watch ID for sudo..."
+
+# Run the installation script for pam_watchid.so from my GitHub repository
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/tsdevau/pam_watchid/HEAD/install.sh)"
+
+log_success "Touch ID and Watch ID configuration for sudo completed"
+
+# Reload sudo session
+log_info "Reloading sudo configuration..."
+sudo -k
+log_success "Sudo configuration reloaded"
+log_note "You can now use Touch ID and Watch ID for sudo commands."
+
+log_done "Touch ID Configuration Complete"
