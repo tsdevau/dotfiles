@@ -1,52 +1,65 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # homebrew hash: {{ include ".chezmoidata/homebrew.jsonc" | sha256sum }}
 # mas apps hash: {{ include ".chezmoidata/mas.jsonc" | sha256sum }}
 # This script runs when the Homebrew package list changes
+
+{{ includeTemplate "script-logging.sh" }}
+
+log_header "Homebrew Bundle Installation"
 
 BREWFILE="${HOME}/.config/homebrew/brewfile"
 
 # Verify that Homebrew is installed
 if ! command -v brew &>/dev/null; then
-  echo -e "\033[34mHomebrew is not installed. Installing Homebrew...\033[0m"
-  if command -v chezmoi &>/dev/null; then
-    chezmoi execute-template -f "{{ .chezmoi.sourceDir -}}/run_onchange_after_03-install-homebrew-bundle.sh.tmpl"
+  log_warn "Homebrew is not installed. Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  if [[ $(uname -m) == 'arm64' ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  else
+    eval "$(/usr/local/bin/brew shellenv)"
   fi
 fi
 
 # Check if the Brewfile exists
 if [ ! -f "$BREWFILE" ]; then
-  echo -e "\033[31m$BREWFILE not found. Add the Brewfile to your configuration.\033[0m"
+  log_error "$BREWFILE not found. Add the Brewfile to your configuration."
   exit 1
 fi
 
 # Check if the Brewfile is empty
 if [ ! -s "$BREWFILE" ]; then
-  echo -e "\033[31m$BREWFILE is empty. Please add your Homebrew packages.\033[0m"
+  log_error "$BREWFILE is empty. Please add your Homebrew packages."
   exit 1
 fi
 
+log_kv "Brewfile" "$BREWFILE"
+
 # Update Homebrew
+log_info "Updating Homebrew..."
 brew update
 
 # Trust all taps declared in the Brewfile
 while IFS= read -r tap; do
   [ -z "$tap" ] && continue
-  echo -e "\033[34mEnsuring trust for tap: ${tap}\033[0m"
+  log_info "Ensuring trust for tap: ${tap}"
   brew tap "$tap" >/dev/null 2>&1 || true
   brew trust --tap "$tap"
 done < <(sed -nE 's/^tap[[:space:]]+"([^"]+)".*/\1/p' "$BREWFILE")
 
 # Install packages based on the Brewfile bundle
+log_info "Installing packages from Brewfile..."
 brew bundle --file "$BREWFILE"
 
 # Clean up based on the Brewfile bundle
+log_info "Cleaning up unused Brewfile packages..."
 brew bundle cleanup --file "$BREWFILE" --force
 
 # Upgrade all dependency packages
+log_info "Upgrading installed packages..."
 brew upgrade
 
-
 # Clean up Homebrew
+log_info "Running brew cleanup..."
 brew cleanup
 
-echo -e "\033[32mHomebrew packages installation and cleanup completed successfully.\033[0m"
+log_done "Homebrew Bundle Complete"
