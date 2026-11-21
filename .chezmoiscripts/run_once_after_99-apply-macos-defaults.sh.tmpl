@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# macos-defaults hash: {{ include "private_dot_config/macos/executable_macos-defaults.sh" | sha256sum }}
+# This script runs whenever private_dot_config/macos/executable_macos-defaults.sh changes.
+
+echo "Configuring macOS defaults..."
+
+{{ include "private_dot_config/macos/executable_macos-defaults.sh" | trimPrefix "#!/usr/bin/env bash\n" }}
+
+echo "macOS defaults configuration completed."
