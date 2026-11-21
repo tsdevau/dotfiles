@@ -1,45 +1,52 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-echo "Setting up development environment..."
+{{ includeTemplate "script-logging.sh" }}
 
+log_header "Development Environment Setup"
 
 # Check for bat cache and build it if required
 # bat config hash: {{ includeTemplate "private_dot_config/bat/config" | sha256sum }}
 if command -v bat >/dev/null 2>&1; then
-  echo "Re-building bat cache..."
+  log_info "Re-building bat cache..."
   command bat cache --build
+  log_success "bat cache rebuilt"
 fi
 
 # Configure 1Password CLI
 if command -v op >/dev/null 2>&1; then
-  echo "1Password CLI is available. Signing in..."
+  log_info "1Password CLI is available. Signing in..."
   op signin
+  log_success "1Password CLI signed in"
 fi
 
 # Install Anthropic Claude-Code CLI
 if ! command -v claude >/dev/null 2>&1; then
-  echo "Installing Anthropic Claude-Code CLI..."
+  log_info "Installing Anthropic Claude-Code CLI..."
   curl -fsSL https://claude.ai/install.sh | bash
+  log_success "Claude-Code CLI installed"
 else
-  echo "Updating Anthropic Claude-Code CLI..."
+  log_info "Updating Anthropic Claude-Code CLI..."
   claude install
+  log_success "Claude-Code CLI updated"
 fi
 
 # Install global bun packages using template data from .chezmoi.toml
 # bun packages hash: {{ include ".chezmoidata/bun.jsonc" | sha256sum }}
 if command -v bun >/dev/null 2>&1; then
-  echo "Installing global bun packages..."
+  log_info "Installing global bun packages..."
   bun install -g {{ .bun.packages | join " " }}
+  log_success "Global bun packages installed"
 fi
 
 # Set up Rust environment
 # rust hash: {{ include ".chezmoidata/rust.jsonc" | sha256sum }}
 if command -v rustc >/dev/null 2>&1; then
-  echo "Setting up Rust environment..."
+  log_info "Setting up Rust environment..."
 
   # Install and activate Rust toolchains
   {{ range .rust.toolchains }}
   if ! rustup show active-toolchain | grep -q '^{{- .name -}}'; then
+    log_info "Installing Rust toolchain: {{ .name }}"
     rustup {{ .profile }} {{ .name }}
   fi
   {{ end }}
@@ -47,6 +54,7 @@ if command -v rustc >/dev/null 2>&1; then
   # Install Rust components
   {{ range .rust.components }}
   if ! rustup component list --installed | grep -q '^{{- . -}}'; then
+    log_info "Installing Rust component: {{ . }}"
     rustup component add {{ . }}
   fi
   {{ end }}
@@ -54,11 +62,12 @@ if command -v rustc >/dev/null 2>&1; then
   # Install global cargo packages
   {{ range .rust.cargo }}
   if command -v cargo >/dev/null 2>&1; then
+    log_info "Installing cargo package: {{ . }}"
     cargo install {{ . }}
   fi
   {{ end }}
 
+  log_success "Rust environment configured"
 fi
 
-
-echo "Development environment setup completed"
+log_done "Development Environment Setup Complete"
