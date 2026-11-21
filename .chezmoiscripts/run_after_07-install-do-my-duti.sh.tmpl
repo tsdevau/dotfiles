@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+{{ includeTemplate "script-logging.sh" }}
+
+log_header "doMyDuti Installation"
+
+log_info "Installing doMyDuti..."
+curl -fsSL https://raw.githubusercontent.com/tsdevau/doMyDuti/main/install.sh | bash
+log_success "doMyDuti installation completed"
+
+log_info "Applying doMyDuti default configuration..."
+doMyDuti.sh --immediate
+log_success "doMyDuti default configuration applied"
+
+log_done "doMyDuti Setup Complete"
