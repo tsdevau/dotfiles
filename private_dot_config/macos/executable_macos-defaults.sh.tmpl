@@ -8,9 +8,15 @@
 # Copyright (c) 2020-2024 tpsTech, TPS Contractors Pty Ltd and its affiliates.  All rights reserved.
 # @Author: @tsdevau
 
+{{ includeTemplate "script-logging.sh" }}
+
+log_header "macOS Defaults Configuration"
+
 ####################################################################################################
 # Setup to Load System Preferences                                                                 #
 ####################################################################################################
+
+log_info "Closing System Settings and requesting administrator access..."
 
 # Close System Settings, to prevent them from overriding settings we’re about to change
 osascript -e 'tell application "System Settings" to quit'
@@ -46,6 +52,8 @@ SCREENSHOTS_DIR="${HOME}/Library/CloudStorage/SynologyDrive-home/screenshots"
 # System Language & Format Preferences                                                             #
 ####################################################################################################
 
+log_info "Applying system language & format preferences..."
+
 # Set System Locale
 defaults write NSGlobalDomain AppleLocale -string "${LOCALE}"
 
@@ -70,6 +78,8 @@ defaults write NSGlobalDomain AppleMeasurementUnits -string "Millimeters"
 ####################################################################################################
 # Text & Automatic Formatting Preferences                                                          #
 ####################################################################################################
+
+log_info "Applying text & automatic formatting preferences..."
 
 # Set Cursor as the default text editor app
 defaults write com.apple.LaunchServices/com.apple.LaunchServices.secure LSHandlers -array-add "{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=${TEXT_EDITOR};}"
@@ -124,6 +134,8 @@ defaults write NSGlobalDomain NSUserDictionaryReplacementItems -array-add '{on =
 # System UI Preferences                                                                            #
 ####################################################################################################
 
+log_info "Applying system UI preferences..."
+
 # Enable System Dark Mode
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 
@@ -146,6 +158,8 @@ defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool tr
 # Display Preferences                                                                              #
 ####################################################################################################
 
+log_info "Applying display preferences..."
+
 # Enable HiDPI display modes (requires restart)
 defaults write com.apple.windowserver DisplayResolutionEnabled -bool true
 
@@ -162,6 +176,8 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 0
 # Screen Capture Preferences                                                                       #
 ####################################################################################################
 
+log_info "Applying screen capture preferences..."
+
 # Set the default save location for screen captures
 defaults write com.apple.screencapture location -string "${SCREENSHOTS_DIR}"
 
@@ -174,6 +190,8 @@ defaults write com.apple.screencapture disable-shadow -bool true
 ####################################################################################################
 # File & Finder Preferences                                                                        #
 ####################################################################################################
+
+log_info "Applying Finder & file preferences..."
 
 # Show the ${HOME}/Library folder
 chflags nohidden ${HOME}/Library
@@ -273,6 +291,8 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 # Mouse & Trackpad Preferences                                                                     #
 ####################################################################################################
 
+log_info "Applying mouse & trackpad preferences..."
+
 # Enable natural scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
 
@@ -299,6 +319,8 @@ defaults -currentHost write com.apple.driver.AppleBluetoothMultitouch.trackpad T
 # Keyboard Preferences                                                                             #
 ####################################################################################################
 
+log_info "Applying keyboard preferences..."
+
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialog)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
@@ -310,6 +332,8 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Bluetooth Preferences                                                                            #
 ####################################################################################################
 
+log_info "Applying Bluetooth preferences..."
+
 # Enable Bluetooth
 
 # Increase sound quality for Bluetooth headphones/headsets
@@ -318,6 +342,8 @@ defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int
 ####################################################################################################
 # Dock Preferences                                                                                 #
 ####################################################################################################
+
+log_info "Applying Dock preferences..."
 
 # Only show open applications in the Dock
 defaults write com.apple.dock static-only -bool true
@@ -383,6 +409,8 @@ defaults write com.apple.dock wvous-bl-corner -int 4
 # Activity Monitor                                                                                 #
 ####################################################################################################
 
+log_info "Applying Activity Monitor preferences..."
+
 # Show the main window when launching Activity Monitor
 defaults write -app "Activity Monitor" OpenMainWindow -bool true
 
@@ -400,6 +428,8 @@ defaults write -app "Activity Monitor" SortDirection -int 0
 # Time Machine Preferences                                                                         #
 ####################################################################################################
 
+log_info "Applying Time Machine preferences..."
+
 # Disable Time Machine prompt to use connected drives as a Time Machine volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
@@ -409,6 +439,8 @@ hash tmutil &>/dev/null && sudo tmutil disable
 ####################################################################################################
 # Mac App Store                                                                                    #
 ####################################################################################################
+
+log_info "Applying Mac App Store preferences..."
 
 # Enable the WebKit Developer Tools in the Mac App Store
 defaults write com.apple.appstore WebKitDeveloperExtras -bool true
@@ -441,8 +473,13 @@ defaults write com.apple.commerce AutoUpdate -bool true
 # Application Specific Preferences                                                                 #
 ####################################################################################################
 
+log_info "Applying application-specific preferences..."
+
 # Change the default directory for Hammerspoon to use XDG_CONFIG_HOME
 defaults write org.hammerspoon.Hammerspoon MJConfigFile "${XDG_CONFIG_HOME:-$HOME/.config}/hammerspoon/init.lua"
 
 # Disable annoying spelling corrections in Gemini Desktop Application
 defaults write com.google.GeminiMacOS WebAutomaticSpellingCorrectionEnabled -bool false
+
+log_done "macOS Defaults Configuration Complete"
+log_note "Some changes may require logging out or restarting for full effect."
