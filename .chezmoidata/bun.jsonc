@@ -1,7 +1,7 @@
 {
   "bun": {
     "packages": [
-      // Keep formatted as single line
+      // Keep formatted as single item per line
       "@cspell/dict-en-au",
       "tsx",
       "wrangler"

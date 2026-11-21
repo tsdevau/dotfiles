@@ -1,14 +1,13 @@
 {
   "rust": {
     "components": [
-      // Keep formatted as single line
+      // Keep formatted as single item per line
       "clippy",
       "rustfmt"
     ],
     "toolchains": [
-      // Keep formatted as single line
       {
-        // Keep formatted as single line
+        // Keep formatted as single item per line
         "name": "stable",
         "profile": "default"
       }
