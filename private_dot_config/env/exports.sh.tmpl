@@ -19,11 +19,11 @@ export ZDOTDIR="$HOME/.config/zsh"
 export HOMEBREW_PREFIX="/opt/homebrew"
 
 # Set PATH
-if [[ -d "$HOMEBREW_PREFIX/bin" ]]           ; then
+if [[ -d "$HOMEBREW_PREFIX/bin" ]]; then
 eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
 fi
 
-export PATH="${HOMEBREW_PREFIX}/opt/python@3.13/libexec/bin:${HOMEBREW_PREFIX}/opt/dotnet@8/bin:${HOME}/.local/bin:${XDG_DATA_HOME}/pnpm:${XDG_DATA_HOME}/bun/bin:${XDG_DATA_HOME}/cargo/bin:${XDG_DATA_HOME}/rustup:${XDG_DATA_HOME}/go/bin:${XDG_DATA_HOME}/dotnet/tools:${PATH}"
+export PATH="${HOMEBREW_PREFIX}/Cellar/python@3.15/3.15.2/bin:${HOMEBREW_PREFIX}/Cellar/dotnet@8/8.0.134/bin:${HOME}/.local/bin:${XDG_DATA_HOME}/pnpm:${XDG_DATA_HOME}/bun/bin:${XDG_DATA_HOME}/cargo/bin:${XDG_DATA_HOME}/rustup:${XDG_DATA_HOME}/go/bin:${XDG_DATA_HOME}/dotnet/tools:${PATH}"
 
 # Set default editors
 export EDITOR={{- .editors.tui | quote }}
@@ -74,7 +74,7 @@ export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
 # dotNet SDK configuration
 export ASPNET_HOME="$XDG_DATA_HOME/aspnet"
 export DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet"
-export DOTNET_ROOT="/opt/homebrew/opt/dotnet@8/libexec"
+export DOTNET_ROOT="${HOMEBREW_PREFIX}/Cellar/dotnet@8/8.0.134/libexec"
 # export DOTNET_ROOT="$XDG_CONFIG_HOME/dotnet"
 export NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages"
 
