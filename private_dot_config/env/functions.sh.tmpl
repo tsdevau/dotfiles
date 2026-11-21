@@ -1,3 +1,5 @@
+{{ includeTemplate "script-logging.sh" }}
+
 # Normalize `open` across Linux, macOS, and Windows.
 if [[ ! $(uname -s) = "Darwin" ]]; then
   if grep -q Microsoft /proc/version; then
@@ -11,43 +13,47 @@ fi
 # Recursively delete ".DS_Store" and ".dbxignore" files from the current directory.
 rmdsdb() {
   if [[ $(uname -s) = "Darwin" ]]; then
+    log_info "Removing .DS_Store and .dbxignore files from $(pwd)..."
     find . \( -name ".DS_Store" -o -name ".dbxignore" \) -type f -delete
+    log_success "Removed .DS_Store and .dbxignore files"
   else
-    echo "This function is only applicable on macOS."
+    log_error "This function is only applicable on macOS."
   fi
 }
 
 # Empty all Trash on all macOS mounted volumes.
 trashall() {
   if [[ $(uname -s) = "Darwin" ]]; then
-    echo -e "\033[31m*** STOP! *** This function will permanently delete all files in the Trash on all mounted volumes and clear all Apple System Logs.\033[0m"
+    log_header "Empty Trash on All Volumes"
+    log_warn "This permanently deletes all Trash on mounted volumes and clears Apple System Logs."
     read "confirm?Are you sure you want to proceed? (y/N): "
 
     if [[ "$confirm" =~ ^[yY]$ ]]; then
 
       for volume in /Volumes/*; do
         if [[ -d "$volume/.Trashes" ]]; then
-          echo "Emptying Trash on $volume"
-          sudo command rm -rf "$volume/.Trashes/*"
+          log_info "Emptying Trash on $volume"
+          sudo command rm -rf "$volume/.Trashes/"*
         else
-          echo "No Trash found on $volume"
+          log_note "No Trash found on $volume"
         fi
       done
-      echo "All Trash emptied."
+      log_success "All Trash emptied"
 
-      echo "Clearing all Apple System Logs..."
+      log_info "Clearing all Apple System Logs..."
       sudo command rm -rf /private/var/log/asl/*.asl
-      echo "Apple System Logs cleared."
+      log_success "Apple System Logs cleared"
 
-      # echo "Clearing download history from Quarantine..."
+      # log_info "Clearing download history from Quarantine..."
       # sqlite3 "${HOME}/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV*" 'delete from LSQuarantineEvent'
-      # echo "Download history cleared from Quarantine."
+      # log_success "Download history cleared from Quarantine"
 
+      log_done "Trash Cleanup Complete"
     else
-      echo "Operation aborted by user."
+      log_warn "Operation aborted by user."
     fi
 
   else
-    echo "This function is only applicable on macOS."
+    log_error "This function is only applicable on macOS."
   fi
 }
