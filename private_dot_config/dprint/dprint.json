@@ -8,18 +8,13 @@
     "preferSingleLine": false,
     "trailingCommas": "never"
   },
-  "jsonc": {
-    "lineWidth": 120,
-    "preferSingleLine": false,
-    "trailingCommas": "never"
-  },
   "malva": {},
   "markdown": {
     "emphasisKind": "underscores",
     "lineWidth": 120,
     "strongKind": "asterisks"
   },
-  "markup_fmt": {
+  "markup": {
     "astro.scriptIndent": true,
     "astro.styleIndent": true,
     "astroAttrShorthand": true,
@@ -37,7 +32,7 @@
     "printWidth": 120,
     "quotes": "double",
     "scriptIndent": true,
-    "singleAttrsSameLine": true,
+    "singleAttrSameLine": true,
     "strictSvelteAttr": true,
     "styleIndent": true,
     "svelte.scriptIndent": true,
@@ -52,22 +47,21 @@
     "vue.styleIndent": true
   },
   "plugins": [
-    "https://plugins.dprint.dev/typescript-0.95.15.wasm",
-    "https://plugins.dprint.dev/json-0.21.3.wasm",
-    "https://plugins.dprint.dev/markdown-0.21.1.wasm",
-    "https://plugins.dprint.dev/toml-0.7.0.wasm",
-    "https://plugins.dprint.dev/dockerfile-0.3.3.wasm",
-    "https://plugins.dprint.dev/ruff-0.7.10.wasm",
-    "https://plugins.dprint.dev/g-plane/malva-v0.15.3.wasm",
-    "https://plugins.dprint.dev/g-plane/markup_fmt-v0.27.0.wasm",
-    "https://plugins.dprint.dev/g-plane/pretty_yaml-v0.6.0.wasm",
-    "https://plugins.dprint.dev/g-plane/pretty_graphql-v0.2.3.wasm",
-    "https://plugins.dprint.dev/RubixDev/stylua-v0.2.1.wasm"
+    "npm:@dprint/typescript@0.101.0",
+    "npm:@dprint/json@0.26.0",
+    "npm:@dprint/markdown@0.29.0",
+    "npm:@dprint/toml@0.10.0",
+    "npm:@dprint/dockerfile@0.8.0",
+    "npm:@dprint/ruff@0.12.3",
+    "npm:dprint-plugin-markup@0.28.0",
+    "npm:dprint-plugin-malva@0.16.1",
+    "npm:dprint-plugin-yaml@0.6.0",
+    "npm:dprint-plugin-graphql@0.2.3",
+    "npm:@dprint/stylua@0.2.0"
   ],
   "ruff": {},
   "stylua": {
-    "lineWidth": 120,
-    "verify": true
+    "lineWidth": 120
   },
   "toml": {},
   "typescript": {
@@ -82,7 +76,7 @@
     "preferSingleLine": false,
     "quoteProps": "asNeeded",
     "quoteStyle": "alwaysDouble",
-    "semiColons": "asi",
+    "semicolons": "asi",
     "singleBodyPosition": "nextLine",
     "trailingCommas": "onlyMultiLine",
     "useBraces": "always",
